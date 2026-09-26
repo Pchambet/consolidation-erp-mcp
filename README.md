@@ -108,20 +108,23 @@ corriger sa requête.
 
 ### Brancher Claude Desktop
 
-Dans `~/Library/Application Support/Claude/claude_desktop_config.json` :
+Dans `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS), en remplaçant les deux
+chemins par les vôtres : celui d'`uv` (`which uv`) et celui de ce dépôt. Claude Desktop ne connaît pas votre
+`PATH`, il faut donc un chemin absolu vers `uv`.
 
 ```json
 {
   "mcpServers": {
     "consolidation-erp": {
-      "command": "/Users/pierre/.local/bin/uv",
-      "args": ["--directory", "/Users/pierre/Desktop/consolidation-erp-mcp", "run", "consolidation-mcp"]
+      "command": "/chemin/absolu/vers/uv",
+      "args": ["--directory", "/chemin/absolu/vers/consolidation-erp-mcp", "run", "consolidation-mcp"]
     }
   }
 }
 ```
 
-Puis redémarrer Claude Desktop. Dans Claude Code : `claude mcp add consolidation-erp -- /Users/pierre/.local/bin/uv --directory /Users/pierre/Desktop/consolidation-erp-mcp run consolidation-mcp`.
+Puis redémarrer Claude Desktop. Dans Claude Code :
+`claude mcp add consolidation-erp -- /chemin/absolu/vers/uv --directory /chemin/absolu/vers/consolidation-erp-mcp run consolidation-mcp`.
 
 Trois questions pour l'essayer, avec la réponse attendue :
 
@@ -157,13 +160,13 @@ CSV par un test, ce qui valide leurs colonnes et leur logique, pas la syntaxe DA
   de taxes, pas de réceptions Odoo (l'entrepôt est le système C).
 - **Le taux de change** est fixe (1 CHF = 1,06 EUR). Un vrai projet lirait les taux du jour.
 - **L'actualisation reconstruit tout** au lieu de lire les seuls changements. Elle est idempotente et
-  rapide à cette échelle (une seconde) ; le connecteur Odoo de FreightSight sait lire en incrémental,
-  celui-ci ne le fait pas.
+  rapide à cette échelle (une seconde). Un connecteur de production lirait en incrémental sur
+  `write_date`, ce que celui-ci ne fait pas.
 
 ## Tests
 
 ```bash
-uv run pytest        # 71 tests, une quarantaine de secondes
+uv run pytest        # 71 tests avec Odoo, 68 sans (les 3 tests contre le vrai Odoo sont alors ignorés)
 ```
 
 Les tests qui comptent : les contrôles retrouvent exactement les écarts plantés ; l'actualisation est
