@@ -1,0 +1,62 @@
+// Mesures DAX du tableau de bord Power BI.
+//
+// ATTENTION : ce fichier n'a JAMAIS été ouvert dans Power BI Desktop. Il a été écrit sur une machine
+// sans Windows. Chaque mesure est associée à la valeur que l'entrepôt de données donne pour le même
+// indicateur (commande `consolidation indicateurs`) : si Power BI donne un autre chiffre, c'est la mesure
+// qui est fausse, pas l'entrepôt. Voir la table de vérification dans README.md.
+
+// --- Paramètre -------------------------------------------------------------------------------
+Date d'arrêté = MAX ( parametres[as_of] )
+
+// --- Écarts (attendu : 22, 8, 12 007) ----------------------------------------------------------
+Écarts ouverts = COUNTROWS ( ecarts )
+
+Écarts de gravité haute = CALCULATE ( [Écarts ouverts], ecarts[gravite] = "haute" )
+
+Montant exposé (EUR) = ROUND ( SUM ( ecarts[montant_eur] ), 0 )
+
+// --- Rapprochement en trois voies (attendu : 81,8 %) -------------------------------------------
+Commandes de plus de 30 jours =
+VAR limite = [Date d'arrêté] - 30
+RETURN CALCULATE ( DISTINCTCOUNT ( fact_commande[po_ref] ), fact_commande[date_commande] < limite )
+
+Commandes conformes =
+VAR limite = [Date d'arrêté] - 30
+RETURN
+    CALCULATE (
+        DISTINCTCOUNT ( fact_commande[po_ref] ),
+        fact_commande[date_commande] < limite,
+        fact_commande[nb_ecarts] = 0
+    )
+
+Taux de conformité = DIVIDE ( [Commandes conformes], [Commandes de plus de 30 jours] )   // format : 0,0 %
+
+// --- Reçu et non facturé (attendu : 4 495 EUR) -------------------------------------------------
+Reçu non facturé (EUR) =
+VAR limite = [Date d'arrêté] - 30
+RETURN
+    ROUND (
+        CALCULATE (
+            SUM ( rapprochement[total_eur] ),
+            rapprochement[recue] = 1,
+            rapprochement[facturee] = 0,
+            rapprochement[premiere_reception] < limite
+        ),
+        0
+    )
+
+// --- Délai moyen commande à facture (attendu : 17,4 jours) -------------------------------------
+Délai moyen commande à facture =
+AVERAGEX (
+    FILTER ( rapprochement, rapprochement[facturee] = 1 && rapprochement[date_facture] >= rapprochement[date_commande] ),
+    DATEDIFF ( rapprochement[date_commande], rapprochement[date_facture], DAY )
+)
+
+// --- Données de base (attendu : 2 et 97,5 %) ----------------------------------------------------
+Fournisseurs à fiches multiples = CALCULATE ( COUNTROWS ( dim_partenaire ), dim_partenaire[fiches_odoo] > 1 )
+
+Comptes auxiliaires rattachés =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( pont_partenaire ), pont_partenaire[systeme] = "B", pont_partenaire[partner_key] <> BLANK () ),
+    CALCULATE ( COUNTROWS ( pont_partenaire ), pont_partenaire[systeme] = "B" )
+)   // format : 0,0 %

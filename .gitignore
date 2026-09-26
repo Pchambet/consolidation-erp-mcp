@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# L'entrepôt se reconstruit : `consolidation actualiser`
+data/entrepot.duckdb
+data/entrepot.duckdb.wal
+data/entrepot.construction.duckdb*
+.DS_Store

@@ -1,0 +1,3545 @@
+{
+ "partners": [
+  {
+   "id": 7,
+   "ref": "F0001",
+   "name": "Usinage Salève SA",
+   "vat": "FR92669015044",
+   "write_date": "2026-09-26 15:34:57"
+  },
+  {
+   "id": 8,
+   "ref": "F0002",
+   "name": "Papeterie Aravis SAS",
+   "vat": "FR27272218179",
+   "write_date": "2026-09-26 15:34:57"
+  },
+  {
+   "id": 9,
+   "ref": "F0003",
+   "name": "Usinage Bornes SA",
+   "vat": "FR59392924176",
+   "write_date": "2026-09-26 15:34:57"
+  },
+  {
+   "id": 10,
+   "ref": "F0004",
+   "name": "Outillage Annecy SARL",
+   "vat": "FR20511442130",
+   "write_date": "2026-09-26 15:34:57"
+  },
+  {
+   "id": 11,
+   "ref": "F0005",
+   "name": "Manutention Bornes SARL",
+   "vat": "FR32382870507",
+   "write_date": "2026-09-26 15:34:57"
+  },
+  {
+   "id": 12,
+   "ref": "F0006",
+   "name": "Chimie Genevois SARL",
+   "vat": "FR46602189461",
+   "write_date": "2026-09-26 15:34:57"
+  },
+  {
+   "id": 13,
+   "ref": "F0007",
+   "name": "Étiquettes Bauges SAS",
+   "vat": "FR71577367252",
+   "write_date": "2026-09-26 15:34:57"
+  },
+  {
+   "id": 14,
+   "ref": "F0008",
+   "name": "Usinage Rhône SAS",
+   "vat": "FR45976336909",
+   "write_date": "2026-09-26 15:34:57"
+  },
+  {
+   "id": 15,
+   "ref": "F0009",
+   "name": "Mécanique Arve SA",
+   "vat": "FR39105267592",
+   "write_date": "2026-09-26 15:34:57"
+  },
+  {
+   "id": 16,
+   "ref": "F0010",
+   "name": "Câblage Bornes SA",
+   "vat": "FR92454809561",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 17,
+   "ref": "F0011",
+   "name": "Manutention Bauges SAS",
+   "vat": "FR33129189427",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 18,
+   "ref": "F0012",
+   "name": "Outillage Faucigny SA",
+   "vat": "FR55703445637",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 19,
+   "ref": "F0013",
+   "name": "Manutention Salève SAS",
+   "vat": "FR37217782500",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 20,
+   "ref": "F0014",
+   "name": "Fixations Jura SARL",
+   "vat": "FR81906644511",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 21,
+   "ref": "F0015",
+   "name": "Plastiques Bauges SA",
+   "vat": "FR82416431845",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 22,
+   "ref": "F0016",
+   "name": "Papeterie Vuache SAS",
+   "vat": "FR81242397668",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 23,
+   "ref": "F0017",
+   "name": "Usinage Annecy SARL",
+   "vat": "FR22568208209",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 24,
+   "ref": "F0018",
+   "name": "Mécanique Annecy SAS",
+   "vat": "FR17915091094",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 25,
+   "ref": "F0019",
+   "name": "Outillage Rhône SA",
+   "vat": "FR92776550271",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 26,
+   "ref": "F0020",
+   "name": "Fonderie Jura SARL",
+   "vat": "FR45731476759",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 27,
+   "ref": "F0021",
+   "name": "Conditionnement Léman SARL",
+   "vat": "FR50273292139",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 28,
+   "ref": "F0022",
+   "name": "Conditionnement Valserine SA",
+   "vat": "FR11541997588",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 29,
+   "ref": "F0023",
+   "name": "Câblage Bauges SARL",
+   "vat": "FR63116567828",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 30,
+   "ref": "F0024",
+   "name": "Emballages Arve SA",
+   "vat": "FR12432772643",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 31,
+   "ref": "F0025",
+   "name": "Fonderie Salève SAS",
+   "vat": "FR81718991814",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 32,
+   "ref": "F0026",
+   "name": "Conditionnement Rhône SARL",
+   "vat": "FR50937257462",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 33,
+   "ref": "F0027",
+   "name": "Fixations Vercors SAS",
+   "vat": "FR93866883911",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 34,
+   "ref": "F0028",
+   "name": "Textiles Bauges SARL",
+   "vat": "FR50752604874",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 35,
+   "ref": "F0029",
+   "name": "Câblage Chablais SARL",
+   "vat": "FR64825762789",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 36,
+   "ref": "F0030",
+   "name": "Manutention Léman SAS",
+   "vat": "FR57638225743",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 37,
+   "ref": "F0031",
+   "name": "Manutention Mont-Blanc SARL",
+   "vat": "FR59413405252",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 38,
+   "ref": "F0032",
+   "name": "Papeterie Léman SARL",
+   "vat": "FR17889615695",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 39,
+   "ref": "F0033",
+   "name": "Outillage Salève SA",
+   "vat": "FR46846573366",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 40,
+   "ref": "F0034",
+   "name": "Chimie Vuache SAS",
+   "vat": "FR25418839064",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 41,
+   "ref": "F0035",
+   "name": "Fonderie Genevois SARL",
+   "vat": "FR84121764845",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 42,
+   "ref": "F0036",
+   "name": "Mécanique Bauges SARL",
+   "vat": "FR35702221890",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 43,
+   "ref": "F0037",
+   "name": "Manutention Jura SA",
+   "vat": "CHE-266.733.225 TVA",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 44,
+   "ref": "F0038",
+   "name": "Plastiques Vercors SA",
+   "vat": "CHE-635.462.711 TVA",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 45,
+   "ref": "F0039",
+   "name": "Papeterie Salève AG",
+   "vat": "CHE-409.129.534 TVA",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 46,
+   "ref": "F0040",
+   "name": "Chimie Vercors Sàrl",
+   "vat": "CHE-525.493.486 TVA",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 47,
+   "ref": "F0041",
+   "name": "Électronique Salève Sàrl",
+   "vat": "CHE-778.324.893 TVA",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 48,
+   "ref": "F0042",
+   "name": "Papeterie Valserine AG",
+   "vat": "CHE-129.777.834 TVA",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 49,
+   "ref": "F0043",
+   "name": "Outillage Léman AG",
+   "vat": "CHE-668.506.361 TVA",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 50,
+   "ref": "F0044",
+   "name": "Plastiques Genevois SA",
+   "vat": "CHE-123.116.383 TVA",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 51,
+   "ref": "F0045",
+   "name": "Câblage Bornes SARL",
+   "vat": "FR11239212440",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 52,
+   "ref": "F0901",
+   "name": "Conditionnement Valserine S.A.",
+   "vat": "FR11541997588",
+   "write_date": "2026-09-26 15:34:58"
+  },
+  {
+   "id": 53,
+   "ref": "F0902",
+   "name": "Mécanique Annecy S.A.S.",
+   "vat": "FR17915091094",
+   "write_date": "2026-09-26 15:34:58"
+  }
+ ],
+ "products": [
+  {
+   "id": 1,
+   "sku": "VIS-M8-INOX",
+   "name": "Vis inox M8",
+   "uom_achat": "Dozens"
+  },
+  {
+   "id": 2,
+   "sku": "VIS-M10-ACIER",
+   "name": "Vis acier M10",
+   "uom_achat": "Dozens"
+  },
+  {
+   "id": 3,
+   "sku": "ECR-M8",
+   "name": "Écrou M8",
+   "uom_achat": "Dozens"
+  },
+  {
+   "id": 4,
+   "sku": "RON-M8",
+   "name": "Rondelle M8",
+   "uom_achat": "Dozens"
+  },
+  {
+   "id": 5,
+   "sku": "JNT-TOR-20",
+   "name": "Joint torique 20 mm",
+   "uom_achat": "Dozens"
+  },
+  {
+   "id": 6,
+   "sku": "ETQ-A6",
+   "name": "Étiquette adhésive A6",
+   "uom_achat": "Dozens"
+  },
+  {
+   "id": 7,
+   "sku": "GNT-NIT-L",
+   "name": "Gant nitrile L",
+   "uom_achat": "Dozens"
+  },
+  {
+   "id": 8,
+   "sku": "BOU-PLA-30",
+   "name": "Bouchon plastique 30 mm",
+   "uom_achat": "Dozens"
+  },
+  {
+   "id": 9,
+   "sku": "ROUL-6204",
+   "name": "Roulement 6204",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 10,
+   "sku": "ROUL-6206",
+   "name": "Roulement 6206",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 11,
+   "sku": "CAR-40X30",
+   "name": "Carton 40x30",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 12,
+   "sku": "CAR-60X40",
+   "name": "Carton 60x40",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 13,
+   "sku": "PAL-120X80",
+   "name": "Palette bois 120x80",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 14,
+   "sku": "FIL-ETIR-50",
+   "name": "Film étirable 50 cm",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 15,
+   "sku": "RUB-ADH-48",
+   "name": "Ruban adhésif 48 mm",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 16,
+   "sku": "CAB-3G15",
+   "name": "Câble 3G1,5 (m)",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 17,
+   "sku": "CON-RJ45",
+   "name": "Connecteur RJ45",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 18,
+   "sku": "CAP-PT100",
+   "name": "Capteur PT100",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 19,
+   "sku": "REL-24V",
+   "name": "Relais 24 V",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 20,
+   "sku": "FUS-10A",
+   "name": "Fusible 10 A",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 21,
+   "sku": "COL-200",
+   "name": "Collier de serrage 200 mm",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 22,
+   "sku": "HUI-ISO46",
+   "name": "Huile hydraulique ISO 46 (L)",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 23,
+   "sku": "SAC-30L",
+   "name": "Sac plastique 30 L",
+   "uom_achat": "Units"
+  },
+  {
+   "id": 24,
+   "sku": "PIL-AA",
+   "name": "Pile AA",
+   "uom_achat": "Units"
+  }
+ ],
+ "orders": [
+  {
+   "id": 1,
+   "name": "P00001",
+   "partner_id": 31,
+   "date_order": "2026-03-03 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 172.2,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 1,
+     "sku": "PIL-AA",
+     "qty": 420.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.41
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "P00002",
+   "partner_id": 7,
+   "date_order": "2026-03-04 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1448.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 2,
+     "sku": "COL-200",
+     "qty": 240.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.09
+    },
+    {
+     "id": 3,
+     "sku": "CAB-3G15",
+     "qty": 360.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.67
+    },
+    {
+     "id": 4,
+     "sku": "FIL-ETIR-50",
+     "qty": 120.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 6.88
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "P00003",
+   "partner_id": 40,
+   "date_order": "2026-03-06 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 15.75,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 5,
+     "sku": "ETQ-A6",
+     "qty": 25.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.63
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "name": "P00004",
+   "partner_id": 41,
+   "date_order": "2026-03-11 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 3.6,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 6,
+     "sku": "ETQ-A6",
+     "qty": 6.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.6
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "P00005",
+   "partner_id": 14,
+   "date_order": "2026-03-11 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 102.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 7,
+     "sku": "HUI-ISO46",
+     "qty": 20.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 3.65
+    },
+    {
+     "id": 8,
+     "sku": "SAC-30L",
+     "qty": 250.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.1
+    },
+    {
+     "id": 9,
+     "sku": "COL-200",
+     "qty": 60.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.08
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "name": "P00006",
+   "partner_id": 30,
+   "date_order": "2026-03-12 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 5510.78,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 10,
+     "sku": "GNT-NIT-L",
+     "qty": 14.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 6.77
+    },
+    {
+     "id": 11,
+     "sku": "CAP-PT100",
+     "qty": 400.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 13.54
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "name": "P00007",
+   "partner_id": 46,
+   "date_order": "2026-03-13 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 113.3,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 12,
+     "sku": "JNT-TOR-20",
+     "qty": 11.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 10.3
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "name": "P00008",
+   "partner_id": 27,
+   "date_order": "2026-03-16 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 103.49,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 13,
+     "sku": "RON-M8",
+     "qty": 9.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.81
+    },
+    {
+     "id": 14,
+     "sku": "PIL-AA",
+     "qty": 260.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.37
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "name": "P00009",
+   "partner_id": 23,
+   "date_order": "2026-03-16 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1444.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 15,
+     "sku": "ROUL-6206",
+     "qty": 240.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 5.78
+    },
+    {
+     "id": 16,
+     "sku": "COL-200",
+     "qty": 320.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.09
+    },
+    {
+     "id": 17,
+     "sku": "RON-M8",
+     "qty": 36.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.8
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "name": "P00010",
+   "partner_id": 14,
+   "date_order": "2026-03-23 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 833.15,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 18,
+     "sku": "CON-RJ45",
+     "qty": 450.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.84
+    },
+    {
+     "id": 19,
+     "sku": "BOU-PLA-30",
+     "qty": 57.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 1.35
+    },
+    {
+     "id": 20,
+     "sku": "CAR-60X40",
+     "qty": 310.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.22
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "name": "P00011",
+   "partner_id": 44,
+   "date_order": "2026-03-23 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 467.76,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 21,
+     "sku": "ECR-M8",
+     "qty": 54.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 2.09
+    },
+    {
+     "id": 22,
+     "sku": "CAB-3G15",
+     "qty": 210.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.69
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "name": "P00012",
+   "partner_id": 23,
+   "date_order": "2026-03-24 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 360.61,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 23,
+     "sku": "BOU-PLA-30",
+     "qty": 32.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 1.36
+    },
+    {
+     "id": 24,
+     "sku": "ETQ-A6",
+     "qty": 37.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.57
+    },
+    {
+     "id": 25,
+     "sku": "CAR-40X30",
+     "qty": 370.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.8
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "name": "P00013",
+   "partner_id": 52,
+   "date_order": "2026-03-27 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1247.1,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:03",
+   "lines": [
+    {
+     "id": 26,
+     "sku": "PIL-AA",
+     "qty": 330.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.4
+    },
+    {
+     "id": 27,
+     "sku": "HUI-ISO46",
+     "qty": 270.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 4.13
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "name": "P00014",
+   "partner_id": 27,
+   "date_order": "2026-03-28 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 388.08,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 28,
+     "sku": "GNT-NIT-L",
+     "qty": 56.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 6.93
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "name": "P00015",
+   "partner_id": 36,
+   "date_order": "2026-04-05 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 26.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 29,
+     "sku": "SAC-30L",
+     "qty": 240.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.11
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "name": "P00016",
+   "partner_id": 29,
+   "date_order": "2026-04-06 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1709.3,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 30,
+     "sku": "REL-24V",
+     "qty": 150.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 4.92
+    },
+    {
+     "id": 31,
+     "sku": "PAL-120X80",
+     "qty": 110.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 8.83
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "name": "P00017",
+   "partner_id": 35,
+   "date_order": "2026-04-06 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1838.6,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 32,
+     "sku": "REL-24V",
+     "qty": 100.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 5.62
+    },
+    {
+     "id": 33,
+     "sku": "HUI-ISO46",
+     "qty": 290.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 4.14
+    },
+    {
+     "id": 34,
+     "sku": "PIL-AA",
+     "qty": 190.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.4
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "name": "P00018",
+   "partner_id": 52,
+   "date_order": "2026-04-07 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 171.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 35,
+     "sku": "CAR-40X30",
+     "qty": 190.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.9
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "name": "P00019",
+   "partner_id": 35,
+   "date_order": "2026-04-09 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 3447.7,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 36,
+     "sku": "JNT-TOR-20",
+     "qty": 45.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 12.1
+    },
+    {
+     "id": 37,
+     "sku": "CAP-PT100",
+     "qty": 190.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 15.28
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "name": "P00020",
+   "partner_id": 21,
+   "date_order": "2026-04-10 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1930.14,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 38,
+     "sku": "JNT-TOR-20",
+     "qty": 54.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 11.51
+    },
+    {
+     "id": 39,
+     "sku": "CAP-PT100",
+     "qty": 90.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.54
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "name": "P00021",
+   "partner_id": 24,
+   "date_order": "2026-04-11 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 2464.5,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 40,
+     "sku": "REL-24V",
+     "qty": 420.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 5.18
+    },
+    {
+     "id": 41,
+     "sku": "RUB-ADH-48",
+     "qty": 270.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.07
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "name": "P00022",
+   "partner_id": 32,
+   "date_order": "2026-04-11 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 6721.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 42,
+     "sku": "CAP-PT100",
+     "qty": 470.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.3
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "name": "P00023",
+   "partner_id": 28,
+   "date_order": "2026-04-12 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 3768.72,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 43,
+     "sku": "FIL-ETIR-50",
+     "qty": 450.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 7.62
+    },
+    {
+     "id": 44,
+     "sku": "CAR-40X30",
+     "qty": 330.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.9
+    },
+    {
+     "id": 45,
+     "sku": "RON-M8",
+     "qty": 48.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.89
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "name": "P00024",
+   "partner_id": 47,
+   "date_order": "2026-04-15 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 4188.78,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 46,
+     "sku": "CAP-PT100",
+     "qty": 290.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 12.77
+    },
+    {
+     "id": 47,
+     "sku": "CON-RJ45",
+     "qty": 240.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.8
+    },
+    {
+     "id": 48,
+     "sku": "GNT-NIT-L",
+     "qty": 46.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 6.38
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "name": "P00025",
+   "partner_id": 28,
+   "date_order": "2026-04-16 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 4828.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 49,
+     "sku": "PAL-120X80",
+     "qty": 480.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 10.06
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "name": "P00026",
+   "partner_id": 18,
+   "date_order": "2026-04-19 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1827.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 50,
+     "sku": "ROUL-6204",
+     "qty": 370.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 4.94
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "name": "P00027",
+   "partner_id": 23,
+   "date_order": "2026-04-19 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 312.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 51,
+     "sku": "CAR-40X30",
+     "qty": 390.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.8
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "name": "P00028",
+   "partner_id": 48,
+   "date_order": "2026-04-22 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 646.2,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 52,
+     "sku": "FIL-ETIR-50",
+     "qty": 20.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 7.27
+    },
+    {
+     "id": 53,
+     "sku": "CAB-3G15",
+     "qty": 40.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.77
+    },
+    {
+     "id": 54,
+     "sku": "CAR-40X30",
+     "qty": 500.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.86
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "name": "P00029",
+   "partner_id": 21,
+   "date_order": "2026-04-26 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 866.95,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 55,
+     "sku": "RON-M8",
+     "qty": 25.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.85
+    },
+    {
+     "id": 56,
+     "sku": "HUI-ISO46",
+     "qty": 30.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 3.94
+    },
+    {
+     "id": 57,
+     "sku": "ROUL-6204",
+     "qty": 150.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 4.85
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "name": "P00030",
+   "partner_id": 36,
+   "date_order": "2026-04-27 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1288.6,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 58,
+     "sku": "ROUL-6204",
+     "qty": 250.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 4.94
+    },
+    {
+     "id": 59,
+     "sku": "FUS-10A",
+     "qty": 70.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.29
+    },
+    {
+     "id": 60,
+     "sku": "COL-200",
+     "qty": 370.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.09
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "name": "P00031",
+   "partner_id": 19,
+   "date_order": "2026-04-30 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 545.06,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 61,
+     "sku": "VIS-M8-INOX",
+     "qty": 26.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 5.14
+    },
+    {
+     "id": 62,
+     "sku": "RON-M8",
+     "qty": 19.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.86
+    },
+    {
+     "id": 63,
+     "sku": "JNT-TOR-20",
+     "qty": 34.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 11.62
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "name": "P00032",
+   "partner_id": 20,
+   "date_order": "2026-05-03 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 875.3,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:04",
+   "lines": [
+    {
+     "id": 64,
+     "sku": "HUI-ISO46",
+     "qty": 210.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 3.94
+    },
+    {
+     "id": 65,
+     "sku": "ETQ-A6",
+     "qty": 10.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.61
+    },
+    {
+     "id": 66,
+     "sku": "SAC-30L",
+     "qty": 380.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.11
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "name": "P00033",
+   "partner_id": 33,
+   "date_order": "2026-05-07 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1169.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 67,
+     "sku": "CON-RJ45",
+     "qty": 370.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.92
+    },
+    {
+     "id": 68,
+     "sku": "HUI-ISO46",
+     "qty": 100.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 3.97
+    },
+    {
+     "id": 69,
+     "sku": "REL-24V",
+     "qty": 80.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 5.4
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "name": "P00034",
+   "partner_id": 8,
+   "date_order": "2026-05-08 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1113.5,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 70,
+     "sku": "FIL-ETIR-50",
+     "qty": 130.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 7.39
+    },
+    {
+     "id": 71,
+     "sku": "VIS-M10-ACIER",
+     "qty": 40.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 3.82
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "name": "P00035",
+   "partner_id": 51,
+   "date_order": "2026-05-08 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 748.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 72,
+     "sku": "CAB-3G15",
+     "qty": 440.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.7
+    }
+   ]
+  },
+  {
+   "id": 36,
+   "name": "P00036",
+   "partner_id": 49,
+   "date_order": "2026-05-08 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 696.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 73,
+     "sku": "CAR-40X30",
+     "qty": 220.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.84
+    },
+    {
+     "id": 74,
+     "sku": "CAR-60X40",
+     "qty": 400.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.28
+    }
+   ]
+  },
+  {
+   "id": 37,
+   "name": "P00037",
+   "partner_id": 37,
+   "date_order": "2026-05-11 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 374.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 75,
+     "sku": "CAB-3G15",
+     "qty": 180.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.88
+    },
+    {
+     "id": 76,
+     "sku": "CAR-40X30",
+     "qty": 40.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.91
+    }
+   ]
+  },
+  {
+   "id": 38,
+   "name": "P00038",
+   "partner_id": 48,
+   "date_order": "2026-05-14 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 687.89,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 77,
+     "sku": "JNT-TOR-20",
+     "qty": 35.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 11.51
+    },
+    {
+     "id": 78,
+     "sku": "VIS-M8-INOX",
+     "qty": 56.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 5.09
+    }
+   ]
+  },
+  {
+   "id": 39,
+   "name": "P00039",
+   "partner_id": 30,
+   "date_order": "2026-05-15 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 406.44,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 79,
+     "sku": "RUB-ADH-48",
+     "qty": 250.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.03
+    },
+    {
+     "id": 80,
+     "sku": "GNT-NIT-L",
+     "qty": 22.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 6.77
+    }
+   ]
+  },
+  {
+   "id": 40,
+   "name": "P00040",
+   "partner_id": 39,
+   "date_order": "2026-05-16 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 4300.17,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 81,
+     "sku": "PAL-120X80",
+     "qty": 390.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 9.24
+    },
+    {
+     "id": 82,
+     "sku": "ROUL-6206",
+     "qty": 50.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 5.94
+    },
+    {
+     "id": 83,
+     "sku": "GNT-NIT-L",
+     "qty": 57.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 7.01
+    }
+   ]
+  },
+  {
+   "id": 41,
+   "name": "P00041",
+   "partner_id": 33,
+   "date_order": "2026-05-17 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 187.2,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 84,
+     "sku": "PIL-AA",
+     "qty": 480.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.39
+    }
+   ]
+  },
+  {
+   "id": 42,
+   "name": "P00042",
+   "partner_id": 48,
+   "date_order": "2026-05-19 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 7413.3,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 85,
+     "sku": "CON-RJ45",
+     "qty": 210.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.91
+    },
+    {
+     "id": 86,
+     "sku": "HUI-ISO46",
+     "qty": 320.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 3.94
+    },
+    {
+     "id": 87,
+     "sku": "CAP-PT100",
+     "qty": 410.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.54
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "name": "P00043",
+   "partner_id": 12,
+   "date_order": "2026-05-20 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 696.3,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 88,
+     "sku": "CON-RJ45",
+     "qty": 330.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.85
+    },
+    {
+     "id": 89,
+     "sku": "FUS-10A",
+     "qty": 220.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.27
+    },
+    {
+     "id": 90,
+     "sku": "CAR-40X30",
+     "qty": 440.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.81
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "name": "P00044",
+   "partner_id": 28,
+   "date_order": "2026-05-20 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 163.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 91,
+     "sku": "ETQ-A6",
+     "qty": 40.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.64
+    },
+    {
+     "id": 92,
+     "sku": "ECR-M8",
+     "qty": 60.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 2.29
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "name": "P00045",
+   "partner_id": 18,
+   "date_order": "2026-05-21 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1173.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 93,
+     "sku": "CON-RJ45",
+     "qty": 420.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.93
+    },
+    {
+     "id": 94,
+     "sku": "PAL-120X80",
+     "qty": 80.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 9.79
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "name": "P00046",
+   "partner_id": 45,
+   "date_order": "2026-05-22 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 163.88,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 95,
+     "sku": "VIS-M8-INOX",
+     "qty": 34.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 4.82
+    }
+   ]
+  },
+  {
+   "id": 47,
+   "name": "P00047",
+   "partner_id": 22,
+   "date_order": "2026-05-26 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 2291.6,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 96,
+     "sku": "FIL-ETIR-50",
+     "qty": 340.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 6.74
+    }
+   ]
+  },
+  {
+   "id": 48,
+   "name": "P00048",
+   "partner_id": 40,
+   "date_order": "2026-05-28 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 141.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 97,
+     "sku": "CON-RJ45",
+     "qty": 150.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.94
+    }
+   ]
+  },
+  {
+   "id": 49,
+   "name": "P00049",
+   "partner_id": 53,
+   "date_order": "2026-05-28 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 4511.02,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:05",
+   "lines": [
+    {
+     "id": 98,
+     "sku": "CAB-3G15",
+     "qty": 450.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.71
+    },
+    {
+     "id": 99,
+     "sku": "JNT-TOR-20",
+     "qty": 58.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 11.14
+    },
+    {
+     "id": 100,
+     "sku": "CAP-PT100",
+     "qty": 220.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.07
+    }
+   ]
+  },
+  {
+   "id": 50,
+   "name": "P00050",
+   "partner_id": 30,
+   "date_order": "2026-05-31 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 9197.2,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 101,
+     "sku": "PAL-120X80",
+     "qty": 480.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 8.93
+    },
+    {
+     "id": 102,
+     "sku": "CAP-PT100",
+     "qty": 360.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 13.54
+    },
+    {
+     "id": 103,
+     "sku": "FUS-10A",
+     "qty": 140.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.26
+    }
+   ]
+  },
+  {
+   "id": 51,
+   "name": "P00051",
+   "partner_id": 16,
+   "date_order": "2026-06-01 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 6964.49,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 104,
+     "sku": "CAP-PT100",
+     "qty": 480.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.18
+    },
+    {
+     "id": 105,
+     "sku": "SAC-30L",
+     "qty": 110.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.11
+    },
+    {
+     "id": 106,
+     "sku": "JNT-TOR-20",
+     "qty": 13.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 11.23
+    }
+   ]
+  },
+  {
+   "id": 52,
+   "name": "P00052",
+   "partner_id": 49,
+   "date_order": "2026-06-01 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 1626.55,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 107,
+     "sku": "VIS-M10-ACIER",
+     "qty": 55.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 3.67
+    },
+    {
+     "id": 108,
+     "sku": "HUI-ISO46",
+     "qty": 210.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 3.85
+    },
+    {
+     "id": 109,
+     "sku": "ROUL-6204",
+     "qty": 130.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 4.74
+    }
+   ]
+  },
+  {
+   "id": 53,
+   "name": "P00053",
+   "partner_id": 15,
+   "date_order": "2026-06-02 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 3720.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 110,
+     "sku": "CAP-PT100",
+     "qty": 240.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 15.45
+    },
+    {
+     "id": 111,
+     "sku": "SAC-30L",
+     "qty": 100.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.12
+    }
+   ]
+  },
+  {
+   "id": 54,
+   "name": "P00054",
+   "partner_id": 36,
+   "date_order": "2026-06-05 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 30.38,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 112,
+     "sku": "ETQ-A6",
+     "qty": 49.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.62
+    }
+   ]
+  },
+  {
+   "id": 55,
+   "name": "P00055",
+   "partner_id": 10,
+   "date_order": "2026-06-05 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 415.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 113,
+     "sku": "HUI-ISO46",
+     "qty": 110.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 3.78
+    }
+   ]
+  },
+  {
+   "id": 56,
+   "name": "P00056",
+   "partner_id": 33,
+   "date_order": "2026-06-07 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 2728.1,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 114,
+     "sku": "FUS-10A",
+     "qty": 30.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.29
+    },
+    {
+     "id": 115,
+     "sku": "CAB-3G15",
+     "qty": 210.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.78
+    },
+    {
+     "id": 116,
+     "sku": "CAP-PT100",
+     "qty": 160.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.66
+    }
+   ]
+  },
+  {
+   "id": 57,
+   "name": "P00057",
+   "partner_id": 39,
+   "date_order": "2026-06-09 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 4443.9,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 117,
+     "sku": "CAP-PT100",
+     "qty": 310.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.01
+    },
+    {
+     "id": 118,
+     "sku": "ECR-M8",
+     "qty": 48.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 2.1
+    }
+   ]
+  },
+  {
+   "id": 58,
+   "name": "P00058",
+   "partner_id": 51,
+   "date_order": "2026-06-10 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 95.7,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 119,
+     "sku": "CAR-40X30",
+     "qty": 110.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.87
+    }
+   ]
+  },
+  {
+   "id": 59,
+   "name": "P00059",
+   "partner_id": 39,
+   "date_order": "2026-06-12 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 34.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 120,
+     "sku": "CAB-3G15",
+     "qty": 20.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.7
+    }
+   ]
+  },
+  {
+   "id": 60,
+   "name": "P00060",
+   "partner_id": 10,
+   "date_order": "2026-06-14 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 491.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 121,
+     "sku": "CAR-60X40",
+     "qty": 390.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.26
+    }
+   ]
+  },
+  {
+   "id": 61,
+   "name": "P00061",
+   "partner_id": 23,
+   "date_order": "2026-06-15 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 186.18,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 122,
+     "sku": "VIS-M8-INOX",
+     "qty": 37.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 4.77
+    },
+    {
+     "id": 123,
+     "sku": "ETQ-A6",
+     "qty": 17.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.57
+    }
+   ]
+  },
+  {
+   "id": 62,
+   "name": "P00062",
+   "partner_id": 12,
+   "date_order": "2026-06-16 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1337.6,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 124,
+     "sku": "HUI-ISO46",
+     "qty": 140.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 3.7
+    },
+    {
+     "id": 125,
+     "sku": "FIL-ETIR-50",
+     "qty": 120.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 6.83
+    }
+   ]
+  },
+  {
+   "id": 63,
+   "name": "P00063",
+   "partner_id": 22,
+   "date_order": "2026-06-27 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1204.5,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 126,
+     "sku": "HUI-ISO46",
+     "qty": 330.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 3.65
+    }
+   ]
+  },
+  {
+   "id": 64,
+   "name": "P00064",
+   "partner_id": 20,
+   "date_order": "2026-06-27 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 4259.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:06",
+   "lines": [
+    {
+     "id": 127,
+     "sku": "ETQ-A6",
+     "qty": 60.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.61
+    },
+    {
+     "id": 128,
+     "sku": "CAP-PT100",
+     "qty": 290.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.56
+    }
+   ]
+  },
+  {
+   "id": 65,
+   "name": "P00065",
+   "partner_id": 34,
+   "date_order": "2026-06-30 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 209.1,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 129,
+     "sku": "CAR-60X40",
+     "qty": 150.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.24
+    },
+    {
+     "id": 130,
+     "sku": "SAC-30L",
+     "qty": 210.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.11
+    }
+   ]
+  },
+  {
+   "id": 66,
+   "name": "P00066",
+   "partner_id": 47,
+   "date_order": "2026-07-01 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 1245.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 131,
+     "sku": "RUB-ADH-48",
+     "qty": 320.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.98
+    },
+    {
+     "id": 132,
+     "sku": "CAP-PT100",
+     "qty": 70.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 12.77
+    },
+    {
+     "id": 133,
+     "sku": "FUS-10A",
+     "qty": 150.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.25
+    }
+   ]
+  },
+  {
+   "id": 67,
+   "name": "P00067",
+   "partner_id": 19,
+   "date_order": "2026-07-04 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 59.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 134,
+     "sku": "ECR-M8",
+     "qty": 27.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 2.2
+    }
+   ]
+  },
+  {
+   "id": 68,
+   "name": "P00068",
+   "partner_id": 50,
+   "date_order": "2026-07-10 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 60.06,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 135,
+     "sku": "SAC-30L",
+     "qty": 130.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.1
+    },
+    {
+     "id": 136,
+     "sku": "ETQ-A6",
+     "qty": 18.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.57
+    },
+    {
+     "id": 137,
+     "sku": "RON-M8",
+     "qty": 46.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.8
+    }
+   ]
+  },
+  {
+   "id": 69,
+   "name": "P00069",
+   "partner_id": 34,
+   "date_order": "2026-07-10 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 206.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 138,
+     "sku": "FIL-ETIR-50",
+     "qty": 30.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 6.88
+    }
+   ]
+  },
+  {
+   "id": 70,
+   "name": "P00070",
+   "partner_id": 42,
+   "date_order": "2026-07-11 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 33.6,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 139,
+     "sku": "COL-200",
+     "qty": 420.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.08
+    }
+   ]
+  },
+  {
+   "id": 71,
+   "name": "P00071",
+   "partner_id": 53,
+   "date_order": "2026-07-12 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 125.3,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 140,
+     "sku": "PIL-AA",
+     "qty": 270.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.37
+    },
+    {
+     "id": 141,
+     "sku": "CAR-60X40",
+     "qty": 20.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.27
+    }
+   ]
+  },
+  {
+   "id": 72,
+   "name": "P00072",
+   "partner_id": 51,
+   "date_order": "2026-07-13 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1015.6,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 142,
+     "sku": "RUB-ADH-48",
+     "qty": 330.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.18
+    },
+    {
+     "id": 143,
+     "sku": "ROUL-6204",
+     "qty": 100.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 5.15
+    },
+    {
+     "id": 144,
+     "sku": "CAR-60X40",
+     "qty": 80.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.39
+    }
+   ]
+  },
+  {
+   "id": 73,
+   "name": "P00073",
+   "partner_id": 16,
+   "date_order": "2026-07-13 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1006.78,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 145,
+     "sku": "BOU-PLA-30",
+     "qty": 29.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 1.42
+    },
+    {
+     "id": 146,
+     "sku": "CAR-60X40",
+     "qty": 400.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.28
+    },
+    {
+     "id": 147,
+     "sku": "RUB-ADH-48",
+     "qty": 420.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.08
+    }
+   ]
+  },
+  {
+   "id": 74,
+   "name": "P00074",
+   "partner_id": 44,
+   "date_order": "2026-07-16 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 48.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 148,
+     "sku": "SAC-30L",
+     "qty": 440.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.11
+    }
+   ]
+  },
+  {
+   "id": 75,
+   "name": "P00075",
+   "partner_id": 42,
+   "date_order": "2026-07-17 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1434.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 149,
+     "sku": "ROUL-6204",
+     "qty": 70.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 4.46
+    },
+    {
+     "id": 150,
+     "sku": "HUI-ISO46",
+     "qty": 310.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 3.62
+    }
+   ]
+  },
+  {
+   "id": 76,
+   "name": "P00076",
+   "partner_id": 36,
+   "date_order": "2026-07-18 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 5261.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 151,
+     "sku": "CAP-PT100",
+     "qty": 350.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.82
+    },
+    {
+     "id": 152,
+     "sku": "CON-RJ45",
+     "qty": 80.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.93
+    }
+   ]
+  },
+  {
+   "id": 77,
+   "name": "P00077",
+   "partner_id": 24,
+   "date_order": "2026-07-19 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 167.23,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 153,
+     "sku": "VIS-M10-ACIER",
+     "qty": 42.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 3.63
+    },
+    {
+     "id": 154,
+     "sku": "ECR-M8",
+     "qty": 7.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 2.11
+    }
+   ]
+  },
+  {
+   "id": 78,
+   "name": "P00078",
+   "partner_id": 11,
+   "date_order": "2026-07-20 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 2595.98,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 155,
+     "sku": "RUB-ADH-48",
+     "qty": 260.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.09
+    },
+    {
+     "id": 156,
+     "sku": "REL-24V",
+     "qty": 430.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 5.27
+    },
+    {
+     "id": 157,
+     "sku": "RON-M8",
+     "qty": 56.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.83
+    }
+   ]
+  },
+  {
+   "id": 79,
+   "name": "P00079",
+   "partner_id": 43,
+   "date_order": "2026-07-20 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 136.5,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 158,
+     "sku": "FUS-10A",
+     "qty": 360.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.25
+    },
+    {
+     "id": 159,
+     "sku": "CAB-3G15",
+     "qty": 30.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.55
+    }
+   ]
+  },
+  {
+   "id": 80,
+   "name": "P00080",
+   "partner_id": 16,
+   "date_order": "2026-07-21 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 272.33,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 160,
+     "sku": "JNT-TOR-20",
+     "qty": 11.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 11.23
+    },
+    {
+     "id": 161,
+     "sku": "VIS-M8-INOX",
+     "qty": 30.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 4.96
+    }
+   ]
+  },
+  {
+   "id": 81,
+   "name": "P00081",
+   "partner_id": 12,
+   "date_order": "2026-07-23 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 2457.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 162,
+     "sku": "CAP-PT100",
+     "qty": 180.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 13.65
+    }
+   ]
+  },
+  {
+   "id": 82,
+   "name": "P00082",
+   "partner_id": 8,
+   "date_order": "2026-07-26 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 23.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:07",
+   "lines": [
+    {
+     "id": 163,
+     "sku": "PIL-AA",
+     "qty": 60.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.39
+    }
+   ]
+  },
+  {
+   "id": 83,
+   "name": "P00083",
+   "partner_id": 45,
+   "date_order": "2026-07-28 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 249.7,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 164,
+     "sku": "RON-M8",
+     "qty": 50.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.8
+    },
+    {
+     "id": 165,
+     "sku": "PIL-AA",
+     "qty": 110.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.36
+    },
+    {
+     "id": 166,
+     "sku": "CAR-40X30",
+     "qty": 210.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.81
+    }
+   ]
+  },
+  {
+   "id": 84,
+   "name": "P00084",
+   "partner_id": 37,
+   "date_order": "2026-07-29 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 427.7,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 167,
+     "sku": "CAR-40X30",
+     "qty": 470.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.91
+    }
+   ]
+  },
+  {
+   "id": 85,
+   "name": "P00085",
+   "partner_id": 36,
+   "date_order": "2026-07-31 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 2500.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 168,
+     "sku": "BOU-PLA-30",
+     "qty": 60.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 1.48
+    },
+    {
+     "id": 169,
+     "sku": "PAL-120X80",
+     "qty": 220.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 9.78
+    },
+    {
+     "id": 170,
+     "sku": "CON-RJ45",
+     "qty": 280.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.93
+    }
+   ]
+  },
+  {
+   "id": 86,
+   "name": "P00086",
+   "partner_id": 9,
+   "date_order": "2026-07-31 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 106.72,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 171,
+     "sku": "BOU-PLA-30",
+     "qty": 16.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 1.42
+    },
+    {
+     "id": 172,
+     "sku": "FUS-10A",
+     "qty": 300.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.28
+    }
+   ]
+  },
+  {
+   "id": 87,
+   "name": "P00087",
+   "partner_id": 19,
+   "date_order": "2026-08-09 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1728.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 173,
+     "sku": "REL-24V",
+     "qty": 320.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 5.4
+    }
+   ]
+  },
+  {
+   "id": 88,
+   "name": "P00088",
+   "partner_id": 44,
+   "date_order": "2026-08-09 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 337.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 174,
+     "sku": "CAB-3G15",
+     "qty": 30.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.69
+    },
+    {
+     "id": 175,
+     "sku": "CON-RJ45",
+     "qty": 330.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.87
+    }
+   ]
+  },
+  {
+   "id": 89,
+   "name": "P00089",
+   "partner_id": 20,
+   "date_order": "2026-08-09 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 260.84,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 176,
+     "sku": "PIL-AA",
+     "qty": 350.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.38
+    },
+    {
+     "id": 177,
+     "sku": "VIS-M10-ACIER",
+     "qty": 34.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 3.76
+    }
+   ]
+  },
+  {
+   "id": 90,
+   "name": "P00090",
+   "partner_id": 15,
+   "date_order": "2026-08-11 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 223.05,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 178,
+     "sku": "BOU-PLA-30",
+     "qty": 25.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 1.55
+    },
+    {
+     "id": 179,
+     "sku": "CON-RJ45",
+     "qty": 190.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.97
+    }
+   ]
+  },
+  {
+   "id": 91,
+   "name": "P00091",
+   "partner_id": 34,
+   "date_order": "2026-08-12 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 2746.6,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 180,
+     "sku": "REL-24V",
+     "qty": 400.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 5.06
+    },
+    {
+     "id": 181,
+     "sku": "VIS-M8-INOX",
+     "qty": 60.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 4.81
+    },
+    {
+     "id": 182,
+     "sku": "CAR-60X40",
+     "qty": 350.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.24
+    }
+   ]
+  },
+  {
+   "id": 92,
+   "name": "P00092",
+   "partner_id": 17,
+   "date_order": "2026-08-12 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1316.72,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 183,
+     "sku": "RON-M8",
+     "qty": 56.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.82
+    },
+    {
+     "id": 184,
+     "sku": "REL-24V",
+     "qty": 150.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 5.17
+    },
+    {
+     "id": 185,
+     "sku": "CAR-60X40",
+     "qty": 390.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.27
+    }
+   ]
+  },
+  {
+   "id": 93,
+   "name": "P00093",
+   "partner_id": 11,
+   "date_order": "2026-08-13 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 886.9,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 186,
+     "sku": "ETQ-A6",
+     "qty": 56.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.6
+    },
+    {
+     "id": 187,
+     "sku": "RUB-ADH-48",
+     "qty": 90.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.09
+    },
+    {
+     "id": 188,
+     "sku": "PAL-120X80",
+     "qty": 80.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 9.44
+    }
+   ]
+  },
+  {
+   "id": 94,
+   "name": "P00094",
+   "partner_id": 33,
+   "date_order": "2026-08-15 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 98.97,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 189,
+     "sku": "VIS-M8-INOX",
+     "qty": 17.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 5.13
+    },
+    {
+     "id": 190,
+     "sku": "BOU-PLA-30",
+     "qty": 8.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 1.47
+    }
+   ]
+  },
+  {
+   "id": 95,
+   "name": "P00095",
+   "partner_id": 23,
+   "date_order": "2026-08-17 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 161.5,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 191,
+     "sku": "CON-RJ45",
+     "qty": 190.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.85
+    }
+   ]
+  },
+  {
+   "id": 96,
+   "name": "P00096",
+   "partner_id": 30,
+   "date_order": "2026-08-18 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 541.2,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 192,
+     "sku": "ROUL-6204",
+     "qty": 120.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 4.51
+    }
+   ]
+  },
+  {
+   "id": 97,
+   "name": "P00097",
+   "partner_id": 9,
+   "date_order": "2026-08-18 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 46.2,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 193,
+     "sku": "SAC-30L",
+     "qty": 420.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.11
+    }
+   ]
+  },
+  {
+   "id": 98,
+   "name": "P00098",
+   "partner_id": 42,
+   "date_order": "2026-08-21 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 377.4,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:08",
+   "lines": [
+    {
+     "id": 194,
+     "sku": "RUB-ADH-48",
+     "qty": 370.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.02
+    }
+   ]
+  },
+  {
+   "id": 99,
+   "name": "P00099",
+   "partner_id": 49,
+   "date_order": "2026-08-22 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 588.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 195,
+     "sku": "CAR-60X40",
+     "qty": 460.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.28
+    }
+   ]
+  },
+  {
+   "id": 100,
+   "name": "P00100",
+   "partner_id": 36,
+   "date_order": "2026-08-27 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 474.23,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 196,
+     "sku": "COL-200",
+     "qty": 430.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.09
+    },
+    {
+     "id": 197,
+     "sku": "VIS-M10-ACIER",
+     "qty": 46.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 3.83
+    },
+    {
+     "id": 198,
+     "sku": "GNT-NIT-L",
+     "qty": 35.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 7.41
+    }
+   ]
+  },
+  {
+   "id": 101,
+   "name": "P00101",
+   "partner_id": 10,
+   "date_order": "2026-08-28 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 101.36,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 199,
+     "sku": "ECR-M8",
+     "qty": 46.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 2.09
+    },
+    {
+     "id": 200,
+     "sku": "ETQ-A6",
+     "qty": 9.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.58
+    }
+   ]
+  },
+  {
+   "id": 102,
+   "name": "P00102",
+   "partner_id": 24,
+   "date_order": "2026-08-30 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 113.16,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 201,
+     "sku": "VIS-M8-INOX",
+     "qty": 23.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 4.92
+    }
+   ]
+  },
+  {
+   "id": 103,
+   "name": "P00103",
+   "partner_id": 46,
+   "date_order": "2026-08-31 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 2840.24,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 202,
+     "sku": "VIS-M10-ACIER",
+     "qty": 9.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 3.36
+    },
+    {
+     "id": 203,
+     "sku": "CAB-3G15",
+     "qty": 460.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.58
+    },
+    {
+     "id": 204,
+     "sku": "ROUL-6204",
+     "qty": 480.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 4.34
+    }
+   ]
+  },
+  {
+   "id": 104,
+   "name": "P00104",
+   "partner_id": 41,
+   "date_order": "2026-09-05 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 6090.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 205,
+     "sku": "CAP-PT100",
+     "qty": 420.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.5
+    }
+   ]
+  },
+  {
+   "id": 105,
+   "name": "P00105",
+   "partner_id": 40,
+   "date_order": "2026-09-05 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1248.7,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 206,
+     "sku": "CAP-PT100",
+     "qty": 50.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 15.02
+    },
+    {
+     "id": 207,
+     "sku": "BOU-PLA-30",
+     "qty": 39.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 1.5
+    },
+    {
+     "id": 208,
+     "sku": "CAB-3G15",
+     "qty": 240.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.83
+    }
+   ]
+  },
+  {
+   "id": 106,
+   "name": "P00106",
+   "partner_id": 21,
+   "date_order": "2026-09-06 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 1687.3,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 209,
+     "sku": "PAL-120X80",
+     "qty": 170.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 9.6
+    },
+    {
+     "id": 210,
+     "sku": "RUB-ADH-48",
+     "qty": 40.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.11
+    },
+    {
+     "id": 211,
+     "sku": "ECR-M8",
+     "qty": 5.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 2.18
+    }
+   ]
+  },
+  {
+   "id": 107,
+   "name": "P00107",
+   "partner_id": 33,
+   "date_order": "2026-09-07 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 4503.6,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 212,
+     "sku": "CAP-PT100",
+     "qty": 300.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 14.66
+    },
+    {
+     "id": 213,
+     "sku": "ECR-M8",
+     "qty": 48.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 2.2
+    }
+   ]
+  },
+  {
+   "id": 108,
+   "name": "P00108",
+   "partner_id": 46,
+   "date_order": "2026-09-08 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 10.8,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 214,
+     "sku": "ETQ-A6",
+     "qty": 20.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 0.54
+    }
+   ]
+  },
+  {
+   "id": 109,
+   "name": "P00109",
+   "partner_id": 17,
+   "date_order": "2026-09-08 09:00:00",
+   "currency": "EUR",
+   "amount_untaxed": 735.0,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 215,
+     "sku": "GNT-NIT-L",
+     "qty": 30.0,
+     "uom": "Dozens",
+     "facteur_base": 12.0,
+     "price_unit": 7.03
+    },
+    {
+     "id": 216,
+     "sku": "CON-RJ45",
+     "qty": 190.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.88
+    },
+    {
+     "id": 217,
+     "sku": "CAR-40X30",
+     "qty": 430.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 0.83
+    }
+   ]
+  },
+  {
+   "id": 110,
+   "name": "P00110",
+   "partner_id": 48,
+   "date_order": "2026-09-11 09:00:00",
+   "currency": "CHF",
+   "amount_untaxed": 77.7,
+   "state": "purchase",
+   "write_date": "2026-09-26 15:35:09",
+   "lines": [
+    {
+     "id": 218,
+     "sku": "RUB-ADH-48",
+     "qty": 70.0,
+     "uom": "Units",
+     "facteur_base": 1.0,
+     "price_unit": 1.11
+    }
+   ]
+  }
+ ]
+}

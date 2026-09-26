@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consolidation de trois ERP</title>
+<style>
+:root {
+  color-scheme: light;
+  --surface: #fcfcfb; --surface-2: #f4f3f0; --texte: #0b0b0b; --texte-2: #52514e; --texte-3: #75746f;
+  --filet: #e4e3df; --serie: #2a78d6; --serie-fond: #dbe8f8;
+  --critique: #d03b3b; --serieux: #c4581f; --discret: #75746f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --surface: #1a1a19; --surface-2: #232321; --texte: #ffffff; --texte-2: #c3c2b7; --texte-3: #9a9990;
+    --filet: #383835; --serie: #3987e5; --serie-fond: #22364f;
+    --critique: #e66767; --serieux: #ec835a; --discret: #9a9990;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #1a1a19; --surface-2: #232321; --texte: #ffffff; --texte-2: #c3c2b7; --texte-3: #9a9990;
+  --filet: #383835; --serie: #3987e5; --serie-fond: #22364f;
+  --critique: #e66767; --serieux: #ec835a; --discret: #9a9990;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface); color: var(--texte); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 1120px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+h2 { font-size: 16px; margin: 0 0 4px; }
+.sous-titre, .discret { color: var(--texte-2); }
+.sous-titre { margin: 0 0 24px; }
+.discret { font-size: 13px; }
+.tuiles { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); margin-bottom: 24px; }
+.tuile { background: var(--surface-2); border-radius: 8px; padding: 14px 16px; }
+.tuile-etiquette { color: var(--texte-2); font-size: 13px; }
+.tuile-valeur { font-size: 26px; font-weight: 600; line-height: 1.2; margin-top: 4px; }
+.tuile.hero { grid-column: span 2; }
+.tuile.hero .tuile-valeur { font-size: 52px; }
+.grille { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); margin-bottom: 16px; }
+.carte { border: 1px solid var(--filet); border-radius: 10px; padding: 16px 18px; }
+.carte p { margin: 0 0 12px; }
+.barres { display: grid; gap: 8px; }
+.rang { display: grid; grid-template-columns: minmax(130px, 42%) 1fr; align-items: center; gap: 10px; border-radius: 4px; }
+.rang:hover, .rang:focus-visible { background: var(--surface-2); outline: none; }
+.etiquette { font-size: 13px; color: var(--texte-2); }
+.piste { position: relative; display: flex; align-items: center; height: 24px;
+  background: linear-gradient(to right, var(--filet) 1px, transparent 1px) 0 0 / 25% 100% repeat-x; }
+.barre { height: 16px; background: var(--serie); border-radius: 0 4px 4px 0; min-width: 2px; }
+.valeur { margin-left: 8px; font-size: 13px; font-variant-numeric: tabular-nums; }
+details { margin-top: 12px; }
+summary { cursor: pointer; color: var(--texte-2); font-size: 13px; }
+.defilement { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--filet); vertical-align: top; }
+th { color: var(--texte-2); font-weight: 600; white-space: nowrap; }
+td.nombre { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.texte { min-width: 280px; }
+.puce { display: inline-flex; gap: 6px; align-items: center; white-space: nowrap; }
+.puce-icone { font-size: 12px; }
+code { font-size: 12px; color: var(--texte-2); }
+ul.sources { margin: 8px 0 0; padding-left: 18px; }
+#infobulle { position: fixed; z-index: 10; max-width: 320px; padding: 8px 10px; border-radius: 6px; font-size: 12.5px;
+  background: var(--texte); color: var(--surface); pointer-events: none; opacity: 0; transition: opacity .08s; }
+@media (max-width: 900px) { .tuiles { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grille { grid-template-columns: 1fr; } .tuiles { grid-template-columns: 1fr; } .tuile.hero { grid-column: span 1; } .rang { grid-template-columns: 1fr; gap: 2px; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Consolidation de trois ERP : contrôle des écarts</h1>
+<p class="sous-titre">Achats (Odoo), comptabilité (FEC) et entrepôt (API REST), rapprochés en trois voies. Date d'arrêté des contrôles : 26/09/2026. Données synthétiques.</p>
+
+<section class="tuiles" aria-label="Indicateurs">
+<div class="tuile hero" tabindex="0" data-tip="Nombre d&#x27;écarts détectés par les contrôles à la dernière actualisation."><div class="tuile-etiquette">Écarts ouverts</div><div class="tuile-valeur">22</div></div>
+<div class="tuile" tabindex="0" data-tip="Écarts qui peuvent déclencher un mauvais paiement : facture en double, mauvais fournisseur, devise, unité."><div class="tuile-etiquette">Écarts de gravité haute</div><div class="tuile-valeur">8</div></div>
+<div class="tuile" tabindex="0" data-tip="Part des commandes de plus de 30 jours sans aucun écart entre commande, réception et facture."><div class="tuile-etiquette">Commandes conformes de bout en bout</div><div class="tuile-valeur">81,8 %</div></div>
+<div class="tuile" tabindex="0" data-tip="Montant des commandes dont la marchandise est arrivée depuis plus de 30 jours et qui n&#x27;ont aucune facture : la charge à provisionner."><div class="tuile-etiquette">Reçu depuis plus de 30 jours et non facturé</div><div class="tuile-valeur">4 495 €</div></div>
+<div class="tuile" tabindex="0" data-tip="Moyenne, sur les commandes facturées, du nombre de jours entre la date de commande et la date de facture."><div class="tuile-etiquette">Délai moyen commande à facture</div><div class="tuile-valeur">17,4 j</div></div>
+<div class="tuile" tabindex="0" data-tip="Fournisseurs (un numéro de TVA) présents sous plusieurs codes dans Odoo."><div class="tuile-etiquette">Fournisseurs à fiches multiples dans Odoo</div><div class="tuile-valeur">2</div></div>
+<div class="tuile" tabindex="0" data-tip="Part des comptes fournisseurs de la comptabilité que l&#x27;on sait rattacher à un fournisseur, par code ou par nom unique."><div class="tuile-etiquette">Comptes auxiliaires rattachés sans ambiguïté</div><div class="tuile-valeur">97,5 %</div></div>
+</section>
+
+<section class="grille">
+  <div class="carte">
+    <h2>Écarts par contrôle</h2>
+    <p class="discret">Nombre d'écarts détectés, du plus fréquent au moins fréquent.</p>
+    <div class="barres" role="list"><div class="rang" tabindex="0" data-tip="Marchandise reçue depuis plus de 30 jours, jamais facturée : 3 écart(s), 4 495 € en jeu. Responsable : Comptabilité fournisseurs. Demander la facture au fournisseur, ou provisionner la charge (B)."><span class="etiquette">Marchandise reçue depuis plus de 30 jours, jamais facturée</span><span class="piste"><span class="barre" style="width:100.0%"></span><span class="valeur">3</span></span></div><div class="rang" tabindex="0" data-tip="Facture saisie deux fois : 2 écart(s), 3 933 € en jeu. Responsable : Comptabilité fournisseurs. Contre-passer l&#x27;écriture en double dans la comptabilité (B) avant tout règlement."><span class="etiquette">Facture saisie deux fois</span><span class="piste"><span class="barre" style="width:66.7%"></span><span class="valeur">2</span></span></div><div class="rang" tabindex="0" data-tip="Commande ancienne sans réception : 2 écart(s), 872 € en jeu. Responsable : Achats. Vérifier avec le fournisseur si la marchandise est arrivée ; si oui, créer la réception dans l&#x27;entrepôt (C), sinon relancer ou annuler dans Odoo (A)."><span class="etiquette">Commande ancienne sans réception</span><span class="piste"><span class="barre" style="width:66.7%"></span><span class="valeur">2</span></span></div><div class="rang" tabindex="0" data-tip="Devise de la facture différente de celle de la commande : 2 écart(s), 797 € en jeu. Responsable : Comptabilité fournisseurs. Vérifier la devise de la facture d&#x27;origine et ressaisir l&#x27;écriture avec la bonne devise (B)."><span class="etiquette">Devise de la facture différente de celle de la commande</span><span class="piste"><span class="barre" style="width:66.7%"></span><span class="valeur">2</span></span></div><div class="rang" tabindex="0" data-tip="Montant facturé différent du montant commandé : 2 écart(s), 699 € en jeu. Responsable : Achats. Comparer le prix de la facture (B) au prix de la commande (A) et faire valider l&#x27;écart par les achats."><span class="etiquette">Montant facturé différent du montant commandé</span><span class="piste"><span class="barre" style="width:66.7%"></span><span class="valeur">2</span></span></div><div class="rang" tabindex="0" data-tip="Quantité reçue différente de la quantité commandée : 2 écart(s), 204 € en jeu. Responsable : Logistique. Livraison partielle : attendre le solde ou solder la ligne dans Odoo (A) ; ne payer que ce qui est reçu."><span class="etiquette">Quantité reçue différente de la quantité commandée</span><span class="piste"><span class="barre" style="width:66.7%"></span><span class="valeur">2</span></span></div><div class="rang" tabindex="0" data-tip="Quantité reçue dans une autre unité que la quantité commandée : 2 écart(s), 133 € en jeu. Responsable : Logistique. La réception a été saisie en pièces avec le nombre de douzaines : corriger la quantité dans l&#x27;entrepôt (C)."><span class="etiquette">Quantité reçue dans une autre unité que la quantité commandée</span><span class="piste"><span class="barre" style="width:66.7%"></span><span class="valeur">2</span></span></div><div class="rang" tabindex="0" data-tip="Fournisseur présent deux fois dans Odoo : 2 écart(s), 0 € en jeu. Responsable : Données de base. Fusionner les fiches dans Odoo (A). Le rapprochement les traite déjà comme un seul fournisseur."><span class="etiquette">Fournisseur présent deux fois dans Odoo</span><span class="piste"><span class="barre" style="width:66.7%"></span><span class="valeur">2</span></span></div><div class="rang" tabindex="0" data-tip="Facture antérieure à la commande : 2 écart(s), 0 € en jeu. Responsable : Achats. Régulariser : la commande a été passée après coup (A) ou la date de la facture est fausse (B)."><span class="etiquette">Facture antérieure à la commande</span><span class="piste"><span class="barre" style="width:66.7%"></span><span class="valeur">2</span></span></div><div class="rang" tabindex="0" data-tip="Facture inscrite sur le compte d&#x27;un autre fournisseur : 1 écart(s), 875 € en jeu. Responsable : Comptabilité fournisseurs. Ré-affecter l&#x27;écriture au bon compte fournisseur (B) avant paiement : le règlement partirait chez le mauvais tiers."><span class="etiquette">Facture inscrite sur le compte d&#x27;un autre fournisseur</span><span class="piste"><span class="barre" style="width:33.3%"></span><span class="valeur">1</span></span></div><div class="rang" tabindex="0" data-tip="Compte auxiliaire dont le nom convient à plusieurs fournisseurs : 1 écart(s), 0 € en jeu. Responsable : Données de base. Choisir le bon fournisseur et renommer le compte auxiliaire en comptabilité (B), pour qu&#x27;il porte un code connu d&#x27;Odoo."><span class="etiquette">Compte auxiliaire dont le nom convient à plusieurs fournisseurs</span><span class="piste"><span class="barre" style="width:33.3%"></span><span class="valeur">1</span></span></div><div class="rang" tabindex="0" data-tip="Réception qui cite une commande inconnue : 1 écart(s), 0 € en jeu. Responsable : Logistique. Corriger la référence de commande sur la réception (C) ou créer la commande manquante (A)."><span class="etiquette">Réception qui cite une commande inconnue</span><span class="piste"><span class="barre" style="width:33.3%"></span><span class="valeur">1</span></span></div></div>
+    <details><summary>Voir les données</summary><div class="defilement"><table><thead><tr><th>Contrôle</th><th>Écarts</th><th>Montant en jeu (€)</th><th>Responsable</th></tr></thead><tbody><tr><td>Marchandise reçue depuis plus de 30 jours, jamais facturée</td><td>3</td><td>4 495</td><td>Comptabilité fournisseurs</td></tr><tr><td>Facture saisie deux fois</td><td>2</td><td>3 933</td><td>Comptabilité fournisseurs</td></tr><tr><td>Commande ancienne sans réception</td><td>2</td><td>872</td><td>Achats</td></tr><tr><td>Devise de la facture différente de celle de la commande</td><td>2</td><td>797</td><td>Comptabilité fournisseurs</td></tr><tr><td>Montant facturé différent du montant commandé</td><td>2</td><td>699</td><td>Achats</td></tr><tr><td>Quantité reçue différente de la quantité commandée</td><td>2</td><td>204</td><td>Logistique</td></tr><tr><td>Quantité reçue dans une autre unité que la quantité commandée</td><td>2</td><td>133</td><td>Logistique</td></tr><tr><td>Fournisseur présent deux fois dans Odoo</td><td>2</td><td>0</td><td>Données de base</td></tr><tr><td>Facture antérieure à la commande</td><td>2</td><td>0</td><td>Achats</td></tr><tr><td>Facture inscrite sur le compte d&#x27;un autre fournisseur</td><td>1</td><td>875</td><td>Comptabilité fournisseurs</td></tr><tr><td>Compte auxiliaire dont le nom convient à plusieurs fournisseurs</td><td>1</td><td>0</td><td>Données de base</td></tr><tr><td>Réception qui cite une commande inconnue</td><td>1</td><td>0</td><td>Logistique</td></tr></tbody></table></div></details>
+  </div>
+  <div class="carte">
+    <h2>Rapprochement en trois voies</h2>
+    <p class="discret">Commandes de plus de 30 jours : combien vont jusqu'à la facture sans le moindre écart.</p>
+    <div class="barres" role="list"><div class="rang" tabindex="0" data-tip="Commandes passées dans Odoo il y a plus de 30 jours"><span class="etiquette">Commandes de plus de 30 jours</span><span class="piste"><span class="barre" style="width:100.0%"></span><span class="valeur">99</span></span></div><div class="rang" tabindex="0" data-tip="Commandes dont l&#x27;entrepôt a enregistré une réception"><span class="etiquette">… avec une réception</span><span class="piste"><span class="barre" style="width:98.0%"></span><span class="valeur">97</span></span></div><div class="rang" tabindex="0" data-tip="Commandes dont la comptabilité a enregistré une facture"><span class="etiquette">… avec une facture</span><span class="piste"><span class="barre" style="width:96.0%"></span><span class="valeur">95</span></span></div><div class="rang" tabindex="0" data-tip="Commandes qui passent tous les contrôles, de la commande à la facture"><span class="etiquette">… sans aucun écart</span><span class="piste"><span class="barre" style="width:81.8%"></span><span class="valeur">81</span></span></div></div>
+    <details><summary>Voir les données</summary><div class="defilement"><table><thead><tr><th>Étape</th><th>Commandes</th></tr></thead><tbody><tr><td>Commandes de plus de 30 jours</td><td>99</td></tr><tr><td>… avec une réception</td><td>97</td></tr><tr><td>… avec une facture</td><td>95</td></tr><tr><td>… sans aucun écart</td><td>81</td></tr></tbody></table></div></details>
+  </div>
+  <div class="carte">
+    <h2>Où corriger</h2>
+    <p class="discret">Écarts qui citent chaque système (un écart peut en citer deux ou trois).</p>
+    <div class="barres" role="list"><div class="rang" tabindex="0" data-tip="18 écart(s) citent des enregistrements du système A · Odoo (achats)"><span class="etiquette">A · Odoo (achats)</span><span class="piste"><span class="barre" style="width:81.8%"></span><span class="valeur">18</span></span></div><div class="rang" tabindex="0" data-tip="10 écart(s) citent des enregistrements du système B · Comptabilité (FEC)"><span class="etiquette">B · Comptabilité (FEC)</span><span class="piste"><span class="barre" style="width:45.5%"></span><span class="valeur">10</span></span></div><div class="rang" tabindex="0" data-tip="8 écart(s) citent des enregistrements du système C · Entrepôt (API)"><span class="etiquette">C · Entrepôt (API)</span><span class="piste"><span class="barre" style="width:36.4%"></span><span class="valeur">8</span></span></div></div>
+    <details><summary>Voir les données</summary><div class="defilement"><table><thead><tr><th>Système</th><th>Écarts qui le citent</th></tr></thead><tbody><tr><td>A · Odoo (achats)</td><td>18</td></tr><tr><td>B · Comptabilité (FEC)</td><td>10</td></tr><tr><td>C · Entrepôt (API)</td><td>8</td></tr></tbody></table></div></details>
+  </div>
+  <div class="carte">
+    <h2>Qui doit agir</h2>
+    <p class="discret">Écarts à traiter par équipe.</p>
+    <div class="barres" role="list"><div class="rang" tabindex="0" data-tip="Comptabilité fournisseurs : 8 écart(s), 10 100 € en jeu"><span class="etiquette">Comptabilité fournisseurs</span><span class="piste"><span class="barre" style="width:100.0%"></span><span class="valeur">8</span></span></div><div class="rang" tabindex="0" data-tip="Achats : 6 écart(s), 1 571 € en jeu"><span class="etiquette">Achats</span><span class="piste"><span class="barre" style="width:75.0%"></span><span class="valeur">6</span></span></div><div class="rang" tabindex="0" data-tip="Logistique : 5 écart(s), 336 € en jeu"><span class="etiquette">Logistique</span><span class="piste"><span class="barre" style="width:62.5%"></span><span class="valeur">5</span></span></div><div class="rang" tabindex="0" data-tip="Données de base : 3 écart(s), 0 € en jeu"><span class="etiquette">Données de base</span><span class="piste"><span class="barre" style="width:37.5%"></span><span class="valeur">3</span></span></div></div>
+  </div>
+</section>
+
+<section class="carte">
+  <h2>Les 22 écarts, du plus grave au moins grave (8 de gravité haute)</h2>
+  <div class="defilement"><table>
+    <thead><tr><th>Gravité</th><th>Objet</th><th>Constat</th><th>Montant en jeu</th><th>Responsable</th><th>Identifiant</th></tr></thead>
+    <tbody><tr><td><span class="puce"><span class="puce-icone" style="color:var(--critique)" aria-hidden="true">▲</span>Haute</span></td><td>P00056</td><td class="texte">La facture FA26-0052 de la commande P00056 est saisie 2 fois</td><td class="nombre">2 728,10 €</td><td>Comptabilité fournisseurs</td><td><code>Ed963fb72</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--critique)" aria-hidden="true">▲</span>Haute</span></td><td>P00063</td><td class="texte">La facture FA26-0063 de la commande P00063 est saisie 2 fois</td><td class="nombre">1 204,50 €</td><td>Comptabilité fournisseurs</td><td><code>E929ad6d0</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--critique)" aria-hidden="true">▲</span>Haute</span></td><td>P00032</td><td class="texte">La facture FA26-0032 de la commande P00032 (F0014) est inscrite sur le compte F0001</td><td class="nombre">875,30 €</td><td>Comptabilité fournisseurs</td><td><code>E5d952957</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--critique)" aria-hidden="true">▲</span>Haute</span></td><td>P00038</td><td class="texte">Commande P00038 en CHF, facture FA26-0040 en EUR (687.89 pour 687.89 commandés)</td><td class="nombre">687,89 €</td><td>Comptabilité fournisseurs</td><td><code>E92f048a3</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--critique)" aria-hidden="true">▲</span>Haute</span></td><td>P00028</td><td class="texte">Commande P00028 passée il y a 157 jours, aucune réception dans l&#x27;entrepôt, et pourtant déjà facturée</td><td class="nombre">684,97 €</td><td>Achats</td><td><code>E54789bb5</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--critique)" aria-hidden="true">▲</span>Haute</span></td><td>P00080</td><td class="texte">JNT-TOR-20 sur P00080 : 11 Dozens commandées (132 pièces), 11 pièces reçues</td><td class="nombre">113,24 €</td><td>Logistique</td><td><code>E1c68c656</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--critique)" aria-hidden="true">▲</span>Haute</span></td><td>P00005</td><td class="texte">Commande P00005 en EUR, facture FA26-0005 en CHF (102.8 pour 102.8 commandés)</td><td class="nombre">108,97 €</td><td>Comptabilité fournisseurs</td><td><code>E0a826b39</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--critique)" aria-hidden="true">▲</span>Haute</span></td><td>P00029</td><td class="texte">RON-M8 sur P00029 : 25 Dozens commandées (300 pièces), 25 pièces reçues</td><td class="nombre">19,48 €</td><td>Logistique</td><td><code>E4e559065</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--serieux)" aria-hidden="true">◆</span>Moyenne</span></td><td>P00064</td><td class="texte">Commande P00064 reçue il y a 81 jours, aucune facture en comptabilité</td><td class="nombre">4 259,00 €</td><td>Comptabilité fournisseurs</td><td><code>Ea8ff64e4</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--serieux)" aria-hidden="true">◆</span>Moyenne</span></td><td>P00051</td><td class="texte">Commande P00051 : 6964.49 EUR commandés, 7660.94 EUR facturés (+10.0 %)</td><td class="nombre">696,45 €</td><td>Achats</td><td><code>Effb05be2</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--serieux)" aria-hidden="true">◆</span>Moyenne</span></td><td>P00041</td><td class="texte">Commande P00041 passée il y a 132 jours, aucune réception dans l&#x27;entrepôt</td><td class="nombre">187,20 €</td><td>Achats</td><td><code>E335e09c0</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--serieux)" aria-hidden="true">◆</span>Moyenne</span></td><td>P00001</td><td class="texte">Commande P00001 reçue il y a 205 jours, aucune facture en comptabilité</td><td class="nombre">172,20 €</td><td>Comptabilité fournisseurs</td><td><code>Efe4b7bbb</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--serieux)" aria-hidden="true">◆</span>Moyenne</span></td><td>P00016</td><td class="texte">REL-24V sur P00016 : 120 pièces reçues sur 150 commandées (80 %)</td><td class="nombre">147,60 €</td><td>Logistique</td><td><code>E1e3d90d9</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--serieux)" aria-hidden="true">◆</span>Moyenne</span></td><td>P00068</td><td class="texte">Commande P00068 reçue il y a 73 jours, aucune facture en comptabilité</td><td class="nombre">63,66 €</td><td>Comptabilité fournisseurs</td><td><code>E8b89b444</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--serieux)" aria-hidden="true">◆</span>Moyenne</span></td><td>P00043</td><td class="texte">CON-RJ45 sur P00043 : 264 pièces reçues sur 330 commandées (80 %)</td><td class="nombre">56,10 €</td><td>Logistique</td><td><code>E0c1dbe9f</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--serieux)" aria-hidden="true">◆</span>Moyenne</span></td><td>P00070</td><td class="texte">Commande P00070 : 33.6 EUR commandés, 31.25 EUR facturés (-7.0 %)</td><td class="nombre">2,35 €</td><td>Achats</td><td><code>E1c5a8938</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--serieux)" aria-hidden="true">◆</span>Moyenne</span></td><td>P09999</td><td class="texte">La réception REC-000090 cite la commande P09999, qui n&#x27;existe pas dans Odoo</td><td class="nombre">n/a</td><td>Logistique</td><td><code>E9cdad317</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--discret)" aria-hidden="true">●</span>Basse</span></td><td>FR11541997588</td><td class="texte">Le numéro de TVA FR11541997588 est porté par 2 fiches Odoo : F0022, F0901</td><td class="nombre">n/a</td><td>Données de base</td><td><code>E09f9c50c</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--discret)" aria-hidden="true">●</span>Basse</span></td><td>P00069</td><td class="texte">La facture FA26-0076 est datée 4 jours avant la commande P00069</td><td class="nombre">n/a</td><td>Achats</td><td><code>E3cb44141</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--discret)" aria-hidden="true">●</span>Basse</span></td><td>F0777</td><td class="texte">Le compte auxiliaire F0777 (« CABLAGE BORNES ») convient à 2 fournisseurs</td><td class="nombre">n/a</td><td>Données de base</td><td><code>E428a9c3d</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--discret)" aria-hidden="true">●</span>Basse</span></td><td>P00067</td><td class="texte">La facture FA26-0072 est datée 4 jours avant la commande P00067</td><td class="nombre">n/a</td><td>Achats</td><td><code>E621d79d9</code></td></tr><tr><td><span class="puce"><span class="puce-icone" style="color:var(--discret)" aria-hidden="true">●</span>Basse</span></td><td>FR17915091094</td><td class="texte">Le numéro de TVA FR17915091094 est porté par 2 fiches Odoo : F0018, F0902</td><td class="nombre">n/a</td><td>Données de base</td><td><code>E7b85d4aa</code></td></tr></tbody>
+  </table></div>
+</section>
+
+<section class="carte" style="margin-top:16px">
+  <h2>Sources lues</h2>
+  <ul class="sources"><li><strong>A</strong> en direct, Odoo 17.0-20260908 <span class="discret">(47 fournisseurs, 24 produits, 110 commandes)</span></li><li><strong>B</strong> fichier 123456789FEC20261231.txt <span class="discret">(296 écritures du journal des achats)</span></li><li><strong>C</strong> API REST simulée, dans le même processus <span class="discret">(45 fournisseurs, 24 articles, 109 réceptions)</span></li></ul>
+  <p class="discret" style="margin-top:8px">Page générée le 26/09/2026 17:38. Chaque écart se retrouve par son identifiant dans le serveur MCP (outil expliquer_ecart) ou en ligne de commande (consolidation expliquer).</p>
+</section>
+</main>
+<div id="infobulle" role="tooltip"></div>
+<script>
+const bulle = document.getElementById('infobulle');
+function montrer(cible, x, y) {
+  bulle.textContent = cible.dataset.tip;
+  const largeur = bulle.offsetWidth, hauteur = bulle.offsetHeight;
+  bulle.style.left = Math.max(8, Math.min(x + 14, window.innerWidth - largeur - 8)) + 'px';
+  bulle.style.top = Math.max(8, Math.min(y + 14, window.innerHeight - hauteur - 8)) + 'px';
+  bulle.style.opacity = 1;
+}
+document.querySelectorAll('[data-tip]').forEach(el => {
+  el.addEventListener('mousemove', e => montrer(el, e.clientX, e.clientY));
+  el.addEventListener('mouseleave', () => bulle.style.opacity = 0);
+  el.addEventListener('focus', () => { const r = el.getBoundingClientRect(); montrer(el, r.left + 40, r.bottom - 10); });
+  el.addEventListener('blur', () => bulle.style.opacity = 0);
+});
+</script>
+</body>
+</html>

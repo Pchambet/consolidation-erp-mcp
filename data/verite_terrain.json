@@ -1,0 +1,112 @@
+[
+ {
+  "regle": "partenaire_ambigu",
+  "cle": "F0777",
+  "note": "compte auxiliaire F0777, libellé commun à deux fournisseurs"
+ },
+ {
+  "regle": "partenaire_double",
+  "cle": "FR11541997588",
+  "note": "F0022 et F0901 pour la même TVA"
+ },
+ {
+  "regle": "partenaire_double",
+  "cle": "FR17915091094",
+  "note": "F0018 et F0902 pour la même TVA"
+ },
+ {
+  "regle": "commande_sans_reception",
+  "cle": "P00028",
+  "note": "facturée"
+ },
+ {
+  "regle": "commande_sans_reception",
+  "cle": "P00041",
+  "note": "non facturée"
+ },
+ {
+  "regle": "reception_sans_commande",
+  "cle": "P09999",
+  "note": "réception qui cite une commande inconnue"
+ },
+ {
+  "regle": "commande_sans_facture",
+  "cle": "P00068",
+  "note": "reçue, jamais facturée"
+ },
+ {
+  "regle": "commande_sans_facture",
+  "cle": "P00064",
+  "note": "reçue, jamais facturée"
+ },
+ {
+  "regle": "commande_sans_facture",
+  "cle": "P00001",
+  "note": "reçue, jamais facturée"
+ },
+ {
+  "regle": "facture_en_double",
+  "cle": "P00063",
+  "note": "facture FA26-0063 saisie deux fois"
+ },
+ {
+  "regle": "facture_en_double",
+  "cle": "P00056",
+  "note": "facture FA26-0052 saisie deux fois"
+ },
+ {
+  "regle": "facture_avant_commande",
+  "cle": "P00069",
+  "note": "facture datée 4 jours avant la commande"
+ },
+ {
+  "regle": "facture_avant_commande",
+  "cle": "P00067",
+  "note": "facture datée 4 jours avant la commande"
+ },
+ {
+  "regle": "ecart_montant",
+  "cle": "P00051",
+  "note": "facturé à 1.10 fois le commandé"
+ },
+ {
+  "regle": "ecart_montant",
+  "cle": "P00070",
+  "note": "facturé à 0.93 fois le commandé"
+ },
+ {
+  "regle": "devise_incoherente",
+  "cle": "P00038",
+  "note": "commande en CHF, facture en EUR pour le même chiffre"
+ },
+ {
+  "regle": "devise_incoherente",
+  "cle": "P00005",
+  "note": "commande en EUR, facture en CHF pour le même chiffre"
+ },
+ {
+  "regle": "unite_incoherente",
+  "cle": "P00080",
+  "note": "JNT-TOR-20 : 11 douzaines commandées, 11 pièces reçues"
+ },
+ {
+  "regle": "unite_incoherente",
+  "cle": "P00029",
+  "note": "RON-M8 : 25 douzaines commandées, 25 pièces reçues"
+ },
+ {
+  "regle": "ecart_quantite",
+  "cle": "P00043",
+  "note": "CON-RJ45 : 80 % seulement de la quantité reçue"
+ },
+ {
+  "regle": "ecart_quantite",
+  "cle": "P00016",
+  "note": "REL-24V : 80 % seulement de la quantité reçue"
+ },
+ {
+  "regle": "facture_mauvais_fournisseur",
+  "cle": "P00032",
+  "note": "commande F0014, facture sur F0001"
+ }
+]

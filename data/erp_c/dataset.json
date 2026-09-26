@@ -1,0 +1,2390 @@
+{
+ "suppliers": [
+  {
+   "code": "SUP00001",
+   "name": "Usinage Salève S.A.",
+   "vat": "FR92669015044",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00002",
+   "name": "Papeterie Aravis S.A.S.",
+   "vat": "FR27272218179",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00003",
+   "name": "Usinage Bornes S.A.",
+   "vat": "FR59392924176",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00004",
+   "name": "Outillage Annecy S.A.R.L.",
+   "vat": "FR20511442130",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00005",
+   "name": "Manutention Bornes S.A.R.L.",
+   "vat": "FR32382870507",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00006",
+   "name": "Chimie Genevois S.A.R.L.",
+   "vat": "FR46602189461",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00007",
+   "name": "Étiquettes Bauges S.A.S.",
+   "vat": "FR71577367252",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00008",
+   "name": "Usinage Rhône S.A.S.",
+   "vat": "FR45976336909",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00009",
+   "name": "Mécanique Arve S.A.",
+   "vat": "FR39105267592",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00010",
+   "name": "Câblage Bornes S.A.",
+   "vat": "FR92454809561",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00011",
+   "name": "Manutention Bauges S.A.S.",
+   "vat": "FR33129189427",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00012",
+   "name": "Outillage Faucigny S.A.",
+   "vat": "FR55703445637",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00013",
+   "name": "Manutention Salève S.A.S.",
+   "vat": "FR37217782500",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00014",
+   "name": "Fixations Jura S.A.R.L.",
+   "vat": "FR81906644511",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00015",
+   "name": "Plastiques Bauges S.A.",
+   "vat": "FR82416431845",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00016",
+   "name": "Papeterie Vuache S.A.S.",
+   "vat": "FR81242397668",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00017",
+   "name": "Usinage Annecy S.A.R.L.",
+   "vat": "FR22568208209",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00018",
+   "name": "Mécanique Annecy S.A.S.",
+   "vat": "FR17915091094",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00019",
+   "name": "Outillage Rhône S.A.",
+   "vat": "FR92776550271",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00020",
+   "name": "Fonderie Jura S.A.R.L.",
+   "vat": "FR45731476759",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00021",
+   "name": "Conditionnement Léman S.A.R.L.",
+   "vat": "FR50273292139",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00022",
+   "name": "Conditionnement Valserine S.A.",
+   "vat": "FR11541997588",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00023",
+   "name": "Câblage Bauges S.A.R.L.",
+   "vat": "FR63116567828",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00024",
+   "name": "Emballages Arve S.A.",
+   "vat": "FR12432772643",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00025",
+   "name": "Fonderie Salève S.A.S.",
+   "vat": "FR81718991814",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00026",
+   "name": "Conditionnement Rhône S.A.R.L.",
+   "vat": "FR50937257462",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00027",
+   "name": "Fixations Vercors S.A.S.",
+   "vat": "FR93866883911",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00028",
+   "name": "Textiles Bauges S.A.R.L.",
+   "vat": "FR50752604874",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00029",
+   "name": "Câblage Chablais S.A.R.L.",
+   "vat": "FR64825762789",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00030",
+   "name": "Manutention Léman S.A.S.",
+   "vat": "FR57638225743",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00031",
+   "name": "Manutention Mont-Blanc S.A.R.L.",
+   "vat": "FR59413405252",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00032",
+   "name": "Papeterie Léman S.A.R.L.",
+   "vat": "FR17889615695",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00033",
+   "name": "Outillage Salève S.A.",
+   "vat": "FR46846573366",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00034",
+   "name": "Chimie Vuache S.A.S.",
+   "vat": "FR25418839064",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00035",
+   "name": "Fonderie Genevois S.A.R.L.",
+   "vat": "FR84121764845",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00036",
+   "name": "Mécanique Bauges S.A.R.L.",
+   "vat": "FR35702221890",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00037",
+   "name": "Manutention Jura S.A.",
+   "vat": "CHE-266.733.225 TVA",
+   "country": "CH",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00038",
+   "name": "Plastiques Vercors S.A.",
+   "vat": "CHE-635.462.711 TVA",
+   "country": "CH",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00039",
+   "name": "Papeterie Salève A.G.",
+   "vat": "CHE-409.129.534 TVA",
+   "country": "CH",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00040",
+   "name": "Chimie Vercors S.à r.l.",
+   "vat": "CHE-525.493.486 TVA",
+   "country": "CH",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00041",
+   "name": "Électronique Salève S.à r.l.",
+   "vat": "CHE-778.324.893 TVA",
+   "country": "CH",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00042",
+   "name": "Papeterie Valserine A.G.",
+   "vat": "CHE-129.777.834 TVA",
+   "country": "CH",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00043",
+   "name": "Outillage Léman A.G.",
+   "vat": "CHE-668.506.361 TVA",
+   "country": "CH",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00044",
+   "name": "Plastiques Genevois S.A.",
+   "vat": "CHE-123.116.383 TVA",
+   "country": "CH",
+   "updated_at": "2026-09-01T08:00:00"
+  },
+  {
+   "code": "SUP00045",
+   "name": "Câblage Bornes S.A.R.L.",
+   "vat": "FR11239212440",
+   "country": "FR",
+   "updated_at": "2026-09-01T08:00:00"
+  }
+ ],
+ "items": [
+  {
+   "sku": "VIS-M8-INOX",
+   "name": "Vis inox M8",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "VIS-M10-ACIER",
+   "name": "Vis acier M10",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "ECR-M8",
+   "name": "Écrou M8",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "RON-M8",
+   "name": "Rondelle M8",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "JNT-TOR-20",
+   "name": "Joint torique 20 mm",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "ETQ-A6",
+   "name": "Étiquette adhésive A6",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "GNT-NIT-L",
+   "name": "Gant nitrile L",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "BOU-PLA-30",
+   "name": "Bouchon plastique 30 mm",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "ROUL-6204",
+   "name": "Roulement 6204",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "ROUL-6206",
+   "name": "Roulement 6206",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "CAR-40X30",
+   "name": "Carton 40x30",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "CAR-60X40",
+   "name": "Carton 60x40",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "PAL-120X80",
+   "name": "Palette bois 120x80",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "FIL-ETIR-50",
+   "name": "Film étirable 50 cm",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "RUB-ADH-48",
+   "name": "Ruban adhésif 48 mm",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "CAB-3G15",
+   "name": "Câble 3G1,5 (m)",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "CON-RJ45",
+   "name": "Connecteur RJ45",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "CAP-PT100",
+   "name": "Capteur PT100",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "REL-24V",
+   "name": "Relais 24 V",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "FUS-10A",
+   "name": "Fusible 10 A",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "COL-200",
+   "name": "Collier de serrage 200 mm",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "HUI-ISO46",
+   "name": "Huile hydraulique ISO 46 (L)",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "SAC-30L",
+   "name": "Sac plastique 30 L",
+   "base_unit": "pce"
+  },
+  {
+   "sku": "PIL-AA",
+   "name": "Pile AA",
+   "base_unit": "pce"
+  }
+ ],
+ "receipts": [
+  {
+   "receipt_ref": "REC-000001",
+   "po_ref": "P00001",
+   "supplier_code": "SUP00025",
+   "received_at": "2026-03-05",
+   "lines": [
+    {
+     "sku": "PIL-AA",
+     "qty": 420.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000002",
+   "po_ref": "P00002",
+   "supplier_code": "SUP00001",
+   "received_at": "2026-03-07",
+   "lines": [
+    {
+     "sku": "COL-200",
+     "qty": 240.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAB-3G15",
+     "qty": 360.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "FIL-ETIR-50",
+     "qty": 120.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000003",
+   "po_ref": "P00003",
+   "supplier_code": "SUP00034",
+   "received_at": "2026-03-16",
+   "lines": [
+    {
+     "sku": "ETQ-A6",
+     "qty": 300.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000004",
+   "po_ref": "P00007",
+   "supplier_code": "SUP00040",
+   "received_at": "2026-03-16",
+   "lines": [
+    {
+     "sku": "JNT-TOR-20",
+     "qty": 132.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000005",
+   "po_ref": "P00005",
+   "supplier_code": "SUP00008",
+   "received_at": "2026-03-18",
+   "lines": [
+    {
+     "sku": "HUI-ISO46",
+     "qty": 20.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "SAC-30L",
+     "qty": 250.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "COL-200",
+     "qty": 60.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000006",
+   "po_ref": "P00008",
+   "supplier_code": "SUP00021",
+   "received_at": "2026-03-18",
+   "lines": [
+    {
+     "sku": "RON-M8",
+     "qty": 108.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "PIL-AA",
+     "qty": 260.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000007",
+   "po_ref": "P00009",
+   "supplier_code": "SUP00017",
+   "received_at": "2026-03-19",
+   "lines": [
+    {
+     "sku": "ROUL-6206",
+     "qty": 240.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "COL-200",
+     "qty": 320.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "RON-M8",
+     "qty": 432.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000008",
+   "po_ref": "P00004",
+   "supplier_code": "SUP00035",
+   "received_at": "2026-03-20",
+   "lines": [
+    {
+     "sku": "ETQ-A6",
+     "qty": 72.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000009",
+   "po_ref": "P00006",
+   "supplier_code": "SUP00024",
+   "received_at": "2026-03-21",
+   "lines": [
+    {
+     "sku": "GNT-NIT-L",
+     "qty": 168.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAP-PT100",
+     "qty": 400.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000010",
+   "po_ref": "P00012",
+   "supplier_code": "SUP00017",
+   "received_at": "2026-03-27",
+   "lines": [
+    {
+     "sku": "BOU-PLA-30",
+     "qty": 384.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ETQ-A6",
+     "qty": 444.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-40X30",
+     "qty": 370.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000011",
+   "po_ref": "P00010",
+   "supplier_code": "SUP00008",
+   "received_at": "2026-03-31",
+   "lines": [
+    {
+     "sku": "CON-RJ45",
+     "qty": 450.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "BOU-PLA-30",
+     "qty": 684.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-60X40",
+     "qty": 310.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000012",
+   "po_ref": "P00014",
+   "supplier_code": "SUP00021",
+   "received_at": "2026-03-31",
+   "lines": [
+    {
+     "sku": "GNT-NIT-L",
+     "qty": 672.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000013",
+   "po_ref": "P00011",
+   "supplier_code": "SUP00038",
+   "received_at": "2026-04-02",
+   "lines": [
+    {
+     "sku": "ECR-M8",
+     "qty": 648.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAB-3G15",
+     "qty": 210.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000014",
+   "po_ref": "P00013",
+   "supplier_code": "SUP00022",
+   "received_at": "2026-04-02",
+   "lines": [
+    {
+     "sku": "PIL-AA",
+     "qty": 330.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "HUI-ISO46",
+     "qty": 270.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000015",
+   "po_ref": "P00018",
+   "supplier_code": "SUP00022",
+   "received_at": "2026-04-09",
+   "lines": [
+    {
+     "sku": "CAR-40X30",
+     "qty": 190.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000016",
+   "po_ref": "P00015",
+   "supplier_code": "SUP00030",
+   "received_at": "2026-04-10",
+   "lines": [
+    {
+     "sku": "SAC-30L",
+     "qty": 240.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000017",
+   "po_ref": "P00016",
+   "supplier_code": "SUP00023",
+   "received_at": "2026-04-10",
+   "lines": [
+    {
+     "sku": "REL-24V",
+     "qty": 120.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "PAL-120X80",
+     "qty": 110.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000018",
+   "po_ref": "P00019",
+   "supplier_code": "SUP00029",
+   "received_at": "2026-04-13",
+   "lines": [
+    {
+     "sku": "JNT-TOR-20",
+     "qty": 540.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAP-PT100",
+     "qty": 190.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000019",
+   "po_ref": "P00020",
+   "supplier_code": "SUP00015",
+   "received_at": "2026-04-13",
+   "lines": [
+    {
+     "sku": "JNT-TOR-20",
+     "qty": 648.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAP-PT100",
+     "qty": 90.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000020",
+   "po_ref": "P00023",
+   "supplier_code": "SUP00022",
+   "received_at": "2026-04-15",
+   "lines": [
+    {
+     "sku": "FIL-ETIR-50",
+     "qty": 450.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-40X30",
+     "qty": 330.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "RON-M8",
+     "qty": 576.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000021",
+   "po_ref": "P00017",
+   "supplier_code": "SUP00029",
+   "received_at": "2026-04-16",
+   "lines": [
+    {
+     "sku": "REL-24V",
+     "qty": 100.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "HUI-ISO46",
+     "qty": 290.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "PIL-AA",
+     "qty": 190.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000022",
+   "po_ref": "P00024",
+   "supplier_code": "SUP00041",
+   "received_at": "2026-04-19",
+   "lines": [
+    {
+     "sku": "CAP-PT100",
+     "qty": 290.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CON-RJ45",
+     "qty": 240.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "GNT-NIT-L",
+     "qty": 552.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000023",
+   "po_ref": "P00021",
+   "supplier_code": "SUP00018",
+   "received_at": "2026-04-20",
+   "lines": [
+    {
+     "sku": "REL-24V",
+     "qty": 420.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "RUB-ADH-48",
+     "qty": 270.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000024",
+   "po_ref": "P00022",
+   "supplier_code": "SUP00026",
+   "received_at": "2026-04-21",
+   "lines": [
+    {
+     "sku": "CAP-PT100",
+     "qty": 470.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000025",
+   "po_ref": "P00026",
+   "supplier_code": "SUP00012",
+   "received_at": "2026-04-23",
+   "lines": [
+    {
+     "sku": "ROUL-6204",
+     "qty": 370.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000026",
+   "po_ref": "P00027",
+   "supplier_code": "SUP00017",
+   "received_at": "2026-04-25",
+   "lines": [
+    {
+     "sku": "CAR-40X30",
+     "qty": 390.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000027",
+   "po_ref": "P00025",
+   "supplier_code": "SUP00022",
+   "received_at": "2026-04-26",
+   "lines": [
+    {
+     "sku": "PAL-120X80",
+     "qty": 480.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000028",
+   "po_ref": "P00030",
+   "supplier_code": "SUP00030",
+   "received_at": "2026-04-29",
+   "lines": [
+    {
+     "sku": "ROUL-6204",
+     "qty": 250.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "FUS-10A",
+     "qty": 70.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "COL-200",
+     "qty": 370.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000029",
+   "po_ref": "P00029",
+   "supplier_code": "SUP00015",
+   "received_at": "2026-04-30",
+   "lines": [
+    {
+     "sku": "RON-M8",
+     "qty": 25.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "HUI-ISO46",
+     "qty": 30.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ROUL-6204",
+     "qty": 150.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000030",
+   "po_ref": "P00031",
+   "supplier_code": "SUP00013",
+   "received_at": "2026-05-03",
+   "lines": [
+    {
+     "sku": "VIS-M8-INOX",
+     "qty": 312.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "RON-M8",
+     "qty": 228.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "JNT-TOR-20",
+     "qty": 408.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000031",
+   "po_ref": "P00032",
+   "supplier_code": "SUP00014",
+   "received_at": "2026-05-08",
+   "lines": [
+    {
+     "sku": "HUI-ISO46",
+     "qty": 210.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ETQ-A6",
+     "qty": 120.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "SAC-30L",
+     "qty": 380.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000032",
+   "po_ref": "P00036",
+   "supplier_code": "SUP00043",
+   "received_at": "2026-05-14",
+   "lines": [
+    {
+     "sku": "CAR-40X30",
+     "qty": 220.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-60X40",
+     "qty": 400.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000033",
+   "po_ref": "P00033",
+   "supplier_code": "SUP00027",
+   "received_at": "2026-05-16",
+   "lines": [
+    {
+     "sku": "CON-RJ45",
+     "qty": 370.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "HUI-ISO46",
+     "qty": 100.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "REL-24V",
+     "qty": 80.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000034",
+   "po_ref": "P00034",
+   "supplier_code": "SUP00002",
+   "received_at": "2026-05-16",
+   "lines": [
+    {
+     "sku": "FIL-ETIR-50",
+     "qty": 130.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "VIS-M10-ACIER",
+     "qty": 480.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000035",
+   "po_ref": "P00035",
+   "supplier_code": "SUP00045",
+   "received_at": "2026-05-17",
+   "lines": [
+    {
+     "sku": "CAB-3G15",
+     "qty": 440.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000036",
+   "po_ref": "P00040",
+   "supplier_code": "SUP00033",
+   "received_at": "2026-05-19",
+   "lines": [
+    {
+     "sku": "PAL-120X80",
+     "qty": 390.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ROUL-6206",
+     "qty": 50.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "GNT-NIT-L",
+     "qty": 684.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000037",
+   "po_ref": "P00037",
+   "supplier_code": "SUP00031",
+   "received_at": "2026-05-20",
+   "lines": [
+    {
+     "sku": "CAB-3G15",
+     "qty": 180.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-40X30",
+     "qty": 40.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000038",
+   "po_ref": "P00039",
+   "supplier_code": "SUP00024",
+   "received_at": "2026-05-22",
+   "lines": [
+    {
+     "sku": "RUB-ADH-48",
+     "qty": 250.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "GNT-NIT-L",
+     "qty": 264.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000039",
+   "po_ref": "P00038",
+   "supplier_code": "SUP00042",
+   "received_at": "2026-05-23",
+   "lines": [
+    {
+     "sku": "JNT-TOR-20",
+     "qty": 420.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "VIS-M8-INOX",
+     "qty": 672.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000040",
+   "po_ref": "P00042",
+   "supplier_code": "SUP00042",
+   "received_at": "2026-05-24",
+   "lines": [
+    {
+     "sku": "CON-RJ45",
+     "qty": 210.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "HUI-ISO46",
+     "qty": 320.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAP-PT100",
+     "qty": 410.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000041",
+   "po_ref": "P00045",
+   "supplier_code": "SUP00012",
+   "received_at": "2026-05-24",
+   "lines": [
+    {
+     "sku": "CON-RJ45",
+     "qty": 420.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "PAL-120X80",
+     "qty": 80.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000042",
+   "po_ref": "P00044",
+   "supplier_code": "SUP00022",
+   "received_at": "2026-05-27",
+   "lines": [
+    {
+     "sku": "ETQ-A6",
+     "qty": 480.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ECR-M8",
+     "qty": 720.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000043",
+   "po_ref": "P00043",
+   "supplier_code": "SUP00006",
+   "received_at": "2026-05-28",
+   "lines": [
+    {
+     "sku": "CON-RJ45",
+     "qty": 264.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "FUS-10A",
+     "qty": 220.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-40X30",
+     "qty": 440.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000044",
+   "po_ref": "P00046",
+   "supplier_code": "SUP00039",
+   "received_at": "2026-05-30",
+   "lines": [
+    {
+     "sku": "VIS-M8-INOX",
+     "qty": 408.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000045",
+   "po_ref": "P00047",
+   "supplier_code": "SUP00016",
+   "received_at": "2026-06-02",
+   "lines": [
+    {
+     "sku": "FIL-ETIR-50",
+     "qty": 340.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000046",
+   "po_ref": "P00048",
+   "supplier_code": "SUP00034",
+   "received_at": "2026-06-05",
+   "lines": [
+    {
+     "sku": "CON-RJ45",
+     "qty": 150.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000047",
+   "po_ref": "P00049",
+   "supplier_code": "SUP00018",
+   "received_at": "2026-06-07",
+   "lines": [
+    {
+     "sku": "CAB-3G15",
+     "qty": 450.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "JNT-TOR-20",
+     "qty": 696.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAP-PT100",
+     "qty": 220.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000048",
+   "po_ref": "P00053",
+   "supplier_code": "SUP00009",
+   "received_at": "2026-06-07",
+   "lines": [
+    {
+     "sku": "CAP-PT100",
+     "qty": 240.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "SAC-30L",
+     "qty": 100.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000049",
+   "po_ref": "P00055",
+   "supplier_code": "SUP00004",
+   "received_at": "2026-06-07",
+   "lines": [
+    {
+     "sku": "HUI-ISO46",
+     "qty": 110.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000050",
+   "po_ref": "P00052",
+   "supplier_code": "SUP00043",
+   "received_at": "2026-06-08",
+   "lines": [
+    {
+     "sku": "VIS-M10-ACIER",
+     "qty": 660.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "HUI-ISO46",
+     "qty": 210.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ROUL-6204",
+     "qty": 130.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000051",
+   "po_ref": "P00051",
+   "supplier_code": "SUP00010",
+   "received_at": "2026-06-09",
+   "lines": [
+    {
+     "sku": "CAP-PT100",
+     "qty": 480.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "SAC-30L",
+     "qty": 110.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "JNT-TOR-20",
+     "qty": 156.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000052",
+   "po_ref": "P00050",
+   "supplier_code": "SUP00024",
+   "received_at": "2026-06-10",
+   "lines": [
+    {
+     "sku": "PAL-120X80",
+     "qty": 480.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAP-PT100",
+     "qty": 360.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "FUS-10A",
+     "qty": 140.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000053",
+   "po_ref": "P00056",
+   "supplier_code": "SUP00027",
+   "received_at": "2026-06-13",
+   "lines": [
+    {
+     "sku": "FUS-10A",
+     "qty": 30.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAB-3G15",
+     "qty": 210.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAP-PT100",
+     "qty": 160.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000054",
+   "po_ref": "P00054",
+   "supplier_code": "SUP00030",
+   "received_at": "2026-06-15",
+   "lines": [
+    {
+     "sku": "ETQ-A6",
+     "qty": 588.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000055",
+   "po_ref": "P00057",
+   "supplier_code": "SUP00033",
+   "received_at": "2026-06-17",
+   "lines": [
+    {
+     "sku": "CAP-PT100",
+     "qty": 310.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ECR-M8",
+     "qty": 576.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000056",
+   "po_ref": "P00058",
+   "supplier_code": "SUP00045",
+   "received_at": "2026-06-19",
+   "lines": [
+    {
+     "sku": "CAR-40X30",
+     "qty": 110.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000057",
+   "po_ref": "P00060",
+   "supplier_code": "SUP00004",
+   "received_at": "2026-06-20",
+   "lines": [
+    {
+     "sku": "CAR-60X40",
+     "qty": 390.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000058",
+   "po_ref": "P00059",
+   "supplier_code": "SUP00033",
+   "received_at": "2026-06-21",
+   "lines": [
+    {
+     "sku": "CAB-3G15",
+     "qty": 20.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000059",
+   "po_ref": "P00061",
+   "supplier_code": "SUP00017",
+   "received_at": "2026-06-25",
+   "lines": [
+    {
+     "sku": "VIS-M8-INOX",
+     "qty": 444.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ETQ-A6",
+     "qty": 204.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000060",
+   "po_ref": "P00062",
+   "supplier_code": "SUP00006",
+   "received_at": "2026-06-26",
+   "lines": [
+    {
+     "sku": "HUI-ISO46",
+     "qty": 140.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "FIL-ETIR-50",
+     "qty": 120.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000061",
+   "po_ref": "P00063",
+   "supplier_code": "SUP00016",
+   "received_at": "2026-07-05",
+   "lines": [
+    {
+     "sku": "HUI-ISO46",
+     "qty": 330.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000062",
+   "po_ref": "P00065",
+   "supplier_code": "SUP00028",
+   "received_at": "2026-07-06",
+   "lines": [
+    {
+     "sku": "CAR-60X40",
+     "qty": 150.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "SAC-30L",
+     "qty": 210.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000063",
+   "po_ref": "P00064",
+   "supplier_code": "SUP00014",
+   "received_at": "2026-07-07",
+   "lines": [
+    {
+     "sku": "ETQ-A6",
+     "qty": 720.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAP-PT100",
+     "qty": 290.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000064",
+   "po_ref": "P00066",
+   "supplier_code": "SUP00041",
+   "received_at": "2026-07-08",
+   "lines": [
+    {
+     "sku": "RUB-ADH-48",
+     "qty": 320.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAP-PT100",
+     "qty": 70.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "FUS-10A",
+     "qty": 150.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000065",
+   "po_ref": "P00067",
+   "supplier_code": "SUP00013",
+   "received_at": "2026-07-12",
+   "lines": [
+    {
+     "sku": "ECR-M8",
+     "qty": 324.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000066",
+   "po_ref": "P00068",
+   "supplier_code": "SUP00044",
+   "received_at": "2026-07-15",
+   "lines": [
+    {
+     "sku": "SAC-30L",
+     "qty": 130.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ETQ-A6",
+     "qty": 216.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "RON-M8",
+     "qty": 552.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000067",
+   "po_ref": "P00069",
+   "supplier_code": "SUP00028",
+   "received_at": "2026-07-18",
+   "lines": [
+    {
+     "sku": "FIL-ETIR-50",
+     "qty": 30.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000068",
+   "po_ref": "P00070",
+   "supplier_code": "SUP00036",
+   "received_at": "2026-07-19",
+   "lines": [
+    {
+     "sku": "COL-200",
+     "qty": 420.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000069",
+   "po_ref": "P00071",
+   "supplier_code": "SUP00018",
+   "received_at": "2026-07-19",
+   "lines": [
+    {
+     "sku": "PIL-AA",
+     "qty": 270.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-60X40",
+     "qty": 20.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000070",
+   "po_ref": "P00074",
+   "supplier_code": "SUP00038",
+   "received_at": "2026-07-19",
+   "lines": [
+    {
+     "sku": "SAC-30L",
+     "qty": 440.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000071",
+   "po_ref": "P00073",
+   "supplier_code": "SUP00010",
+   "received_at": "2026-07-20",
+   "lines": [
+    {
+     "sku": "BOU-PLA-30",
+     "qty": 348.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-60X40",
+     "qty": 400.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "RUB-ADH-48",
+     "qty": 420.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000072",
+   "po_ref": "P00075",
+   "supplier_code": "SUP00036",
+   "received_at": "2026-07-22",
+   "lines": [
+    {
+     "sku": "ROUL-6204",
+     "qty": 70.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "HUI-ISO46",
+     "qty": 310.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000073",
+   "po_ref": "P00072",
+   "supplier_code": "SUP00045",
+   "received_at": "2026-07-23",
+   "lines": [
+    {
+     "sku": "RUB-ADH-48",
+     "qty": 330.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ROUL-6204",
+     "qty": 100.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-60X40",
+     "qty": 80.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000074",
+   "po_ref": "P00080",
+   "supplier_code": "SUP00010",
+   "received_at": "2026-07-23",
+   "lines": [
+    {
+     "sku": "JNT-TOR-20",
+     "qty": 11.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "VIS-M8-INOX",
+     "qty": 360.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000075",
+   "po_ref": "P00079",
+   "supplier_code": "SUP00037",
+   "received_at": "2026-07-25",
+   "lines": [
+    {
+     "sku": "FUS-10A",
+     "qty": 360.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAB-3G15",
+     "qty": 30.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000076",
+   "po_ref": "P00081",
+   "supplier_code": "SUP00006",
+   "received_at": "2026-07-26",
+   "lines": [
+    {
+     "sku": "CAP-PT100",
+     "qty": 180.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000077",
+   "po_ref": "P00076",
+   "supplier_code": "SUP00030",
+   "received_at": "2026-07-27",
+   "lines": [
+    {
+     "sku": "CAP-PT100",
+     "qty": 350.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CON-RJ45",
+     "qty": 80.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000078",
+   "po_ref": "P00077",
+   "supplier_code": "SUP00018",
+   "received_at": "2026-07-28",
+   "lines": [
+    {
+     "sku": "VIS-M10-ACIER",
+     "qty": 504.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ECR-M8",
+     "qty": 84.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000079",
+   "po_ref": "P00078",
+   "supplier_code": "SUP00005",
+   "received_at": "2026-07-28",
+   "lines": [
+    {
+     "sku": "RUB-ADH-48",
+     "qty": 260.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "REL-24V",
+     "qty": 430.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "RON-M8",
+     "qty": 672.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000080",
+   "po_ref": "P00082",
+   "supplier_code": "SUP00002",
+   "received_at": "2026-07-29",
+   "lines": [
+    {
+     "sku": "PIL-AA",
+     "qty": 60.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000081",
+   "po_ref": "P00083",
+   "supplier_code": "SUP00039",
+   "received_at": "2026-08-05",
+   "lines": [
+    {
+     "sku": "RON-M8",
+     "qty": 600.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "PIL-AA",
+     "qty": 110.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-40X30",
+     "qty": 210.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000082",
+   "po_ref": "P00084",
+   "supplier_code": "SUP00031",
+   "received_at": "2026-08-07",
+   "lines": [
+    {
+     "sku": "CAR-40X30",
+     "qty": 470.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000083",
+   "po_ref": "P00086",
+   "supplier_code": "SUP00003",
+   "received_at": "2026-08-08",
+   "lines": [
+    {
+     "sku": "BOU-PLA-30",
+     "qty": 192.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "FUS-10A",
+     "qty": 300.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000084",
+   "po_ref": "P00085",
+   "supplier_code": "SUP00030",
+   "received_at": "2026-08-10",
+   "lines": [
+    {
+     "sku": "BOU-PLA-30",
+     "qty": 720.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "PAL-120X80",
+     "qty": 220.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CON-RJ45",
+     "qty": 280.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000085",
+   "po_ref": "P00088",
+   "supplier_code": "SUP00038",
+   "received_at": "2026-08-11",
+   "lines": [
+    {
+     "sku": "CAB-3G15",
+     "qty": 30.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CON-RJ45",
+     "qty": 330.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000086",
+   "po_ref": "P00089",
+   "supplier_code": "SUP00014",
+   "received_at": "2026-08-12",
+   "lines": [
+    {
+     "sku": "PIL-AA",
+     "qty": 350.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "VIS-M10-ACIER",
+     "qty": 408.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000087",
+   "po_ref": "P00090",
+   "supplier_code": "SUP00009",
+   "received_at": "2026-08-15",
+   "lines": [
+    {
+     "sku": "BOU-PLA-30",
+     "qty": 300.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CON-RJ45",
+     "qty": 190.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000088",
+   "po_ref": "P00092",
+   "supplier_code": "SUP00011",
+   "received_at": "2026-08-15",
+   "lines": [
+    {
+     "sku": "RON-M8",
+     "qty": 672.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "REL-24V",
+     "qty": 150.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-60X40",
+     "qty": 390.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000089",
+   "po_ref": "P00087",
+   "supplier_code": "SUP00013",
+   "received_at": "2026-08-16",
+   "lines": [
+    {
+     "sku": "REL-24V",
+     "qty": 320.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000090",
+   "po_ref": "P09999",
+   "supplier_code": "SUP00001",
+   "received_at": "2026-08-17",
+   "lines": [
+    {
+     "sku": "PAL-120X80",
+     "qty": 120.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000091",
+   "po_ref": "P00091",
+   "supplier_code": "SUP00028",
+   "received_at": "2026-08-20",
+   "lines": [
+    {
+     "sku": "REL-24V",
+     "qty": 400.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "VIS-M8-INOX",
+     "qty": 720.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-60X40",
+     "qty": 350.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000092",
+   "po_ref": "P00095",
+   "supplier_code": "SUP00017",
+   "received_at": "2026-08-20",
+   "lines": [
+    {
+     "sku": "CON-RJ45",
+     "qty": 190.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000093",
+   "po_ref": "P00094",
+   "supplier_code": "SUP00027",
+   "received_at": "2026-08-22",
+   "lines": [
+    {
+     "sku": "VIS-M8-INOX",
+     "qty": 204.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "BOU-PLA-30",
+     "qty": 96.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000094",
+   "po_ref": "P00097",
+   "supplier_code": "SUP00003",
+   "received_at": "2026-08-22",
+   "lines": [
+    {
+     "sku": "SAC-30L",
+     "qty": 420.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000095",
+   "po_ref": "P00093",
+   "supplier_code": "SUP00005",
+   "received_at": "2026-08-23",
+   "lines": [
+    {
+     "sku": "ETQ-A6",
+     "qty": 672.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "RUB-ADH-48",
+     "qty": 90.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "PAL-120X80",
+     "qty": 80.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000096",
+   "po_ref": "P00096",
+   "supplier_code": "SUP00024",
+   "received_at": "2026-08-25",
+   "lines": [
+    {
+     "sku": "ROUL-6204",
+     "qty": 120.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000097",
+   "po_ref": "P00098",
+   "supplier_code": "SUP00036",
+   "received_at": "2026-08-30",
+   "lines": [
+    {
+     "sku": "RUB-ADH-48",
+     "qty": 370.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000098",
+   "po_ref": "P00101",
+   "supplier_code": "SUP00004",
+   "received_at": "2026-08-30",
+   "lines": [
+    {
+     "sku": "ECR-M8",
+     "qty": 552.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ETQ-A6",
+     "qty": 108.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000099",
+   "po_ref": "P00100",
+   "supplier_code": "SUP00030",
+   "received_at": "2026-08-31",
+   "lines": [
+    {
+     "sku": "COL-200",
+     "qty": 430.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "VIS-M10-ACIER",
+     "qty": 552.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "GNT-NIT-L",
+     "qty": 420.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000100",
+   "po_ref": "P00099",
+   "supplier_code": "SUP00043",
+   "received_at": "2026-09-01",
+   "lines": [
+    {
+     "sku": "CAR-60X40",
+     "qty": 460.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000101",
+   "po_ref": "P00102",
+   "supplier_code": "SUP00018",
+   "received_at": "2026-09-07",
+   "lines": [
+    {
+     "sku": "VIS-M8-INOX",
+     "qty": 276.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000102",
+   "po_ref": "P00104",
+   "supplier_code": "SUP00035",
+   "received_at": "2026-09-07",
+   "lines": [
+    {
+     "sku": "CAP-PT100",
+     "qty": 420.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000103",
+   "po_ref": "P00103",
+   "supplier_code": "SUP00040",
+   "received_at": "2026-09-09",
+   "lines": [
+    {
+     "sku": "VIS-M10-ACIER",
+     "qty": 108.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAB-3G15",
+     "qty": 460.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ROUL-6204",
+     "qty": 480.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000104",
+   "po_ref": "P00106",
+   "supplier_code": "SUP00015",
+   "received_at": "2026-09-09",
+   "lines": [
+    {
+     "sku": "PAL-120X80",
+     "qty": 170.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "RUB-ADH-48",
+     "qty": 40.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ECR-M8",
+     "qty": 60.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000105",
+   "po_ref": "P00105",
+   "supplier_code": "SUP00034",
+   "received_at": "2026-09-14",
+   "lines": [
+    {
+     "sku": "CAP-PT100",
+     "qty": 50.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "BOU-PLA-30",
+     "qty": 468.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAB-3G15",
+     "qty": 240.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000106",
+   "po_ref": "P00109",
+   "supplier_code": "SUP00011",
+   "received_at": "2026-09-14",
+   "lines": [
+    {
+     "sku": "GNT-NIT-L",
+     "qty": 360.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CON-RJ45",
+     "qty": 190.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "CAR-40X30",
+     "qty": 430.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000107",
+   "po_ref": "P00107",
+   "supplier_code": "SUP00027",
+   "received_at": "2026-09-15",
+   "lines": [
+    {
+     "sku": "CAP-PT100",
+     "qty": 300.0,
+     "unit": "pce"
+    },
+    {
+     "sku": "ECR-M8",
+     "qty": 576.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000108",
+   "po_ref": "P00108",
+   "supplier_code": "SUP00040",
+   "received_at": "2026-09-16",
+   "lines": [
+    {
+     "sku": "ETQ-A6",
+     "qty": 240.0,
+     "unit": "pce"
+    }
+   ]
+  },
+  {
+   "receipt_ref": "REC-000109",
+   "po_ref": "P00110",
+   "supplier_code": "SUP00042",
+   "received_at": "2026-09-21",
+   "lines": [
+    {
+     "sku": "RUB-ADH-48",
+     "qty": 70.0,
+     "unit": "pce"
+    }
+   ]
+  }
+ ]
+}
