@@ -2,8 +2,15 @@
 
 [English version](README.md)
 
-Une maquette de bout en bout. Trois systèmes décrivent les mêmes achats d'un groupe fictif : ils sont
-lus, rapprochés, contrôlés, puis exposés à Claude par un serveur MCP et à un tableau de bord.
+Trois systèmes décrivent les mêmes achats d'un groupe fictif. Sont-ils d'accord ? Ils sont lus,
+rapprochés et contrôlés par des requêtes SQL déterministes, puis exposés à un tableau de bord et à un
+agent (Claude) par un serveur MCP : l'agent lit les écarts trouvés par les contrôles au lieu d'en
+décider lui-même.
+
+![Rapprochement en trois voies des 99 commandes de plus de 30 jours (97 avec réception, 95 avec facture, 81 sans aucun écart) ; les 22 écarts plantés sont tous retrouvés, aucun n'est inventé](docs/figures/hero.png)
+
+*Figure tracée par [`scripts/hero_figure.py`](scripts/hero_figure.py) depuis l'entrepôt et la vérité
+terrain commitée (libellés en anglais).*
 
 ```
  A  Odoo 17 (achats)          XML-RPC ─┐
@@ -160,6 +167,9 @@ CSV par un test, ce qui valide leurs colonnes et leur logique, pas la syntaxe DA
 - **Claude Desktop** : le serveur est testé par un client MCP (en mémoire et en sous-processus stdio,
   lancé avec un environnement minimal : seules les variables que le client MCP transmet par défaut),
   pas encore depuis son interface.
+- **Ce que dit l'agent n'est pas testé.** Citer ses sources et n'affirmer aucun écart non listé sont des
+  consignes données au modèle, pas une contrainte imposée. Les tests portent sur ce que rendent les
+  outils, pas sur les réponses du modèle.
 - **Power BI et Tableau** : voir plus haut.
 - **Odoo** : une seule instance, en version 17.0, avec le module achats seul. Pas de multi-société, pas
   de taxes, pas de réceptions Odoo (l'entrepôt est le système C).
@@ -167,18 +177,22 @@ CSV par un test, ce qui valide leurs colonnes et leur logique, pas la syntaxe DA
 - **L'actualisation reconstruit tout** au lieu de lire les seuls changements. Elle est idempotente et
   rapide à cette échelle (une seconde). Un connecteur de production lirait en incrémental sur
   `write_date`, ce que celui-ci ne fait pas.
+- **Données synthétiques** : les écarts plantés sont ceux que j'ai imaginés. Les retrouver exactement
+  prouve que les contrôles font ce qu'ils annoncent, pas qu'ils couvrent toutes les défaillances d'une
+  vraie clôture.
 
 ## Tests
 
 ```bash
-uv run pytest        # 71 tests avec Odoo, 68 sans (les 3 tests contre le vrai Odoo sont alors ignorés)
+uv run pytest        # 69 tests sans Odoo ; 3 de plus contre le vrai Odoo, ignorés s'il ne répond pas
 ```
 
 Les tests qui comptent : les contrôles retrouvent exactement les écarts plantés ; l'actualisation est
 idempotente et ses identifiants d'écart sont stables ; corriger un écart à la source le fait disparaître,
-lui seul ; chaque barrière de la requête libre est prouvée seule ; le serveur MCP est appelé par un
-vrai client, jusqu'en sous-processus stdio. Les tests contre le vrai Odoo (`-m odoo`) sont ignorés si
-l'instance ne répond pas.
+lui seul ; la lecture seule et le refus d'accès aux fichiers sont prouvés en contournant le filtre de
+mots, et le verrouillage, le délai et la limite de lignes ont leurs propres tests ; le serveur MCP est
+appelé par un vrai client, jusqu'en sous-processus stdio. Les tests contre le vrai Odoo (`-m odoo`) sont
+ignorés si l'instance ne répond pas.
 
 ## Le dépôt
 
