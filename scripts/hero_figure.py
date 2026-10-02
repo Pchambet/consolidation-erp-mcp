@@ -64,9 +64,18 @@ def main() -> None:
         raise SystemExit(f"no English label for {sorted(inconnues)}")
 
     plt.rcParams.update(
-        {"font.family": "DejaVu Sans", "text.color": INK, "axes.labelcolor": INK, "xtick.color": SLATE, "ytick.color": INK}
+        {
+            "font.family": "DejaVu Sans",
+            "font.size": 11.5,
+            "text.color": INK,
+            "axes.labelcolor": INK,
+            "xtick.color": SLATE,
+            "ytick.color": INK,
+        }
     )
-    fig, (gauche, droite) = plt.subplots(1, 2, figsize=(12, 5.2), gridspec_kw={"width_ratios": [1, 1.25], "wspace": 0.95})
+    # GitHub shows README images about 840 px wide: at 10 inches and 200 dpi, 11-point labels stay
+    # about 12 px on screen.
+    fig, (gauche, droite) = plt.subplots(1, 2, figsize=(10, 5.6), layout="constrained", gridspec_kw={"width_ratios": [1, 1.6]})
 
     # Left: the three-way match on purchase orders older than 30 days. Each bar counts from the
     # first one (an order can be invoiced without a receipt), so they are not nested subsets.
@@ -79,9 +88,9 @@ def main() -> None:
     y = range(len(etapes))[::-1]
     couleurs = [SLATE, SLATE, SLATE, TEAL]
     gauche.barh(list(y), [n for _, n in etapes], color=couleurs, height=0.62)
-    gauche.set_yticks(list(y), [e for e, _ in etapes], fontsize=10)
+    gauche.set_yticks(list(y), [e for e, _ in etapes], fontsize=11.5)
     for yi, (_, n) in zip(y, etapes, strict=True):
-        gauche.text(n + 1.5, yi, str(n), va="center", fontsize=11, color=INK, fontweight="bold")
+        gauche.text(n + 1.5, yi, str(n), va="center", fontsize=12.5, color=INK, fontweight="bold")
     part = voies["conformes"] / voies["commandes"]
     gauche.text(
         voies["conformes"] / 2,
@@ -90,26 +99,28 @@ def main() -> None:
         va="center",
         ha="center",
         color="white",
-        fontsize=11,
+        fontsize=12.5,
         fontweight="bold",
     )
-    gauche.set_xlim(0, voies["commandes"] * 1.15)
+    gauche.set_xlim(0, voies["commandes"] * 1.18)
     gauche.set_xlabel("purchase orders (Odoo, A)")
-    gauche.set_title("Three-way match: order → receipt → invoice", loc="left", fontsize=12, color=INK)
+    gauche.set_title("Three-way match:\norder → receipt → invoice", loc="left", fontsize=13, color=INK)
 
     # Right: planted vs detected, per control.
     n_plantes, n_detectes = Counter(r for r, _ in plantes), Counter(r for r, _ in detectes)
     ordre = sorted(CONTROLES, key=lambda r: (n_plantes[r], CONTROLES[r]))
     yy = range(len(ordre))
-    droite.barh(list(yy), [n_plantes[r] for r in ordre], color=GRID, height=0.72, label="planted")
-    droite.scatter([n_detectes[r] for r in ordre], list(yy), color=TEAL, s=46, zorder=3, label="detected by the SQL controls")
-    droite.set_yticks(list(yy), [CONTROLES[r] for r in ordre], fontsize=9)
+    droite.barh(list(yy), [n_plantes[r] for r in ordre], color=GRID, height=0.72)
+    droite.scatter([n_detectes[r] for r in ordre], list(yy), color=TEAL, s=46, zorder=3)
+    droite.set_yticks(list(yy), [CONTROLES[r] for r in ordre], fontsize=11)
     droite.set_xticks(range(0, max(n_plantes.values()) + 1))
     droite.set_xlim(0, max(n_plantes.values()) + 0.6)
-    droite.set_xlabel("discrepancies")
-    droite.legend(loc="lower right", frameon=False, fontsize=9)
+    droite.set_xlabel("discrepancies (bar: planted, dot: detected)")
     droite.set_title(
-        f"{retrouves} of {len(plantes)} planted discrepancies found, {faux_positifs} invented", loc="left", fontsize=12, color=INK
+        f"{retrouves} of {len(plantes)} planted discrepancies found,\n{faux_positifs} invented",
+        loc="left",
+        fontsize=13,
+        color=INK,
     )
 
     for ax in (gauche, droite):
@@ -120,19 +131,21 @@ def main() -> None:
         ax.set_axisbelow(True)
 
     fig.suptitle(
-        "Three systems, one warehouse: deterministic SQL controls find every planted discrepancy and invent none",
+        "Three systems, one warehouse: deterministic SQL controls\nfind every planted discrepancy and invent none",
         x=0.01,
         ha="left",
-        fontsize=13.5,
+        fontsize=15,
         fontweight="bold",
         color=INK,
     )
     as_of = entrepot._lignes(cfg.entrepot, "SELECT as_of FROM parametres")[0]["as_of"]
     fig.text(
         0.01,
-        0.005,
-        f"Synthetic world, fixed seed, cut-off date {as_of}. The 13th control (unbalanced journal entry) has no planted case; it is tested on its own.",
-        fontsize=8.5,
+        -0.01,
+        f"Synthetic world, fixed seed, cut-off date {as_of}.\n"
+        "The 13th control (unbalanced journal entry) has no planted case; it is tested on its own.",
+        va="top",
+        fontsize=11,
         color=SLATE,
     )
     SORTIE.parent.mkdir(parents=True, exist_ok=True)
