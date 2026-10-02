@@ -3,13 +3,12 @@
 Three systems describe the same purchases. Do they agree? This project consolidates an Odoo 17
 instance, an accounting ledger export and a warehouse API into one DuckDB star schema, runs a
 three-way match (order, receipt, invoice) as SQL controls, and lets an LLM agent query the result
-over MCP without being able to invent a discrepancy.
-
-[Version française](README.fr.md)
+over MCP, reading discrepancies from deterministic SQL controls instead of deciding them itself.
 
 [![CI](https://github.com/Pchambet/consolidation-erp-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Pchambet/consolidation-erp-mcp/actions/workflows/ci.yml)
 ![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-0d9488)
 [![License: MIT](https://img.shields.io/badge/license-MIT-64748b)](LICENSE)
+· [Version française](README.fr.md)
 
 ![Three-way match on the 99 purchase orders older than 30 days (97 with a receipt, 95 with an invoice, 81 passing every control), and the 22 planted discrepancies all detected with none invented](docs/figures/hero.png)
 
@@ -18,29 +17,28 @@ The generated control dashboard (French UI) is [shown in full below](#control-da
 
 ## TL;DR
 
-- **22 known discrepancies are planted** in an otherwise consistent synthetic world, across 13 controls
-  (the unbalanced-entry control is tested on its own). The SQL controls recover **all 22 and nothing
-  else**, and a clean world produces **zero** (`tests/test_controles.py`).
+- **22 known discrepancies are planted** in an otherwise consistent synthetic world, across 12 of the
+  13 controls (the 13th, unbalanced journal entry, has its own test). The SQL controls recover **all 22
+  and nothing else**, and a clean world produces **zero** (`tests/test_controles.py`).
 - **Three-way match:** of the 99 purchase orders older than 30 days, 97 have a receipt, 95 an invoice,
   and **81 (81.8 %) pass every control end to end**. 8 discrepancies are high severity; 4,495 EUR of
   goods were received more than 30 days ago and never invoiced.
-- **Free-form SQL from the agent is bounded by three independent guards** (read-only connection with no
-  file or network access, single `SELECT` statement, 10 s timeout), plus a 1,000-row cap. The read-only
-  connection and the blocked file access are each tested *with the keyword filter bypassed*; the locked
-  configuration, the timeout and the row cap have their own tests. Network access is disabled by the
-  same setting but not tested.
+- **Free-form SQL from the agent is bounded by three independent guards** (read-only connection without
+  file or network access, a single `SELECT`, a 10 s timeout) plus a 1,000-row cap; each guard has its
+  own test.
 - **The MCP server is exercised by a real MCP client**, in memory and as a stdio subprocess launched
   with a minimal environment (only the variables the MCP client passes by default).
-- **68 tests pass without Odoo** (71 with the live Odoo 17 instance), in CI on every push to `main`.
+- **69 tests pass without Odoo**, in CI on every push to `main`; 3 more run against a live Odoo 17
+  instance and are skipped when it does not answer.
 
 ## Why it matters
 
 Multi-entity groups close their books by reconciling systems that were never designed to agree: the
 purchasing ERP, the general ledger and the warehouse. Most of the effort goes into finding *which*
-record is wrong and *who* owns the fix. Putting an LLM on top is only useful if it cannot hallucinate a
-discrepancy and always points back to the source record. Here the model never decides what is wrong:
-deterministic, tested SQL controls do. The agent reads their output and must cite the system and the
-record identifier for every claim.
+record is wrong and *who* owns the fix. Putting an LLM on top is only useful if it does not invent
+discrepancies and points back to the source record. Here the model never decides what is wrong:
+deterministic, tested SQL controls do. The agent reads their output and is instructed to cite the
+system and the record identifier for every claim.
 
 ## Approach
 
@@ -150,6 +148,11 @@ The server instructions require the agent to **cite the system and the identifie
 and to never assert a discrepancy that `ecarts_ouverts` does not list. Refusal messages from the SQL
 guard are written to be read by the model, so it can correct its own query.
 
+What the guard tests prove (`tests/test_garde_sql.py`): a keyword filter sits on top of the three
+guards, and the read-only connection and the blocked file access are each tested *with that filter
+bypassed*. The locked configuration, the timeout and the row cap have their own tests. Network access
+is disabled by the same setting as file access but has no dedicated test.
+
 Three questions to try, with the expected answer:
 
 1. "How good is the consolidated data?" → 22 discrepancies, 8 high severity; 81.8 % of orders older
@@ -173,7 +176,7 @@ uv run consolidation actualiser       # read A, B, C and rebuild the warehouse: 
 uv run consolidation ecarts           # list them, most severe first
 uv run consolidation expliquer <id>   # one discrepancy, with its source records in each system
 uv run consolidation tableau-de-bord  # write tableau_de_bord/index.html
-uv run pytest                         # 68 tests without Odoo
+uv run pytest                         # 69 tests without Odoo
 uv run --group figures python scripts/hero_figure.py   # redraw docs/figures/hero.png
 ```
 
@@ -226,7 +229,7 @@ data/                          generated sources (FEC, warehouse dataset, Odoo s
 powerbi/                       CSV, relationships and DAX measures (untested in Power BI, see below)
 scripts/hero_figure.py         the figure at the top of this page
 docs/                          figures and the dashboard screenshot
-tests/                         68 tests offline, 3 more against a live Odoo
+tests/                         69 tests offline, 3 more against a live Odoo
 ```
 
 ## Limitations and what was not verified
@@ -234,9 +237,13 @@ tests/                         68 tests offline, 3 more against a live Odoo
 - **Claude Desktop UI:** the server is tested by an MCP client (in memory and as a stdio subprocess
   with a minimal environment: only the variables the MCP client passes by default), not yet from the
   Claude Desktop interface.
-- **Power BI and Tableau:** the [`powerbi/`](powerbi/README.md) folder (documented in French, with an English summary) (star-schema CSV, relationships,
-  DAX measures) **has never been opened in Power BI Desktop** (developed on a Mac). A test recomputes
-  the eight indicators from the CSV, which validates columns and logic, not DAX syntax.
+- **What the agent says is not tested.** Citing sources and not asserting unlisted discrepancies are
+  instructions given to the model, not an enforced constraint. The tests cover the tools' outputs, not
+  the model's answers.
+- **Power BI and Tableau:** the [`powerbi/`](powerbi/README.md) folder (star-schema CSV, relationships,
+  DAX measures; documented in French with an English summary) **has never been opened in Power BI
+  Desktop** (developed on a Mac). A test recomputes the eight indicators from the CSV, which validates
+  columns and logic, not DAX syntax.
 - **Odoo:** a single instance, version 17.0, purchasing module only. No multi-company, no taxes, no
   Odoo receipts (the warehouse is system C).
 - **Exchange rate** is fixed (1 CHF = 1.06 EUR). A real deployment would read daily rates.
