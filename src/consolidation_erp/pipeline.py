@@ -77,8 +77,9 @@ def _lire_odoo(cfg: Config) -> tuple[dict[str, Any], str]:
         raise odoo.ErreurOdoo(
             "Odoo est injoignable et il n'y a pas d'instantané : ./scripts/odoo_up.sh puis consolidation generer"
         )
-    date = dt.datetime.fromtimestamp(cfg.instantane.stat().st_mtime).strftime("%Y-%m-%d")
-    return odoo.lire_instantane(cfg.instantane), f"instantané du {date} (Odoo injoignable)"
+    donnees, exporte_le = odoo.lire_instantane(cfg.instantane)
+    instantane = f"instantané exporté le {exporte_le}" if exporte_le else "instantané"
+    return donnees, f"{instantane} (Odoo injoignable)"
 
 
 def _lire_entrepot(cfg: Config) -> tuple[dict[str, list[dict]], str]:

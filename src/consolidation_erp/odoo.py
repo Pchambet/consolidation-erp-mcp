@@ -147,13 +147,17 @@ def lire(odoo: Modeles) -> dict[str, Any]:
 
 
 def exporter_instantane(donnees: dict[str, Any], chemin: Path) -> Path:
+    """La date d'export est écrite dans le fichier : sa date de modification change à chaque clone."""
     chemin.parent.mkdir(parents=True, exist_ok=True)
-    chemin.write_text(json.dumps(donnees, ensure_ascii=False, indent=1), encoding="utf-8")
+    contenu = {"exporte_le": dt.date.today().isoformat(), **donnees}
+    chemin.write_text(json.dumps(contenu, ensure_ascii=False, indent=1), encoding="utf-8")
     return chemin
 
 
-def lire_instantane(chemin: Path) -> dict[str, Any]:
-    return json.loads(chemin.read_text(encoding="utf-8"))
+def lire_instantane(chemin: Path) -> tuple[dict[str, Any], str | None]:
+    """Rend les données et leur date d'export (None pour un instantané qui ne la porte pas)."""
+    donnees = json.loads(chemin.read_text(encoding="utf-8"))
+    return donnees, donnees.pop("exporte_le", None)
 
 
 # ----------------------------------------------------------------------------------- écriture

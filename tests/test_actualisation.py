@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import json
+
 import duckdb
 import pytest
 
 from consolidation_erp import demo, entrepot
 from consolidation_erp.fec import FecInvalide
-from consolidation_erp.pipeline import actualiser
+from consolidation_erp.pipeline import actualiser, lire_sources
 
 
 def _ids(cfg, regle=None):
@@ -16,6 +18,16 @@ def _ids(cfg, regle=None):
         return {i for (i,) in con.execute("SELECT ecart_id FROM ecarts").fetchall()}
     finally:
         con.close()
+
+
+def test_l_instantane_est_date_par_son_export_et_non_par_le_fichier(cfg):
+    """Un clone récent donne au fichier la date du clone : seule la date écrite à l'export fait foi."""
+    donnees = json.loads(cfg.instantane.read_text(encoding="utf-8"))
+    donnees["exporte_le"] = "2026-09-26"
+    cfg.instantane.write_text(json.dumps(donnees), encoding="utf-8")
+    sources = lire_sources(cfg)
+    assert sources.modes["A"] == "instantané exporté le 2026-09-26 (Odoo injoignable)"
+    assert "exporte_le" not in sources.odoo
 
 
 def test_l_actualisation_est_idempotente(cfg):
