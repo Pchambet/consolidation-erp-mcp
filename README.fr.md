@@ -154,8 +154,10 @@ Puis pour voir le rafraîchissement : « J'ai saisi la facture manquante de la c
 `uv run consolidation tableau-de-bord` écrit une page HTML autonome : tuiles, écarts par contrôle,
 rapprochement en trois voies, où corriger, qui doit agir, et la liste complète. Une seule teinte pour
 les barres, des puces de gravité avec icône et libellé, infobulles, vue tableau, clair et sombre.
+GitHub affiche le code source de la copie versionnée : [la voir rendue](https://htmlpreview.github.io/?https://github.com/Pchambet/consolidation-erp-mcp/blob/main/tableau_de_bord/index.html) (via
+htmlpreview.github.io) ou ouvrir le fichier en local.
 
-![Tableau de bord](docs/tableau_de_bord.png)
+![Tableau de bord : 22 écarts ouverts, 8 de gravité haute, 81,8 % des commandes de plus de 30 jours conformes de bout en bout](docs/tableau_de_bord.png)
 
 **Power BI.** Le dossier [`powerbi/`](powerbi/README.md) contient les CSV du modèle en étoile, les
 relations, les mesures DAX et la table de vérification des chiffres. **Il n'a jamais été ouvert dans

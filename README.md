@@ -122,9 +122,11 @@ BI CSV export by a test.
 indicator tiles, discrepancies per control, the three-way match, which system to fix, which team must
 act, and the full list. Its figures come from the same SQL indicators that the tests recompute from
 the CSV export; the test on the page itself checks the open-discrepancy count and the 22 severity
-markers. The committed copy is [`tableau_de_bord/index.html`](tableau_de_bord/index.html).
+markers. GitHub shows the committed copy, [`tableau_de_bord/index.html`](tableau_de_bord/index.html),
+as source: [view it rendered](https://htmlpreview.github.io/?https://github.com/Pchambet/consolidation-erp-mcp/blob/main/tableau_de_bord/index.html)
+through htmlpreview.github.io, or open the file locally.
 
-<details><summary>Full-page screenshot</summary>
+<details><summary>Full-page screenshot (all 22 discrepancies)</summary>
 
 ![Control dashboard generated from the warehouse: 22 open discrepancies, 8 high severity, 81.8 % of orders older than 30 days clean end to end](docs/tableau_de_bord.png)
 
