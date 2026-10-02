@@ -42,6 +42,7 @@ def test_la_premiere_detection_traverse_les_actualisations(cfg):
     avant = dict(con.execute("SELECT ecart_id, premiere_detection FROM ecarts").fetchall())
     con.close()
     import datetime as dt
+
     actualiser(type(cfg)(**{**cfg.__dict__, "as_of": cfg.as_of + dt.timedelta(days=3)}))
     con = duckdb.connect(str(cfg.entrepot), read_only=True)
     apres = dict(con.execute("SELECT ecart_id, premiere_detection FROM ecarts").fetchall())

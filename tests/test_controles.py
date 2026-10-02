@@ -35,6 +35,7 @@ def test_un_monde_sain_ne_produit_aucun_ecart(tmp_path):
     # on écrit les trois sources du monde sain à la main, sans passer par generer (qui plante)
     from consolidation_erp.erp_c import ecrire_dataset
     from consolidation_erp.odoo import exporter_instantane
+
     fec.ecrire_fec(sain, cfg.fec)
     ecrire_dataset(sain, cfg.dataset_c)
     exporter_instantane(demo.odoo_depuis_monde(sain), cfg.instantane)
@@ -58,7 +59,9 @@ def test_une_fiche_en_double_ne_fait_pas_passer_une_facture_pour_un_mauvais_four
 def test_un_compte_auxiliaire_ambigu_n_est_pas_rattache_au_hasard(actualise):
     con = duckdb.connect(str(actualise.entrepot), read_only=True)
     try:
-        methode, cle = con.execute("SELECT methode, partner_key FROM pont_partenaire WHERE systeme = 'B' AND code = 'F0777'").fetchone()
+        methode, cle = con.execute(
+            "SELECT methode, partner_key FROM pont_partenaire WHERE systeme = 'B' AND code = 'F0777'"
+        ).fetchone()
     finally:
         con.close()
     assert methode == "ambigu" and cle is None

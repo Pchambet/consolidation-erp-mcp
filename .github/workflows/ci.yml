@@ -15,6 +15,7 @@ jobs:
           enable-cache: true
       - run: uv sync --locked
       - run: uv run ruff check .
+      - run: uv run ruff format --check .
       # No Odoo in CI: the 3 tests against a live Odoo are skipped and Odoo is read from the
       # committed snapshot.
       - run: uv run pytest -q

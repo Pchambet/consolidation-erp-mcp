@@ -119,10 +119,16 @@ def page(d: dict[str, Any]) -> str:
     total = ind["ecarts_ouverts"]["valeur"]
     haute = ind["ecarts_gravite_haute"]["valeur"]
 
-    graphique_regles = _barres([
-        (r["libelle"], r["n"], f'{r["libelle"]} : {r["n"]} écart(s), {_n(r["eur"])} € en jeu. Responsable : {r["responsable"]}. {r["action"]}')
-        for r in d["par_regle"]
-    ])
+    graphique_regles = _barres(
+        [
+            (
+                r["libelle"],
+                r["n"],
+                f"{r['libelle']} : {r['n']} écart(s), {_n(r['eur'])} € en jeu. Responsable : {r['responsable']}. {r['action']}",
+            )
+            for r in d["par_regle"]
+        ]
+    )
     table_regles = _table(
         ["Contrôle", "Écarts", "Montant en jeu (€)", "Responsable"],
         [[r["libelle"], r["n"], _n(r["eur"]), r["responsable"]] for r in d["par_regle"]],
@@ -130,7 +136,10 @@ def page(d: dict[str, Any]) -> str:
 
     noms = {"A": "A · Odoo (achats)", "B": "B · Comptabilité (FEC)", "C": "C · Entrepôt (API)"}
     graphique_systemes = _barres(
-        [(noms[s["systeme"]], s["n"], f'{s["n"]} écart(s) citent des enregistrements du système {noms[s["systeme"]]}') for s in d["par_systeme"]],
+        [
+            (noms[s["systeme"]], s["n"], f"{s['n']} écart(s) citent des enregistrements du système {noms[s['systeme']]}")
+            for s in d["par_systeme"]
+        ],
         maximum=total,
     )
     table_systemes = _table(["Système", "Écarts qui le citent"], [[noms[s["systeme"]], s["n"]] for s in d["par_systeme"]])
@@ -146,17 +155,20 @@ def page(d: dict[str, Any]) -> str:
     table_voies = _table(["Étape", "Commandes"], [[l, v] for l, v, _ in etapes])
 
     graphique_resp = _barres(
-        [(r["responsable"], r["n"], f'{r["responsable"]} : {r["n"]} écart(s), {_n(r["eur"])} € en jeu') for r in d["par_responsable"]]
+        [
+            (r["responsable"], r["n"], f"{r['responsable']} : {r['n']} écart(s), {_n(r['eur'])} € en jeu")
+            for r in d["par_responsable"]
+        ]
     )
 
     lignes_ecarts = ""
     for e in d["ecarts"]:
         icone, libelle, couleur = GRAVITES[e["gravite"]]
-        montant = f'{_n(e["montant_eur"], 2)} €' if e["montant_eur"] is not None else "n/a"
+        montant = f"{_n(e['montant_eur'], 2)} €" if e["montant_eur"] is not None else "n/a"
         lignes_ecarts += (
             f'<tr><td><span class="puce"><span class="puce-icone" style="color:{couleur}" aria-hidden="true">{icone}</span>{libelle}</span></td>'
             f'<td>{_e(e["objet"])}</td><td class="texte">{_e(e["resume"])}</td><td class="nombre">{montant}</td>'
-            f'<td>{_e(e["responsable"])}</td><td><code>{_e(e["ecart_id"])}</code></td></tr>'
+            f"<td>{_e(e['responsable'])}</td><td><code>{_e(e['ecart_id'])}</code></td></tr>"
         )
 
     sources = "".join(

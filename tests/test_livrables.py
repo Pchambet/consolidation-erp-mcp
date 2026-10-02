@@ -22,7 +22,7 @@ def test_le_tableau_de_bord_est_autonome_et_affiche_les_bons_chiffres(actualise,
     assert not re.search(r'(src|href)="https?://', page), "la page doit s'ouvrir hors ligne"
     assert "<script src" not in page
     valeurs = {i["cle"]: i["valeur"] for i in entrepot.indicateurs(actualise.entrepot)}
-    assert f'>{valeurs["ecarts_ouverts"]}<' in page
+    assert f">{valeurs['ecarts_ouverts']}<" in page
     assert "prefers-color-scheme: dark" in page and 'data-theme="dark"' in page
     assert page.count('class="puce"') == 22  # une puce de gravité par écart, avec son icône et son libellé
     assert "<details><summary>Voir les données" in page  # la vue tableau existe sous chaque graphique
@@ -30,7 +30,9 @@ def test_le_tableau_de_bord_est_autonome_et_affiche_les_bons_chiffres(actualise,
 
 def test_chaque_gravite_a_une_icone_et_un_libelle_en_plus_de_la_couleur():
     assert {g: (i, l) for g, (i, l, _) in tableau_de_bord.GRAVITES.items()} == {
-        "haute": ("▲", "Haute"), "moyenne": ("◆", "Moyenne"), "basse": ("●", "Basse"),
+        "haute": ("▲", "Haute"),
+        "moyenne": ("◆", "Moyenne"),
+        "basse": ("●", "Basse"),
     }
 
 
@@ -60,16 +62,24 @@ def test_les_indicateurs_recalcules_depuis_les_csv_egalent_ceux_de_l_entrepot(ac
     limite = as_of - dt.timedelta(days=30)
     ecarts, commandes, rap = _csv(tmp_path, "ecarts"), _csv(tmp_path, "fact_commande"), _csv(tmp_path, "rapprochement")
     anciennes = [c for c in commandes if d(c["date_commande"]) < limite]
-    delais = [(d(r["date_facture"]) - d(r["date_commande"])).days for r in rap
-              if r["facturee"] == "1" and d(r["date_facture"]) >= d(r["date_commande"])]
+    delais = [
+        (d(r["date_facture"]) - d(r["date_commande"])).days
+        for r in rap
+        if r["facturee"] == "1" and d(r["date_facture"]) >= d(r["date_commande"])
+    ]
     pont_b = [p for p in _csv(tmp_path, "pont_partenaire") if p["systeme"] == "B"]
     recalcule = {
         "ecarts_ouverts": len(ecarts),
         "ecarts_gravite_haute": sum(e["gravite"] == "haute" for e in ecarts),
         "montant_expose_eur": round(sum(float(e["montant_eur"] or 0) for e in ecarts)),
         "taux_conformite_3_voies": round(100 * sum(c["nb_ecarts"] == "0" for c in anciennes) / len(anciennes), 1),
-        "recu_non_facture_eur": round(sum(float(r["total_eur"]) for r in rap
-                                          if r["recue"] == "1" and r["facturee"] == "0" and d(r["premiere_reception"]) < limite)),
+        "recu_non_facture_eur": round(
+            sum(
+                float(r["total_eur"])
+                for r in rap
+                if r["recue"] == "1" and r["facturee"] == "0" and d(r["premiere_reception"]) < limite
+            )
+        ),
         "delai_commande_facture_jours": round(sum(delais) / len(delais), 1),
         "fournisseurs_fiches_multiples": sum(int(p["fiches_odoo"]) > 1 for p in _csv(tmp_path, "dim_partenaire")),
         "rattachement_compta_pct": round(100 * sum(p["partner_key"] != "" for p in pont_b) / len(pont_b), 1),

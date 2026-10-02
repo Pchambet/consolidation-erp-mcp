@@ -21,11 +21,11 @@ TOLERANCE_QUANTITE = 0.02
 class Regle:
     nom: str
     libelle: str
-    gravite: str          # haute, moyenne, basse
+    gravite: str  # haute, moyenne, basse
     responsable: str
     sql: str
-    gabarit: str          # résumé en français, rempli avec les colonnes de la ligne
-    action: str           # ce qu'il faut faire, et dans quel système
+    gabarit: str  # résumé en français, rempli avec les colonnes de la ligne
+    action: str  # ce qu'il faut faire, et dans quel système
 
 
 AS_OF = "(SELECT as_of FROM parametres)"
@@ -34,7 +34,8 @@ REGLES: list[Regle] = [
     Regle(
         "commande_sans_reception",
         "Commande ancienne sans réception",
-        "moyenne", "Achats",
+        "moyenne",
+        "Achats",
         f"""
         SELECT c.po_ref AS cle, c.po_ref, c.partner_key, c.total_eur AS montant_eur,
                CASE WHEN EXISTS (SELECT 1 FROM fact_facture f WHERE f.po_ref = c.po_ref) THEN 'haute' END AS gravite,
@@ -52,7 +53,8 @@ REGLES: list[Regle] = [
     Regle(
         "reception_sans_commande",
         "Réception qui cite une commande inconnue",
-        "moyenne", "Logistique",
+        "moyenne",
+        "Logistique",
         """
         SELECT r.po_ref AS cle, r.po_ref, r.partner_key, NULL::DOUBLE AS montant_eur, NULL AS gravite,
                r.receipt_ref, r.recu_le,
@@ -66,7 +68,8 @@ REGLES: list[Regle] = [
     Regle(
         "commande_sans_facture",
         "Marchandise reçue depuis plus de 30 jours, jamais facturée",
-        "moyenne", "Comptabilité fournisseurs",
+        "moyenne",
+        "Comptabilité fournisseurs",
         f"""
         SELECT c.po_ref AS cle, c.po_ref, c.partner_key, c.total_eur AS montant_eur, NULL AS gravite,
                date_diff('day', r.recu_le, {AS_OF}) AS jours,
@@ -83,7 +86,8 @@ REGLES: list[Regle] = [
     Regle(
         "facture_en_double",
         "Facture saisie deux fois",
-        "haute", "Comptabilité fournisseurs",
+        "haute",
+        "Comptabilité fournisseurs",
         """
         SELECT po_ref AS cle, po_ref, any_value(partner_key_compta) AS partner_key,
                round(sum(ht_eur) - min(ht_eur), 2) AS montant_eur, NULL AS gravite,
@@ -101,7 +105,8 @@ REGLES: list[Regle] = [
     Regle(
         "facture_avant_commande",
         "Facture antérieure à la commande",
-        "basse", "Achats",
+        "basse",
+        "Achats",
         """
         SELECT c.po_ref AS cle, c.po_ref, c.partner_key, NULL::DOUBLE AS montant_eur, NULL AS gravite,
                f.piece_ref, date_diff('day', f.date_facture, c.date_commande) AS jours,
@@ -116,7 +121,8 @@ REGLES: list[Regle] = [
     Regle(
         "ecart_montant",
         "Montant facturé différent du montant commandé",
-        "moyenne", "Achats",
+        "moyenne",
+        "Achats",
         f"""
         SELECT c.po_ref AS cle, c.po_ref, c.partner_key,
                round(abs(f.ht_devise - c.total_devise) * d.taux_eur, 2) AS montant_eur, NULL AS gravite,
@@ -136,7 +142,8 @@ REGLES: list[Regle] = [
     Regle(
         "devise_incoherente",
         "Devise de la facture différente de celle de la commande",
-        "haute", "Comptabilité fournisseurs",
+        "haute",
+        "Comptabilité fournisseurs",
         """
         SELECT c.po_ref AS cle, c.po_ref, c.partner_key,
                round(f.ht_devise * dd.taux_eur, 2) AS montant_eur, NULL AS gravite,
@@ -154,7 +161,8 @@ REGLES: list[Regle] = [
     Regle(
         "unite_incoherente",
         "Quantité reçue dans une autre unité que la quantité commandée",
-        "haute", "Logistique",
+        "haute",
+        "Logistique",
         f"""
         WITH cmd AS (
             SELECT po_ref, sku, sum(qty_base) AS qty_cmd, sum(qty_ligne) AS qty_ligne, max(facteur_base) AS facteur,
@@ -182,7 +190,8 @@ REGLES: list[Regle] = [
     Regle(
         "ecart_quantite",
         "Quantité reçue différente de la quantité commandée",
-        "moyenne", "Logistique",
+        "moyenne",
+        "Logistique",
         f"""
         WITH cmd AS (
             SELECT po_ref, sku, sum(qty_base) AS qty_cmd, sum(qty_ligne) AS qty_ligne, max(facteur_base) AS facteur,
@@ -210,7 +219,8 @@ REGLES: list[Regle] = [
     Regle(
         "facture_mauvais_fournisseur",
         "Facture inscrite sur le compte d'un autre fournisseur",
-        "haute", "Comptabilité fournisseurs",
+        "haute",
+        "Comptabilité fournisseurs",
         """
         SELECT c.po_ref AS cle, c.po_ref, c.partner_key,
                round(f.ht_eur, 2) AS montant_eur, NULL AS gravite,
@@ -226,7 +236,8 @@ REGLES: list[Regle] = [
     Regle(
         "partenaire_ambigu",
         "Compte auxiliaire dont le nom convient à plusieurs fournisseurs",
-        "basse", "Données de base",
+        "basse",
+        "Données de base",
         """
         SELECT pb.code AS cle, NULL AS po_ref, NULL AS partner_key, NULL::DOUBLE AS montant_eur, NULL AS gravite,
                pb.code AS aux_num, pb.nom AS aux_lib,
@@ -241,7 +252,8 @@ REGLES: list[Regle] = [
     Regle(
         "partenaire_double",
         "Fournisseur présent deux fois dans Odoo",
-        "basse", "Données de base",
+        "basse",
+        "Données de base",
         """
         SELECT replace(pk.partner_key, 'TVA:', '') AS cle, NULL AS po_ref, pk.partner_key, NULL::DOUBLE AS montant_eur, NULL AS gravite,
                replace(pk.partner_key, 'TVA:', '') AS tva, list(pk.code ORDER BY pk.code) AS codes,
@@ -258,7 +270,8 @@ REGLES: list[Regle] = [
     Regle(
         "ecriture_desequilibree",
         "Écriture comptable déséquilibrée",
-        "haute", "Comptabilité fournisseurs",
+        "haute",
+        "Comptabilité fournisseurs",
         """
         SELECT po_ref AS cle, po_ref, partner_key_compta AS partner_key, abs(desequilibre) AS montant_eur, NULL AS gravite,
                ecriture_num, desequilibre,

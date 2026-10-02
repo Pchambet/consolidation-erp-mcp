@@ -13,8 +13,10 @@ from .pipeline import Config, actualiser
 
 def _table(colonnes: list[str], lignes: list[list]) -> str:
     largeurs = [max(len(str(c)), *(len(str(l[i])) for l in lignes)) if lignes else len(str(c)) for i, c in enumerate(colonnes)]
+
     def fmt(l: list) -> str:
         return "  ".join(str(v).ljust(w) for v, w in zip(l, largeurs, strict=True)).rstrip()
+
     return "\n".join([fmt(colonnes), fmt(["-" * w for w in largeurs]), *(fmt(l) for l in lignes)])
 
 
@@ -28,17 +30,32 @@ def _actualiser(cfg: Config, args: argparse.Namespace) -> int:
     print(f"Actualisé en {r['duree_s']} s, date d'arrêté {r['date_d_arret']}")
     for s in r["sources"]:
         print(f"  {s['systeme']}  {s['mode']} : {s['detail']}")
-    print(f"{r['ecarts']} écarts" + ("" if r["premiere_construction"] else f" ({len(r['nouveaux'])} nouveaux, {len(r['resolus'])} résolus)"))
+    print(
+        f"{r['ecarts']} écarts"
+        + ("" if r["premiere_construction"] else f" ({len(r['nouveaux'])} nouveaux, {len(r['resolus'])} résolus)")
+    )
     return 0
 
 
 def _ecarts(cfg: Config, args: argparse.Namespace) -> int:
     r = entrepot.ecarts_ouverts(cfg.entrepot, args.gravite, args.regle, args.limite)
     print(f"{r['total']} écarts" + (f", {r['affiches']} affichés" if r["affiches"] < r["total"] else ""))
-    print(_table(
-        ["id", "gravité", "règle", "commande", "EUR", "constat"],
-        [[e["ecart_id"], e["gravite"], e["regle"], e["po_ref"] or "", e["montant_eur"] if e["montant_eur"] is not None else "", e["resume"]] for e in r["ecarts"]],
-    ))
+    print(
+        _table(
+            ["id", "gravité", "règle", "commande", "EUR", "constat"],
+            [
+                [
+                    e["ecart_id"],
+                    e["gravite"],
+                    e["regle"],
+                    e["po_ref"] or "",
+                    e["montant_eur"] if e["montant_eur"] is not None else "",
+                    e["resume"],
+                ]
+                for e in r["ecarts"]
+            ],
+        )
+    )
     return 0
 
 
@@ -62,7 +79,12 @@ def _requete(cfg: Config, args: argparse.Namespace) -> int:
 
 
 def _indicateurs(cfg: Config, args: argparse.Namespace) -> int:
-    print(_table(["indicateur", "valeur", "unité"], [[i["libelle"], i["valeur"], i["unite"]] for i in entrepot.indicateurs(cfg.entrepot)]))
+    print(
+        _table(
+            ["indicateur", "valeur", "unité"],
+            [[i["libelle"], i["valeur"], i["unite"]] for i in entrepot.indicateurs(cfg.entrepot)],
+        )
+    )
     return 0
 
 
@@ -70,6 +92,7 @@ def _erp_c(cfg: Config, args: argparse.Namespace) -> int:
     import uvicorn
 
     from .erp_c import creer_app
+
     donnees = json.loads(cfg.dataset_c.read_text(encoding="utf-8"))
     print(f"ERP C (simulé) sur http://127.0.0.1:{args.port}, en-tête X-API-Key: demo-key")
     uvicorn.run(creer_app(donnees), host="127.0.0.1", port=args.port, log_level="warning")
@@ -78,12 +101,14 @@ def _erp_c(cfg: Config, args: argparse.Namespace) -> int:
 
 def _tableau_de_bord(cfg: Config, args: argparse.Namespace) -> int:
     from .tableau_de_bord import ecrire
+
     print(ecrire(cfg, args.sortie))
     return 0
 
 
 def _exporter_bi(cfg: Config, args: argparse.Namespace) -> int:
     from .export_bi import exporter
+
     for chemin in exporter(cfg, args.sortie):
         print(chemin)
     return 0

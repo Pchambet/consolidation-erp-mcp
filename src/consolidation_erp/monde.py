@@ -26,13 +26,40 @@ TAUX_CHF_EUR = 1.06  # 1 CHF vaut 1,06 EUR, taux fixe de la maquette
 TVA_FR = 0.20
 
 _TOPONYMES = [
-    "Léman", "Jura", "Salève", "Arve", "Rhône", "Chablais", "Faucigny", "Aravis",
-    "Vuache", "Bornes", "Genevois", "Annecy", "Valserine", "Vercors", "Bauges", "Mont-Blanc",
+    "Léman",
+    "Jura",
+    "Salève",
+    "Arve",
+    "Rhône",
+    "Chablais",
+    "Faucigny",
+    "Aravis",
+    "Vuache",
+    "Bornes",
+    "Genevois",
+    "Annecy",
+    "Valserine",
+    "Vercors",
+    "Bauges",
+    "Mont-Blanc",
 ]
 _METIERS = [
-    "Mécanique", "Emballages", "Logistique", "Outillage", "Plastiques", "Fixations",
-    "Textiles", "Papeterie", "Chimie", "Électronique", "Câblage", "Fonderie",
-    "Usinage", "Conditionnement", "Manutention", "Étiquettes",
+    "Mécanique",
+    "Emballages",
+    "Logistique",
+    "Outillage",
+    "Plastiques",
+    "Fixations",
+    "Textiles",
+    "Papeterie",
+    "Chimie",
+    "Électronique",
+    "Câblage",
+    "Fonderie",
+    "Usinage",
+    "Conditionnement",
+    "Manutention",
+    "Étiquettes",
 ]
 _FORMES_FR = ["SA", "SARL", "SAS"]
 _FORMES_CH = ["SA", "Sàrl", "AG"]
@@ -87,23 +114,23 @@ def _pointer(nom: str) -> str:
 
 @dataclass
 class Partenaire:
-    ref: str            # code dans Odoo, identique au compte auxiliaire de la comptabilité
-    nom: str            # nom dans Odoo
+    ref: str  # code dans Odoo, identique au compte auxiliaire de la comptabilité
+    nom: str  # nom dans Odoo
     vat: str
-    pays: str           # FR ou CH
-    devise: str         # EUR ou CHF
-    code_c: str         # code dans l'entrepôt
+    pays: str  # FR ou CH
+    devise: str  # EUR ou CHF
+    code_c: str  # code dans l'entrepôt
     nom_c: str
     coef_prix: float
-    lib_b: str          # libellé du compte auxiliaire en comptabilité
+    lib_b: str  # libellé du compte auxiliaire en comptabilité
 
 
 @dataclass
 class Produit:
     sku: str
     nom: str
-    unite_achat: str    # « Units » ou « Dozens »
-    prix_base: float    # par pièce, en EUR
+    unite_achat: str  # « Units » ou « Dozens »
+    prix_base: float  # par pièce, en EUR
 
     @property
     def facteur(self) -> int:
@@ -113,7 +140,7 @@ class Produit:
 @dataclass
 class Ligne:
     sku: str
-    qty: float          # dans l'unité de la ligne
+    qty: float  # dans l'unité de la ligne
     unite: str
     prix_unitaire: float  # par unité de la ligne, dans la devise de la commande
 
@@ -163,7 +190,7 @@ class Ecart:
 @dataclass
 class Monde:
     partenaires: list[Partenaire]
-    doublons_odoo: list[Partenaire]   # mêmes numéros de TVA, deuxième fiche dans Odoo
+    doublons_odoo: list[Partenaire]  # mêmes numéros de TVA, deuxième fiche dans Odoo
     produits: list[Produit]
     commandes: list[Commande]
     receptions: list[Reception]
@@ -184,6 +211,7 @@ class Monde:
 
 
 # ------------------------------------------------------------------ fabrication du monde sain
+
 
 def _partenaires(rng: random.Random) -> list[Partenaire]:
     combinaisons = [(t, m) for t in _TOPONYMES for m in _METIERS]
@@ -226,9 +254,7 @@ def _produits() -> list[Produit]:
     return [Produit(*p) for p in _PRODUITS]
 
 
-def _commandes(
-    rng: random.Random, partenaires: list[Partenaire], produits: list[Produit]
-) -> list[Commande]:
+def _commandes(rng: random.Random, partenaires: list[Partenaire], produits: list[Produit]) -> list[Commande]:
     debut, fin = dt.date(2026, 3, 2), dt.date(2026, 9, 14)
     jours = (fin - debut).days
     dates = sorted(debut + dt.timedelta(days=rng.randint(0, jours)) for _ in range(110))
@@ -297,6 +323,7 @@ def _numeroter(receptions: list[Reception], factures: list[Facture]) -> None:
 
 # ------------------------------------------------------------------ les écarts plantés
 
+
 def _planter(rng: random.Random, m: Monde) -> None:
     verite = m.verite_terrain
     cmd = {c.ref: c for c in m.commandes}
@@ -355,8 +382,7 @@ def _planter(rng: random.Random, m: Monde) -> None:
     #    ressembleraient à des factures sur le mauvais fournisseur. On choisit ceux qui ont le
     #    plus de commandes récentes, pour que la démonstration ait de la matière.
     compte = Counter(
-        c.partenaire_ref for c in anciens
-        if c.ref not in pris and fr(c) and c.partenaire_ref not in (base.ref, jumeau.ref)
+        c.partenaire_ref for c in anciens if c.ref not in pris and fr(c) and c.partenaire_ref not in (base.ref, jumeau.ref)
     )
     for k, (ref, _) in enumerate(compte.most_common(2)):
         orig = m.partenaire(ref)
@@ -397,7 +423,9 @@ def _planter(rng: random.Random, m: Monde) -> None:
     # 6. Facture saisie deux fois.
     for c in prendre(2):
         f = fac[c.ref]
-        m.factures.append(Facture(0, f.piece_ref, f.po_ref, f.date + dt.timedelta(days=2), f.aux, f.lib_b, f.ht_devise, f.devise, f.avec_tva))
+        m.factures.append(
+            Facture(0, f.piece_ref, f.po_ref, f.date + dt.timedelta(days=2), f.aux, f.lib_b, f.ht_devise, f.devise, f.avec_tva)
+        )
         verite.append(Ecart("facture_en_double", c.ref, f"facture {f.piece_ref} saisie deux fois"))
 
     # 7. Facture antérieure à la commande.
@@ -425,7 +453,13 @@ def _planter(rng: random.Random, m: Monde) -> None:
         for lr in r.lignes:
             if lr[0] == ligne_dz.sku:
                 lr[1] = ligne_dz.qty
-        verite.append(Ecart("unite_incoherente", c.ref, f"{ligne_dz.sku} : {ligne_dz.qty:g} douzaines commandées, {ligne_dz.qty:g} pièces reçues"))
+        verite.append(
+            Ecart(
+                "unite_incoherente",
+                c.ref,
+                f"{ligne_dz.sku} : {ligne_dz.qty:g} douzaines commandées, {ligne_dz.qty:g} pièces reçues",
+            )
+        )
 
     # 11. Livraison incomplète.
     for c in prendre(2, lambda c: not a_douzaines(c) and fr(c)):

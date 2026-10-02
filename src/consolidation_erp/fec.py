@@ -17,9 +17,24 @@ from pathlib import Path
 from .monde import TAUX_CHF_EUR, TVA_FR, Facture, Monde
 
 COLONNES = [
-    "JournalCode", "JournalLib", "EcritureNum", "EcritureDate", "CompteNum", "CompteLib",
-    "CompAuxNum", "CompAuxLib", "PieceRef", "PieceDate", "EcritureLib", "Debit", "Credit",
-    "EcritureLet", "DateLet", "ValidDate", "Montantdevise", "Idevise",
+    "JournalCode",
+    "JournalLib",
+    "EcritureNum",
+    "EcritureDate",
+    "CompteNum",
+    "CompteLib",
+    "CompAuxNum",
+    "CompAuxLib",
+    "PieceRef",
+    "PieceDate",
+    "EcritureLib",
+    "Debit",
+    "Credit",
+    "EcritureLet",
+    "DateLet",
+    "ValidDate",
+    "Montantdevise",
+    "Idevise",
 ]
 NOM_FICHIER = "123456789FEC20261231.txt"
 
@@ -44,16 +59,26 @@ def lignes_de_facture(f: Facture) -> list[dict[str, str]]:
     ttc = round(ht + tva, 2)
     devise = {"Montantdevise": _montant(f.ht_devise), "Idevise": f.devise} if etrangere else {"Montantdevise": "", "Idevise": ""}
 
-    def ligne(compte: str, libelle_compte: str, debit: float, credit: float, aux: bool = False, avec_devise: bool = False) -> dict[str, str]:
+    def ligne(
+        compte: str, libelle_compte: str, debit: float, credit: float, aux: bool = False, avec_devise: bool = False
+    ) -> dict[str, str]:
         return {
-            "JournalCode": "HA", "JournalLib": "Journal des achats",
-            "EcritureNum": str(f.ecriture_num), "EcritureDate": _date(f.date),
-            "CompteNum": compte, "CompteLib": libelle_compte,
-            "CompAuxNum": f.aux if aux else "", "CompAuxLib": f.lib_b if aux else "",
-            "PieceRef": f.piece_ref, "PieceDate": _date(f.date),
+            "JournalCode": "HA",
+            "JournalLib": "Journal des achats",
+            "EcritureNum": str(f.ecriture_num),
+            "EcritureDate": _date(f.date),
+            "CompteNum": compte,
+            "CompteLib": libelle_compte,
+            "CompAuxNum": f.aux if aux else "",
+            "CompAuxLib": f.lib_b if aux else "",
+            "PieceRef": f.piece_ref,
+            "PieceDate": _date(f.date),
             "EcritureLib": f"Facture {f.piece_ref} {f.po_ref} {f.lib_b}",
-            "Debit": _montant(debit), "Credit": _montant(credit),
-            "EcritureLet": "", "DateLet": "", "ValidDate": _date(f.date),
+            "Debit": _montant(debit),
+            "Credit": _montant(credit),
+            "EcritureLet": "",
+            "DateLet": "",
+            "ValidDate": _date(f.date),
             **(devise if avec_devise else {"Montantdevise": "", "Idevise": ""}),
         }
 

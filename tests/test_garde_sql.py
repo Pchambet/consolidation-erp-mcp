@@ -16,19 +16,22 @@ def test_un_select_normal_passe(actualise):
     assert r["colonnes"] == ["regle", "n"] and r["lignes"] and not r["tronque"]
 
 
-@pytest.mark.parametrize("sql", [
-    "DROP TABLE ecarts",
-    "DELETE FROM ecarts",
-    "INSERT INTO ecarts SELECT * FROM ecarts",
-    "UPDATE ecarts SET gravite = 'basse'",
-    "CREATE TABLE x AS SELECT 1",
-    "ATTACH 'autre.duckdb'",
-    "COPY ecarts TO '/tmp/x.csv'",
-    "PRAGMA database_list",
-    "INSTALL httpfs",
-    "SELECT getenv('HOME')",
-    "SELECT * FROM read_csv('/etc/passwd')",
-])
+@pytest.mark.parametrize(
+    "sql",
+    [
+        "DROP TABLE ecarts",
+        "DELETE FROM ecarts",
+        "INSERT INTO ecarts SELECT * FROM ecarts",
+        "UPDATE ecarts SET gravite = 'basse'",
+        "CREATE TABLE x AS SELECT 1",
+        "ATTACH 'autre.duckdb'",
+        "COPY ecarts TO '/tmp/x.csv'",
+        "PRAGMA database_list",
+        "INSTALL httpfs",
+        "SELECT getenv('HOME')",
+        "SELECT * FROM read_csv('/etc/passwd')",
+    ],
+)
 def test_les_ecritures_et_les_acces_externes_sont_refuses(actualise, sql):
     with pytest.raises(RequeteRefusee):
         requete_lecture_seule(actualise.entrepot, sql)

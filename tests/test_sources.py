@@ -12,6 +12,7 @@ from fake_odoo import FauxOdoo
 
 # ------------------------------------------------------------------ B : le FEC
 
+
 def test_le_fec_est_ecrit_en_cp1252_avec_virgule_decimale(monde, tmp_path):
     chemin = fec.ecrire_fec(monde, tmp_path / "fec.txt")
     brut = chemin.read_bytes()
@@ -48,6 +49,7 @@ def test_un_fec_en_utf8_avec_separateur_pipe_se_lit_aussi(monde, tmp_path):
 
 # ------------------------------------------------------------------ C : l'API REST
 
+
 def test_l_api_refuse_une_cle_absente_ou_fausse(monde):
     client = TestClient(creer_app(dataset(monde)))
     assert client.get("/api/v1/receipts").status_code == 401
@@ -73,14 +75,18 @@ def test_le_client_reessaie_sur_429_puis_reussit():
         appels["n"] += 1
         if appels["n"] < 3:
             return httpx.Response(429)
-        return httpx.Response(200, json={"data": [{"sku": "X"}], "meta": {"page": 1, "per_page": 50, "total": 1, "total_pages": 1}})
+        return httpx.Response(
+            200, json={"data": [{"sku": "X"}], "meta": {"page": 1, "per_page": 50, "total": 1, "total_pages": 1}}
+        )
 
     client = ClientErpC(httpx.Client(transport=httpx.MockTransport(handler), base_url="http://c"), attente=0)
     assert client.tout("items") == [{"sku": "X"}] and appels["n"] == 3
 
 
 def test_le_client_abandonne_apres_trois_erreurs_serveur():
-    client = ClientErpC(httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(503)), base_url="http://c"), attente=0)
+    client = ClientErpC(
+        httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(503)), base_url="http://c"), attente=0
+    )
     with pytest.raises(ErreurErpC, match="indisponible"):
         client.tout("items")
 
@@ -96,6 +102,7 @@ def test_le_client_detecte_un_total_incoherent():
 
 # ------------------------------------------------------------------ A : le lecteur Odoo
 
+
 def test_le_lecteur_odoo_convertit_les_unites_et_pagine(monde, monkeypatch):
     monkeypatch.setattr(odoo, "TAILLE_PAGE", 20)  # 110 commandes : plusieurs pages
     faux = FauxOdoo(monde)
@@ -110,8 +117,11 @@ def test_le_lecteur_odoo_convertit_les_unites_et_pagine(monde, monkeypatch):
 
 def test_un_mauvais_mot_de_passe_est_dit_clairement(monkeypatch):
     class Commun:
-        def authenticate(self, *a): return False
-        def version(self): return {"server_version": "17.0"}
+        def authenticate(self, *a):
+            return False
+
+        def version(self):
+            return {"server_version": "17.0"}
 
     monkeypatch.setattr(odoo.xmlrpc.client, "ServerProxy", lambda *a, **k: Commun())
     with pytest.raises(odoo.ErreurOdoo, match="authentification refusée"):

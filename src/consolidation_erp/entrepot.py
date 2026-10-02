@@ -57,6 +57,7 @@ CREATE TABLE sources_meta(systeme VARCHAR, mode VARCHAR, lignes INTEGER, detail 
 @dataclass
 class Sources:
     """Ce que la consolidation a lu, système par système, avec la manière dont chacun a été lu."""
+
     odoo: dict[str, Any]
     fec: list[dict]
     entrepot: dict[str, list[dict]]
@@ -65,24 +66,67 @@ class Sources:
 
 def _charger(con: duckdb.DuckDBPyConnection, s: Sources) -> None:
     a, c = s.odoo, s.entrepot
-    con.executemany("INSERT INTO stg_a_partner VALUES (?,?,?,?,?)", [(p["id"], p["ref"], p["name"], p["vat"], p["write_date"]) for p in a["partners"]])
-    con.executemany("INSERT INTO stg_a_product VALUES (?,?,?,?)", [(p["id"], p["sku"], p["name"], p["uom_achat"]) for p in a["products"]])
+    con.executemany(
+        "INSERT INTO stg_a_partner VALUES (?,?,?,?,?)",
+        [(p["id"], p["ref"], p["name"], p["vat"], p["write_date"]) for p in a["partners"]],
+    )
+    con.executemany(
+        "INSERT INTO stg_a_product VALUES (?,?,?,?)", [(p["id"], p["sku"], p["name"], p["uom_achat"]) for p in a["products"]]
+    )
     con.executemany(
         "INSERT INTO stg_a_order VALUES (?,?,?,?,?,?,?,?)",
-        [(o["id"], o["name"], o["partner_id"], o["date_order"], o["currency"], o["amount_untaxed"], o["state"], o["write_date"]) for o in a["orders"]],
+        [
+            (
+                o["id"],
+                o["name"],
+                o["partner_id"],
+                o["date_order"],
+                o["currency"],
+                o["amount_untaxed"],
+                o["state"],
+                o["write_date"],
+            )
+            for o in a["orders"]
+        ],
     )
     con.executemany(
         "INSERT INTO stg_a_order_line VALUES (?,?,?,?,?,?,?)",
-        [(l["id"], o["id"], l["sku"], l["qty"], l["uom"], l["facteur_base"], l["price_unit"]) for o in a["orders"] for l in o["lines"]],
+        [
+            (l["id"], o["id"], l["sku"], l["qty"], l["uom"], l["facteur_base"], l["price_unit"])
+            for o in a["orders"]
+            for l in o["lines"]
+        ],
     )
     con.executemany(
         "INSERT INTO stg_b_ecriture VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
-        [(e["ecriture_num"], e["journal"], e["date"], e["compte"], e["aux_num"], e["aux_lib"], e["piece_ref"], e["libelle"],
-          e["debit"], e["credit"], e["montant_devise"], e["idevise"], e["ligne_fichier"]) for e in s.fec],
+        [
+            (
+                e["ecriture_num"],
+                e["journal"],
+                e["date"],
+                e["compte"],
+                e["aux_num"],
+                e["aux_lib"],
+                e["piece_ref"],
+                e["libelle"],
+                e["debit"],
+                e["credit"],
+                e["montant_devise"],
+                e["idevise"],
+                e["ligne_fichier"],
+            )
+            for e in s.fec
+        ],
     )
-    con.executemany("INSERT INTO stg_c_supplier VALUES (?,?,?,?,?)", [(x["code"], x["name"], x["vat"], x["country"], x["updated_at"]) for x in c["suppliers"]])
+    con.executemany(
+        "INSERT INTO stg_c_supplier VALUES (?,?,?,?,?)",
+        [(x["code"], x["name"], x["vat"], x["country"], x["updated_at"]) for x in c["suppliers"]],
+    )
     con.executemany("INSERT INTO stg_c_item VALUES (?,?,?)", [(x["sku"], x["name"], x["base_unit"]) for x in c["items"]])
-    con.executemany("INSERT INTO stg_c_receipt VALUES (?,?,?,?)", [(r["receipt_ref"], r["po_ref"], r["supplier_code"], r["received_at"]) for r in c["receipts"]])
+    con.executemany(
+        "INSERT INTO stg_c_receipt VALUES (?,?,?,?)",
+        [(r["receipt_ref"], r["po_ref"], r["supplier_code"], r["received_at"]) for r in c["receipts"]],
+    )
     con.executemany(
         "INSERT INTO stg_c_receipt_line VALUES (?,?,?,?)",
         [(r["receipt_ref"], l["sku"], l["qty"], l["unit"]) for r in c["receipts"] for l in r["lines"]],
@@ -92,11 +136,19 @@ def _charger(con: duckdb.DuckDBPyConnection, s: Sources) -> None:
             raise ValueError(f"l'entrepôt a livré une unité inconnue : {l['unit']!r} (attendu : pce)")
     maintenant = dt.datetime.now().replace(microsecond=0)
     meta = [
-        ("A", s.modes["A"], len(a["orders"]) + len(a["partners"]) + len(a["products"]),
-         f"{len(a['partners'])} fournisseurs, {len(a['products'])} produits, {len(a['orders'])} commandes"),
+        (
+            "A",
+            s.modes["A"],
+            len(a["orders"]) + len(a["partners"]) + len(a["products"]),
+            f"{len(a['partners'])} fournisseurs, {len(a['products'])} produits, {len(a['orders'])} commandes",
+        ),
         ("B", s.modes["B"], len(s.fec), f"{len(s.fec)} écritures du journal des achats"),
-        ("C", s.modes["C"], len(c["receipts"]) + len(c["suppliers"]) + len(c["items"]),
-         f"{len(c['suppliers'])} fournisseurs, {len(c['items'])} articles, {len(c['receipts'])} réceptions"),
+        (
+            "C",
+            s.modes["C"],
+            len(c["receipts"]) + len(c["suppliers"]) + len(c["items"]),
+            f"{len(c['suppliers'])} fournisseurs, {len(c['items'])} articles, {len(c['receipts'])} réceptions",
+        ),
     ]
     con.executemany("INSERT INTO sources_meta VALUES (?,?,?,?,?)", [(*m, maintenant) for m in meta])
 
@@ -122,9 +174,17 @@ def _ecarts(con: duckdb.DuckDBPyConnection, as_of: dt.date, deja_vus: dict[str, 
             con.execute(
                 "INSERT INTO ecarts VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 [
-                    ecart_id, regle.nom, regle.libelle, ligne.get("gravite") or regle.gravite, regle.responsable,
-                    ligne["cle"], ligne.get("po_ref"), ligne.get("partner_key"),
-                    ligne.get("montant_eur"), _resume(regle, ligne), regle.action,
+                    ecart_id,
+                    regle.nom,
+                    regle.libelle,
+                    ligne.get("gravite") or regle.gravite,
+                    regle.responsable,
+                    ligne["cle"],
+                    ligne.get("po_ref"),
+                    ligne.get("partner_key"),
+                    ligne.get("montant_eur"),
+                    _resume(regle, ligne),
+                    regle.action,
                     ligne["detail"] if isinstance(ligne["detail"], str) else json.dumps(ligne["detail"]),
                     deja_vus.get(ecart_id, as_of),
                 ],
@@ -154,7 +214,9 @@ def construire(chemin: Path, sources: Sources, as_of: dt.date) -> dict[str, Any]
     con = duckdb.connect(str(suivant))
     try:
         con.execute("CREATE TABLE parametres AS SELECT ?::DATE AS as_of", [as_of])
-        con.execute("CREATE TABLE dim_devise AS SELECT * FROM (VALUES ('EUR', 1.0), ('CHF', ?)) t(devise, taux_eur)", [TAUX_CHF_EUR])
+        con.execute(
+            "CREATE TABLE dim_devise AS SELECT * FROM (VALUES ('EUR', 1.0), ('CHF', ?)) t(devise, taux_eur)", [TAUX_CHF_EUR]
+        )
         con.execute(SCHEMA_STAGING)
         con.execute(SCHEMA_ECARTS)
         _charger(con, sources)
@@ -169,15 +231,22 @@ def construire(chemin: Path, sources: Sources, as_of: dt.date) -> dict[str, Any]
         raise
     con.close()
     os.replace(suivant, chemin)
-    return {"ecarts": compte, "nouveaux": sorted(apres - avant), "resolus": sorted(avant - apres), "premiere_construction": not avant}
+    return {
+        "ecarts": compte,
+        "nouveaux": sorted(apres - avant),
+        "resolus": sorted(avant - apres),
+        "premiere_construction": not avant,
+    }
 
 
 # ------------------------------------------------------------------------------------------ lecture
 
+
 def ouvrir_lecture(chemin: Path) -> duckdb.DuckDBPyConnection:
     """Une connexion en lecture seule, sans accès aux fichiers ni au réseau, configuration verrouillée."""
     return duckdb.connect(
-        str(chemin), read_only=True,
+        str(chemin),
+        read_only=True,
         config={"enable_external_access": False, "lock_configuration": True},
     )
 
@@ -285,7 +354,9 @@ def expliquer_ecart(chemin: Path, ecart_id: str) -> dict[str, Any]:
         if rapprochement:
             contexte["rapprochement_en_trois_voies"] = rapprochement[0]
     if e["partner_key"]:
-        p = _lignes(chemin, "SELECT nom, identifiant, pays, fiches_odoo FROM dim_partenaire WHERE partner_key = ?", [e["partner_key"]])
+        p = _lignes(
+            chemin, "SELECT nom, identifiant, pays, fiches_odoo FROM dim_partenaire WHERE partner_key = ?", [e["partner_key"]]
+        )
         if p:
             contexte["fournisseur"] = p[0]
     return {
@@ -307,34 +378,66 @@ def expliquer_ecart(chemin: Path, ecart_id: str) -> dict[str, Any]:
 
 
 INDICATEURS: list[dict[str, str]] = [
-    dict(cle="ecarts_ouverts", libelle="Écarts ouverts", unite="nombre",
-         definition="Nombre d'écarts détectés par les contrôles à la dernière actualisation.",
-         sql="SELECT count(*) FROM ecarts"),
-    dict(cle="ecarts_gravite_haute", libelle="Écarts de gravité haute", unite="nombre",
-         definition="Écarts qui peuvent déclencher un mauvais paiement : facture en double, mauvais fournisseur, devise, unité.",
-         sql="SELECT count(*) FROM ecarts WHERE gravite = 'haute'"),
-    dict(cle="montant_expose_eur", libelle="Montant exposé", unite="EUR",
-         definition="Somme des montants en jeu des écarts, convertis en EUR au taux fixe de la maquette. Un même montant peut figurer dans plusieurs écarts.",
-         sql="SELECT round(coalesce(sum(montant_eur), 0)) FROM ecarts"),
-    dict(cle="taux_conformite_3_voies", libelle="Commandes conformes de bout en bout", unite="%",
-         definition="Part des commandes de plus de 30 jours sans aucun écart entre commande, réception et facture.",
-         sql="""SELECT round(100.0 * (1 - count(DISTINCT e.po_ref) / count(DISTINCT c.po_ref)), 1)
+    dict(
+        cle="ecarts_ouverts",
+        libelle="Écarts ouverts",
+        unite="nombre",
+        definition="Nombre d'écarts détectés par les contrôles à la dernière actualisation.",
+        sql="SELECT count(*) FROM ecarts",
+    ),
+    dict(
+        cle="ecarts_gravite_haute",
+        libelle="Écarts de gravité haute",
+        unite="nombre",
+        definition="Écarts qui peuvent déclencher un mauvais paiement : facture en double, mauvais fournisseur, devise, unité.",
+        sql="SELECT count(*) FROM ecarts WHERE gravite = 'haute'",
+    ),
+    dict(
+        cle="montant_expose_eur",
+        libelle="Montant exposé",
+        unite="EUR",
+        definition="Somme des montants en jeu des écarts, convertis en EUR au taux fixe de la maquette. Un même montant peut figurer dans plusieurs écarts.",
+        sql="SELECT round(coalesce(sum(montant_eur), 0)) FROM ecarts",
+    ),
+    dict(
+        cle="taux_conformite_3_voies",
+        libelle="Commandes conformes de bout en bout",
+        unite="%",
+        definition="Part des commandes de plus de 30 jours sans aucun écart entre commande, réception et facture.",
+        sql="""SELECT round(100.0 * (1 - count(DISTINCT e.po_ref) / count(DISTINCT c.po_ref)), 1)
                 FROM fact_commande c LEFT JOIN ecarts e ON e.po_ref = c.po_ref
-                WHERE c.date_commande < (SELECT as_of FROM parametres) - INTERVAL 30 DAY"""),
-    dict(cle="recu_non_facture_eur", libelle="Reçu depuis plus de 30 jours et non facturé", unite="EUR",
-         definition="Montant des commandes dont la marchandise est arrivée depuis plus de 30 jours et qui n'ont aucune facture : la charge à provisionner.",
-         sql="""SELECT round(coalesce(sum(total_eur), 0)) FROM v_rapprochement
-                WHERE recue AND NOT facturee AND premiere_reception < (SELECT as_of FROM parametres) - INTERVAL 30 DAY"""),
-    dict(cle="delai_commande_facture_jours", libelle="Délai moyen commande à facture", unite="jours",
-         definition="Moyenne, sur les commandes facturées, du nombre de jours entre la date de commande et la date de facture.",
-         sql="""SELECT round(avg(date_diff('day', date_commande, date_facture)), 1) FROM v_rapprochement
-                WHERE facturee AND date_facture >= date_commande"""),
-    dict(cle="fournisseurs_fiches_multiples", libelle="Fournisseurs à fiches multiples dans Odoo", unite="nombre",
-         definition="Fournisseurs (un numéro de TVA) présents sous plusieurs codes dans Odoo.",
-         sql="SELECT count(*) FROM dim_partenaire WHERE fiches_odoo > 1"),
-    dict(cle="rattachement_compta_pct", libelle="Comptes auxiliaires rattachés sans ambiguïté", unite="%",
-         definition="Part des comptes fournisseurs de la comptabilité que l'on sait rattacher à un fournisseur, par code ou par nom unique.",
-         sql="SELECT round(100.0 * count(*) FILTER (WHERE partner_key IS NOT NULL) / count(*), 1) FROM pont_partenaire WHERE systeme = 'B'"),
+                WHERE c.date_commande < (SELECT as_of FROM parametres) - INTERVAL 30 DAY""",
+    ),
+    dict(
+        cle="recu_non_facture_eur",
+        libelle="Reçu depuis plus de 30 jours et non facturé",
+        unite="EUR",
+        definition="Montant des commandes dont la marchandise est arrivée depuis plus de 30 jours et qui n'ont aucune facture : la charge à provisionner.",
+        sql="""SELECT round(coalesce(sum(total_eur), 0)) FROM v_rapprochement
+                WHERE recue AND NOT facturee AND premiere_reception < (SELECT as_of FROM parametres) - INTERVAL 30 DAY""",
+    ),
+    dict(
+        cle="delai_commande_facture_jours",
+        libelle="Délai moyen commande à facture",
+        unite="jours",
+        definition="Moyenne, sur les commandes facturées, du nombre de jours entre la date de commande et la date de facture.",
+        sql="""SELECT round(avg(date_diff('day', date_commande, date_facture)), 1) FROM v_rapprochement
+                WHERE facturee AND date_facture >= date_commande""",
+    ),
+    dict(
+        cle="fournisseurs_fiches_multiples",
+        libelle="Fournisseurs à fiches multiples dans Odoo",
+        unite="nombre",
+        definition="Fournisseurs (un numéro de TVA) présents sous plusieurs codes dans Odoo.",
+        sql="SELECT count(*) FROM dim_partenaire WHERE fiches_odoo > 1",
+    ),
+    dict(
+        cle="rattachement_compta_pct",
+        libelle="Comptes auxiliaires rattachés sans ambiguïté",
+        unite="%",
+        definition="Part des comptes fournisseurs de la comptabilité que l'on sait rattacher à un fournisseur, par code ou par nom unique.",
+        sql="SELECT round(100.0 * count(*) FILTER (WHERE partner_key IS NOT NULL) / count(*), 1) FROM pont_partenaire WHERE systeme = 'B'",
+    ),
 ]
 
 
@@ -361,7 +464,7 @@ def decrire_modele(chemin: Path) -> dict[str, Any]:
     return {
         "tables": lignes,
         "usage": "Dimensions : dim_*. Faits : fact_*. pont_partenaire relie les codes de chaque système à un fournisseur. "
-                 "v_rapprochement donne la vue commande, réception, facture. ecarts liste les écarts. Les tables stg_* sont les données brutes lues dans chaque système.",
+        "v_rapprochement donne la vue commande, réception, facture. ecarts liste les écarts. Les tables stg_* sont les données brutes lues dans chaque système.",
     }
 
 

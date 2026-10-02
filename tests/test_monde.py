@@ -28,7 +28,11 @@ def test_le_monde_sain_ne_plante_rien():
 def test_aucune_commande_plantee_ne_sert_deux_fois(monde):
     # deux écarts de commande ne visent jamais la même commande : chaque écart planté est isolé,
     # sans quoi on ne saurait pas dire lequel un contrôle a trouvé
-    cles = [e.cle for e in monde.verite_terrain if e.regle not in ("partenaire_double", "partenaire_ambigu", "reception_sans_commande")]
+    cles = [
+        e.cle
+        for e in monde.verite_terrain
+        if e.regle not in ("partenaire_double", "partenaire_ambigu", "reception_sans_commande")
+    ]
     assert len(cles) == len(set(cles))
 
 

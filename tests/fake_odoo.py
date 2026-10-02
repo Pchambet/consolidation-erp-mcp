@@ -18,8 +18,12 @@ class FauxOdoo:
             ],
             "res.partner": [{**p, "supplier_rank": 1} for p in d["partners"]],
             "product.product": [
-                {"id": p["id"], "default_code": p["sku"], "name": p["name"],
-                 "uom_po_id": (2 if p["uom_achat"] == "Dozens" else 1, p["uom_achat"])}
+                {
+                    "id": p["id"],
+                    "default_code": p["sku"],
+                    "name": p["name"],
+                    "uom_po_id": (2 if p["uom_achat"] == "Dozens" else 1, p["uom_achat"]),
+                }
                 for p in d["products"]
             ],
             "purchase.order": [],
@@ -28,15 +32,28 @@ class FauxOdoo:
         sku_id = {p["sku"]: p["id"] for p in d["products"]}
         for o in d["orders"]:
             self.tables["purchase.order"].append(
-                {"id": o["id"], "name": o["name"], "partner_id": (o["partner_id"], "x"), "date_order": o["date_order"],
-                 "currency_id": (1, o["currency"]), "amount_untaxed": o["amount_untaxed"], "state": o["state"],
-                 "write_date": o["write_date"], "order_line": [l["id"] for l in o["lines"]]}
+                {
+                    "id": o["id"],
+                    "name": o["name"],
+                    "partner_id": (o["partner_id"], "x"),
+                    "date_order": o["date_order"],
+                    "currency_id": (1, o["currency"]),
+                    "amount_untaxed": o["amount_untaxed"],
+                    "state": o["state"],
+                    "write_date": o["write_date"],
+                    "order_line": [l["id"] for l in o["lines"]],
+                }
             )
             for l in o["lines"]:
                 self.tables["purchase.order.line"].append(
-                    {"id": l["id"], "order_id": (o["id"], o["name"]), "product_id": (sku_id[l["sku"]], l["sku"]),
-                     "product_qty": l["qty"], "product_uom": (2 if l["uom"] == "Dozens" else 1, l["uom"]),
-                     "price_unit": l["price_unit"]}
+                    {
+                        "id": l["id"],
+                        "order_id": (o["id"], o["name"]),
+                        "product_id": (sku_id[l["sku"]], l["sku"]),
+                        "product_qty": l["qty"],
+                        "product_uom": (2 if l["uom"] == "Dozens" else 1, l["uom"]),
+                        "price_unit": l["price_unit"],
+                    }
                 )
         self.appels = 0
 

@@ -30,15 +30,36 @@ def odoo_depuis_monde(monde: Monde) -> dict[str, Any]:
         lignes = []
         for l in c.lignes:
             n_ligne += 1
-            lignes.append({"id": n_ligne, "sku": l.sku, "qty": l.qty, "uom": l.unite, "facteur_base": unites[l.unite], "price_unit": l.prix_unitaire})
-        commandes.append({
-            "id": i, "name": c.ref, "partner_id": id_part[c.partenaire_ref], "date_order": f"{c.date.isoformat()} 09:00:00",
-            "currency": c.devise, "amount_untaxed": c.total, "state": "purchase", "write_date": f"{c.date.isoformat()} 09:00:00",
-            "lines": lignes,
-        })
+            lignes.append(
+                {
+                    "id": n_ligne,
+                    "sku": l.sku,
+                    "qty": l.qty,
+                    "uom": l.unite,
+                    "facteur_base": unites[l.unite],
+                    "price_unit": l.prix_unitaire,
+                }
+            )
+        commandes.append(
+            {
+                "id": i,
+                "name": c.ref,
+                "partner_id": id_part[c.partenaire_ref],
+                "date_order": f"{c.date.isoformat()} 09:00:00",
+                "currency": c.devise,
+                "amount_untaxed": c.total,
+                "state": "purchase",
+                "write_date": f"{c.date.isoformat()} 09:00:00",
+                "lines": lignes,
+            }
+        )
     return {
-        "partners": [{"id": id_part[p.ref], "ref": p.ref, "name": p.nom, "vat": p.vat, "write_date": "2026-09-01 08:00:00"} for p in parts],
-        "products": [{"id": i, "sku": p.sku, "name": p.nom, "uom_achat": p.unite_achat} for i, p in enumerate(monde.produits, start=1)],
+        "partners": [
+            {"id": id_part[p.ref], "ref": p.ref, "name": p.nom, "vat": p.vat, "write_date": "2026-09-01 08:00:00"} for p in parts
+        ],
+        "products": [
+            {"id": i, "sku": p.sku, "name": p.nom, "uom_achat": p.unite_achat} for i, p in enumerate(monde.produits, start=1)
+        ],
         "orders": commandes,
     }
 
@@ -63,6 +84,7 @@ def generer(cfg: Config, avec_odoo: bool = True) -> dict[str, Any]:
 
 
 # ------------------------------------------------------------------------------------------ corrections
+
 
 class CorrectionImpossible(ValueError):
     pass
@@ -120,8 +142,15 @@ def _saisir_facture(cfg: Config, po_ref: str) -> str:
     _, _, lignes = _ligne_fec(cfg.fec)
     numero = max(int(l[2]) for l in lignes[1:]) + 1
     facture = Facture(
-        ecriture_num=numero, piece_ref=f"FA26-{numero:04d}", po_ref=po_ref, date=cfg.as_of,
-        aux=c["code_odoo"], lib_b=normaliser_nom(c["nom"]), ht_devise=c["total_devise"], devise=c["devise"], avec_tva=c["pays"] == "FR",
+        ecriture_num=numero,
+        piece_ref=f"FA26-{numero:04d}",
+        po_ref=po_ref,
+        date=cfg.as_of,
+        aux=c["code_odoo"],
+        lib_b=normaliser_nom(c["nom"]),
+        ht_devise=c["total_devise"],
+        devise=c["devise"],
+        avec_tva=c["pays"] == "FR",
     )
     nouvelles = [[l[k] for k in fec.COLONNES] for l in fec.lignes_de_facture(facture)]
     _ecrire_fec_lignes(cfg.fec, lignes + nouvelles)
