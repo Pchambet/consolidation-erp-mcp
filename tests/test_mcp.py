@@ -4,7 +4,6 @@ sous-processus stdio, qui est le transport que Claude Desktop utilise."""
 from __future__ import annotations
 
 import asyncio
-import os
 import sys
 
 import pytest
@@ -104,11 +103,15 @@ def test_une_question_libre_passe_par_decrire_modele_puis_une_requete(actualise)
 
 
 def test_le_serveur_tourne_en_sous_processus_stdio(actualise):
-    """Le transport réel : le protocole passe par stdin et stdout, donc rien d'autre ne doit y être écrit."""
+    """Le transport réel : le protocole passe par stdin et stdout, donc rien d'autre ne doit y être écrit.
+
+    Environnement minimal, comme un client MCP de bureau : seules les variables que le client transmet
+    par défaut (HOME, PATH, ...) plus les deux nécessaires au serveur. Rien n'est hérité du shell de test.
+    """
     params = StdioServerParameters(
         command=sys.executable,
         args=["-m", "consolidation_erp.mcp_server"],
-        env={**os.environ, "CONSOLIDATION_DATA": str(actualise.donnees), "ODOO_MODE": "instantane"},
+        env={"CONSOLIDATION_DATA": str(actualise.donnees), "ODOO_MODE": "instantane"},
     )
 
     async def scenario(c):
