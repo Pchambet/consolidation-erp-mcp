@@ -14,6 +14,7 @@ dependencies = [
 
 [dependency-groups]
 dev = ["pytest>=8", "ruff>=0.15"]
+figures = ["matplotlib>=3.9"]
 
 [project.scripts]
 consolidation = "consolidation_erp.cli:main"
