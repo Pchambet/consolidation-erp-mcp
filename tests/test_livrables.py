@@ -52,7 +52,10 @@ def test_les_indicateurs_recalcules_depuis_les_csv_egalent_ceux_de_l_entrepot(ac
     """C'est ce que fait Power BI avec les mesures DAX : recalculer les indicateurs depuis les CSV.
     La logique doit donner les mêmes chiffres que l'entrepôt."""
     export_bi.exporter(actualise, tmp_path)
-    d = lambda s: dt.date.fromisoformat(s) if s else None
+
+    def d(s: str) -> dt.date | None:
+        return dt.date.fromisoformat(s) if s else None
+
     as_of = d(_csv(tmp_path, "parametres")[0]["as_of"])
     limite = as_of - dt.timedelta(days=30)
     ecarts, commandes, rap = _csv(tmp_path, "ecarts"), _csv(tmp_path, "fact_commande"), _csv(tmp_path, "rapprochement")

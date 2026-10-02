@@ -7,8 +7,8 @@ from fastapi.testclient import TestClient
 from consolidation_erp import fec, odoo
 from consolidation_erp.demo import odoo_depuis_monde
 from consolidation_erp.erp_c import ClientErpC, ErreurErpC, creer_app, dataset
-from fake_odoo import FauxOdoo
 
+from fake_odoo import FauxOdoo
 
 # ------------------------------------------------------------------ B : le FEC
 

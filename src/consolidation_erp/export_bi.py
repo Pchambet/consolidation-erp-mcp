@@ -12,7 +12,7 @@ import csv
 from pathlib import Path
 
 from . import entrepot
-from .pipeline import Config, RACINE
+from .pipeline import RACINE, Config
 
 TABLES = {
     "dim_partenaire": "SELECT * FROM dim_partenaire ORDER BY partner_key",

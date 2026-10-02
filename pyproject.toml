@@ -1,7 +1,7 @@
 [project]
 name = "consolidation-erp-mcp"
 version = "0.1.0"
-description = "Maquette : consolider trois ERP, contrôler les écarts et interroger le tout depuis Claude par MCP"
+description = "Consolidate three ERPs into a DuckDB star schema, run three-way-match controls in SQL, and query the result from an LLM agent over MCP"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["pytest>=8"]
+dev = ["pytest>=8", "ruff>=0.15"]
 
 [project.scripts]
 consolidation = "consolidation_erp.cli:main"
@@ -28,4 +28,15 @@ packages = ["src/consolidation_erp"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-markers = ["odoo: nécessite l'instance Odoo de la maquette (docker compose up)"]
+markers = ["odoo: needs the live Odoo 17 instance (./scripts/odoo_up.sh)"]
+
+[tool.ruff]
+line-length = 130
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "UP", "SIM"]
+# `l` is the conventional short name for a row (`ligne`) throughout the code base.
+ignore = ["E741"]
+
+[tool.ruff.lint.isort]
+known-local-folder = ["fake_odoo"]

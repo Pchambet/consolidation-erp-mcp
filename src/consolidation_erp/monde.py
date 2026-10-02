@@ -71,7 +71,7 @@ def normaliser_nom(nom: str) -> str:
     """Nom sans accents ni forme juridique, en majuscules : la clé d'un rapprochement par le nom."""
     sans_accents = unicodedata.normalize("NFKD", nom).encode("ascii", "ignore").decode()
     mots = [m for m in sans_accents.upper().replace(".", "").replace(",", " ").split()]
-    formes = {"SA", "SARL", "SAS", "AG", "SARL", "SRL"}
+    formes = {"SA", "SARL", "SAS", "AG", "SRL"}
     while mots and mots[-1] in formes:
         mots.pop()
     return " ".join(mots)
@@ -406,7 +406,7 @@ def _planter(rng: random.Random, m: Monde) -> None:
         verite.append(Ecart("facture_avant_commande", c.ref, "facture datée 4 jours avant la commande"))
 
     # 8. Montant facturé différent du montant commandé.
-    for c, coef in zip(prendre(2), (1.10, 0.93)):
+    for c, coef in zip(prendre(2), (1.10, 0.93), strict=True):
         fac[c.ref].ht_devise = round(c.total * coef, 2)
         verite.append(Ecart("ecart_montant", c.ref, f"facturé à {coef:.2f} fois le commandé"))
 

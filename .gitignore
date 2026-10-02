@@ -7,3 +7,4 @@ data/entrepot.duckdb
 data/entrepot.duckdb.wal
 data/entrepot.construction.duckdb*
 .DS_Store
+.ruff_cache/

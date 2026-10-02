@@ -117,7 +117,7 @@ def _ecarts(con: duckdb.DuckDBPyConnection, as_of: dt.date, deja_vus: dict[str, 
         curseur = con.execute(regle.sql)
         colonnes = [d[0] for d in curseur.description]
         for valeurs in curseur.fetchall():
-            ligne = dict(zip(colonnes, valeurs))
+            ligne = dict(zip(colonnes, valeurs, strict=True))
             ecart_id = _identifiant(regle.nom, ligne)
             con.execute(
                 "INSERT INTO ecarts VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
@@ -244,7 +244,7 @@ def _lignes(chemin: Path, sql: str, params: list | None = None) -> list[dict[str
     try:
         curseur = con.execute(sql, params or [])
         colonnes = [d[0] for d in curseur.description]
-        return [{k: _serialisable(v) for k, v in zip(colonnes, l)} for l in curseur.fetchall()]
+        return [{k: _serialisable(v) for k, v in zip(colonnes, l, strict=True)} for l in curseur.fetchall()]
     finally:
         con.close()
 
@@ -256,9 +256,11 @@ def ecarts_ouverts(chemin: Path, gravite: str | None = None, regle: str | None =
         raise RequeteRefusee(f"règle inconnue. Règles : {', '.join(PAR_NOM)}")
     filtres, params = [], []
     if gravite:
-        filtres.append("gravite = ?"); params.append(gravite)
+        filtres.append("gravite = ?")
+        params.append(gravite)
     if regle:
-        filtres.append("regle = ?"); params.append(regle)
+        filtres.append("regle = ?")
+        params.append(regle)
     ou = ("WHERE " + " AND ".join(filtres)) if filtres else ""
     ordre = "CASE gravite WHEN 'haute' THEN 0 WHEN 'moyenne' THEN 1 ELSE 2 END, montant_eur DESC NULLS LAST, ecart_id"
     total = _lignes(chemin, f"SELECT count(*) AS n FROM ecarts {ou}", params)[0]["n"]

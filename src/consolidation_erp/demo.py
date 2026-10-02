@@ -15,7 +15,7 @@ from typing import Any
 
 from . import entrepot, fec
 from .erp_c import ecrire_dataset
-from .monde import Monde, Facture, construire, normaliser_nom, renommer_commandes, verite_en_dict
+from .monde import Facture, Monde, construire, normaliser_nom, renommer_commandes, verite_en_dict
 from .odoo import ClientOdoo, ErreurOdoo, exporter_instantane, lire, semer
 from .pipeline import Config
 

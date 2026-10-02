@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Any
 
 from . import entrepot
-from .pipeline import Config, RACINE
+from .pipeline import RACINE, Config
 
 GRAVITES = {
     "haute": ("▲", "Haute", "var(--critique)"),

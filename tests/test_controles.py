@@ -7,7 +7,6 @@ entre ce qui a été planté et ce qui est détecté.
 
 from __future__ import annotations
 
-
 import duckdb
 
 from consolidation_erp import demo, entrepot, fec

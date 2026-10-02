@@ -4,6 +4,7 @@ import duckdb
 import pytest
 
 from consolidation_erp import demo, entrepot
+from consolidation_erp.fec import FecInvalide
 from consolidation_erp.pipeline import actualiser
 
 
@@ -53,7 +54,7 @@ def test_une_construction_qui_echoue_laisse_l_ancien_entrepot_intact(cfg):
     actualiser(cfg)
     avant = cfg.entrepot.read_bytes()
     cfg.fec.write_text("colonne_absurde\n1\n", encoding="utf-8")
-    with pytest.raises(Exception):
+    with pytest.raises(FecInvalide):
         actualiser(cfg)
     assert cfg.entrepot.read_bytes() == avant
     assert not cfg.entrepot.with_suffix(".construction.duckdb").exists()

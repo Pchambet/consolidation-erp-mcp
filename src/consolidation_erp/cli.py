@@ -14,7 +14,7 @@ from .pipeline import Config, actualiser
 def _table(colonnes: list[str], lignes: list[list]) -> str:
     largeurs = [max(len(str(c)), *(len(str(l[i])) for l in lignes)) if lignes else len(str(c)) for i, c in enumerate(colonnes)]
     def fmt(l: list) -> str:
-        return "  ".join(str(v).ljust(w) for v, w in zip(l, largeurs)).rstrip()
+        return "  ".join(str(v).ljust(w) for v, w in zip(l, largeurs, strict=True)).rstrip()
     return "\n".join([fmt(colonnes), fmt(["-" * w for w in largeurs]), *(fmt(l) for l in lignes)])
 
 
@@ -68,6 +68,7 @@ def _indicateurs(cfg: Config, args: argparse.Namespace) -> int:
 
 def _erp_c(cfg: Config, args: argparse.Namespace) -> int:
     import uvicorn
+
     from .erp_c import creer_app
     donnees = json.loads(cfg.dataset_c.read_text(encoding="utf-8"))
     print(f"ERP C (simulé) sur http://127.0.0.1:{args.port}, en-tête X-API-Key: demo-key")
