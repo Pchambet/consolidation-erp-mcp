@@ -1,5 +1,7 @@
 # Consolider trois ERP, contrôler les écarts, interroger le tout depuis Claude
 
+[English version](README.md)
+
 Une maquette de bout en bout. Trois systèmes décrivent les mêmes achats d'un groupe fictif : ils sont
 lus, rapprochés, contrôlés, puis exposés à Claude par un serveur MCP et à un tableau de bord.
 
