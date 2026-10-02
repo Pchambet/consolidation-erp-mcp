@@ -1,5 +1,10 @@
 # Power BI, ou Tableau : le tableau de bord sur le modèle consolidé
 
+> **In English.** This folder holds the star-schema CSV export (`donnees/`), the relationships and the
+> DAX measures (`mesures.dax`) for rebuilding the dashboard in Power BI or Tableau. It has **never been
+> opened in Power BI Desktop**; a test recomputes the eight indicators from these CSV files, which checks
+> columns and logic, not DAX syntax. The rest of this page is in French.
+
 **Ce dossier n'a jamais été ouvert dans Power BI Desktop.** La maquette a été développée sur un Mac, et
 Power BI Desktop n'existe que sous Windows. Ce que contient ce dossier est prêt à être chargé, mais
 **non vérifié** : le modèle, les relations et les mesures DAX ci-dessous sont écrits d'après la

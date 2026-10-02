@@ -104,8 +104,10 @@ enregistrement, et de n'affirmer aucun écart que `ecarts_ouverts` ne liste pas.
 2. une seule instruction, de type `SELECT` ;
 3. un délai de 10 secondes, après lequel la requête est interrompue.
 
-Un filtre de mots interdits vient en plus, mais les tests prouvent chaque barrière **séparément**, sans
-lui (`tests/test_garde_sql.py`). Les messages de refus sont faits pour être lus par Claude : il peut
+Un filtre de mots interdits vient en plus. La lecture seule et le refus d'accès aux fichiers sont testés
+**en contournant ce filtre** ; le verrouillage de la configuration, le délai et la limite de 1 000 lignes
+ont leurs propres tests (`tests/test_garde_sql.py`). L'accès réseau est coupé par le même réglage, sans
+test dédié. Les messages de refus sont faits pour être lus par Claude : il peut
 corriger sa requête.
 
 ### Brancher Claude Desktop
@@ -156,7 +158,8 @@ CSV par un test, ce qui valide leurs colonnes et leur logique, pas la syntaxe DA
 ## Ce qui n'a pas été vérifié
 
 - **Claude Desktop** : le serveur est testé par un client MCP (en mémoire et en sous-processus stdio,
-  lancé avec un environnement vide comme le fait Claude Desktop), pas encore depuis son interface.
+  lancé avec un environnement minimal : seules les variables que le client MCP transmet par défaut),
+  pas encore depuis son interface.
 - **Power BI et Tableau** : voir plus haut.
 - **Odoo** : une seule instance, en version 17.0, avec le module achats seul. Pas de multi-société, pas
   de taxes, pas de réceptions Odoo (l'entrepôt est le système C).

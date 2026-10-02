@@ -11,23 +11,26 @@ over MCP without being able to invent a discrepancy.
 ![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-0d9488)
 [![License: MIT](https://img.shields.io/badge/license-MIT-64748b)](LICENSE)
 
-![Control dashboard generated from the warehouse: 22 open discrepancies, 8 high severity, 81.8 % of orders older than 30 days clean end to end](docs/tableau_de_bord.png)
+![Three-way match on the 99 purchase orders older than 30 days (97 with a receipt, 95 with an invoice, 81 passing every control), and the 22 planted discrepancies all detected with none invented](docs/figures/hero.png)
 
-*The generated dashboard (French UI, synthetic data). Every number on it is recomputed by the test suite.*
+*Drawn by [`scripts/hero_figure.py`](scripts/hero_figure.py) from the warehouse and the committed ground truth.
+The generated control dashboard (French UI) is [shown in full below](#control-dashboard).*
 
 ## TL;DR
 
-- **22 known discrepancies are planted** in an otherwise consistent synthetic world, across 12 control
-  rules. The SQL controls recover **all 22 and nothing else**, and a clean world produces **zero**
-  (`tests/test_controles.py`).
+- **22 known discrepancies are planted** in an otherwise consistent synthetic world, across 13 controls
+  (the unbalanced-entry control is tested on its own). The SQL controls recover **all 22 and nothing
+  else**, and a clean world produces **zero** (`tests/test_controles.py`).
 - **Three-way match:** of the 99 purchase orders older than 30 days, 97 have a receipt, 95 an invoice,
   and **81 (81.8 %) pass every control end to end**. 8 discrepancies are high severity; 4,495 EUR of
   goods were received more than 30 days ago and never invoiced.
 - **Free-form SQL from the agent is bounded by three independent guards** (read-only connection with no
-  file or network access, single `SELECT` statement, 10 s timeout). Each guard is proven *on its own*
-  by a test, with the keyword filter disabled.
+  file or network access, single `SELECT` statement, 10 s timeout), plus a 1,000-row cap. The read-only
+  connection and the blocked file access are each tested *with the keyword filter bypassed*; the locked
+  configuration, the timeout and the row cap have their own tests. Network access is disabled by the
+  same setting but not tested.
 - **The MCP server is exercised by a real MCP client**, in memory and as a stdio subprocess launched
-  with an empty environment, the way Claude Desktop launches it.
+  with a minimal environment (only the variables the MCP client passes by default).
 - **68 tests pass without Odoo** (71 with the live Odoo 17 instance), in CI on every push to `main`.
 
 ## Why it matters
@@ -115,6 +118,20 @@ unassigned.
 Reproduce with `uv run consolidation indicateurs`. The same eight values are recomputed from the Power
 BI CSV export by a test.
 
+### Control dashboard
+
+`uv run consolidation tableau-de-bord` writes a self-contained HTML page (French UI, light and dark):
+indicator tiles, discrepancies per control, the three-way match, which system to fix, which team must
+act, and the full list. Its figures come from the same SQL indicators that the tests recompute from
+the CSV export; the test on the page itself checks the open-discrepancy count and the 22 severity
+markers. The committed copy is [`tableau_de_bord/index.html`](tableau_de_bord/index.html).
+
+<details><summary>Full-page screenshot</summary>
+
+![Control dashboard generated from the warehouse: 22 open discrepancies, 8 high severity, 81.8 % of orders older than 30 days clean end to end](docs/tableau_de_bord.png)
+
+</details>
+
 ### The MCP server
 
 Six tools. Five are read-only and read the warehouse, never the ERPs. Tool names are in French, as is
@@ -157,6 +174,7 @@ uv run consolidation ecarts           # list them, most severe first
 uv run consolidation expliquer <id>   # one discrepancy, with its source records in each system
 uv run consolidation tableau-de-bord  # write tableau_de_bord/index.html
 uv run pytest                         # 68 tests without Odoo
+uv run --group figures python scripts/hero_figure.py   # redraw docs/figures/hero.png
 ```
 
 Without Docker, Odoo is read from `data/odoo_instantane.json`, a snapshot exported from the real Odoo
@@ -206,14 +224,17 @@ src/consolidation_erp/
   export_bi.py                 star-schema CSV export
 data/                          generated sources (FEC, warehouse dataset, Odoo snapshot, ground truth)
 powerbi/                       CSV, relationships and DAX measures (untested in Power BI, see below)
+scripts/hero_figure.py         the figure at the top of this page
+docs/                          figures and the dashboard screenshot
 tests/                         68 tests offline, 3 more against a live Odoo
 ```
 
 ## Limitations and what was not verified
 
 - **Claude Desktop UI:** the server is tested by an MCP client (in memory and as a stdio subprocess
-  with an empty environment, as Claude Desktop launches it), not yet from the Claude Desktop interface.
-- **Power BI and Tableau:** the [`powerbi/`](powerbi/README.md) folder (star-schema CSV, relationships,
+  with a minimal environment: only the variables the MCP client passes by default), not yet from the
+  Claude Desktop interface.
+- **Power BI and Tableau:** the [`powerbi/`](powerbi/README.md) folder (documented in French, with an English summary) (star-schema CSV, relationships,
   DAX measures) **has never been opened in Power BI Desktop** (developed on a Mac). A test recomputes
   the eight indicators from the CSV, which validates columns and logic, not DAX syntax.
 - **Odoo:** a single instance, version 17.0, purchasing module only. No multi-company, no taxes, no
